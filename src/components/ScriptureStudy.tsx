@@ -302,18 +302,18 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
   const getTranslationText = () => {
     const verseKey = getCurrentVerseKey();
     if (isOldTestament()) {
-      return (bhsTranslations as any)[verseKey] || 'Translation not available for this verse.';
+      return (bhsTranslations as Record<string, string>)[verseKey] || 'Translation not available for this verse.';
     } else {
-      return (na28Translations as any)[verseKey] || 'Translation not available for this verse.';
+      return (na28Translations as Record<string, string>)[verseKey] || 'Translation not available for this verse.';
     }
   };
 
   const getWordStudyData = () => {
     const verseKey = getCurrentVerseKey();
     if (isOldTestament()) {
-      return (keyHebrewWords as any)[verseKey] || [];
+      return (keyHebrewWords as Record<string, any[]>)[verseKey] || [];
     } else {
-      return (keyGreekWords as any)[verseKey] || [];
+      return (keyGreekWords as Record<string, any[]>)[verseKey] || [];
     }
   };
 
@@ -661,7 +661,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
 
               <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
                 <div className="italic text-gray-800 dark:text-gray-200 mb-3 border-l-4 border-zb-red-500 pl-4">
-                  {(commentaries[activeCommentary] as any)[getCurrentVerseKey()] || 
+                  {(commentaries[activeCommentary] as Record<string, string>)[getCurrentVerseKey()] || 
                    'Commentary not available for this verse.'}
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">

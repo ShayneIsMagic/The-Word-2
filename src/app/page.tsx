@@ -27,6 +27,8 @@ import {
   ArrowLeftIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline';
+import VerseComparison from "../components/VerseComparison";
+import { sampleVerseData } from "../lib/sampleVerseData";
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
@@ -334,6 +336,7 @@ export default function Home() {
       
       {/* Performance Monitor */}
       <PerformanceMonitor />
+      <VerseComparison {...sampleVerseData} />
     </div>
   );
 } 

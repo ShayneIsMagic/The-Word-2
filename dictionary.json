@@ -1,0 +1,22 @@
+[
+  {
+    "headword": "λόγος",
+    "definition": "word, speech, account, reason...",
+    "related_verses": ["John 1:1", "John 1:14", "John 3:16"]
+  },
+  {
+    "headword": "ἀρχή",
+    "definition": "beginning, origin, first cause...",
+    "related_verses": ["John 1:1", "John 3:16"]
+  },
+  {
+    "title": "Textual Apparatus",
+    "content": "The apparatus provides information about variant readings in the Greek manuscripts.",
+    "related_chapters": ["John 3"]
+  },
+  {
+    "title": "Abbreviations",
+    "content": "LXX: Septuagint, NA: Nestle-Aland, UBS: United Bible Societies.",
+    "related_chapters": ["John 3"]
+  }
+] 

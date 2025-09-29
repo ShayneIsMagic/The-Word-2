@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biblical Dictionary & Commentary Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 2rem;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #2d3748;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+    }
+    .entry {
+      background: #f1f5f9;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .headword {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #b91c1c;
+      margin-bottom: 0.3rem;
+    }
+    .reference {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 0.3rem;
+    }
+    .definition, .commentary {
+      color: #374151;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .source {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-top: 0.2rem;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 1rem; }
+      .entry { padding: 0.7rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Biblical Study Platform</h1>
+    <h2>Dictionary Entries</h2>
+    <div class="section" id="dictionary">
+      <!-- Dictionary entries will be inserted here -->
+    </div>
+    <h2>Commentary</h2>
+    <div class="section" id="commentary">
+      <!-- Commentary entries will be inserted here -->
+    </div>
+  </div>
+  <script>
+    // Example data (replace with your parsed JSON)
+    const dictionary = [
+      { headword: "λόγος", definition: "word, speech, account, reason...", related_verses: ["John 1:1", "John 1:14"] },
+      { headword: "ἀρχή", definition: "beginning, origin, first cause...", related_verses: ["John 1:1"] }
+    ];
+    const commentary = [
+      { reference: "John 1:1", commentary_text: "This verse introduces the concept of the Word (λόγος) as pre-existent and divine.", source: "UBS5" },
+      { reference: "John 1:2", commentary_text: "The repetition emphasizes the eternal nature of the Word.", source: "UBS5" }
+    ];
+
+    // Render dictionary
+    const dictDiv = document.getElementById('dictionary');
+    dictionary.forEach(entry => {
+      dictDiv.innerHTML += `
+        <div class="entry">
+          <div class="headword">${entry.headword}</div>
+          <div class="definition">${entry.definition}</div>
+          <div class="source">Verses: ${entry.related_verses.join(', ')}</div>
+        </div>
+      `;
+    });
+
+    // Render commentary
+    const commDiv = document.getElementById('commentary');
+    commentary.forEach(entry => {
+      commDiv.innerHTML += `
+        <div class="entry">
+          <div class="reference">${entry.reference}</div>
+          <div class="commentary">${entry.commentary_text}</div>
+          <div class="source">Source: ${entry.source}</div>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html> 

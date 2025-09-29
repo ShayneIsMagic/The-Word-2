@@ -1,0 +1,810 @@
+978-3-438-05117-2  Hardcover,  with Greek-English Dictionary 
+978-3-438-051 18-9  Flexicover. with Greek-English Dictionary 
+
+The Greek New Testament 
+Fifth Revised  Edition 
+©  2014  Deutsche Bibelgesellschaft. Stuttgart 
+All  rights reserved 
+Printed in  Germany 
+
+www.dbg.de 
+www.academic-bible.com 
+
+4.2014 
+
+
+CONTENTS 
+
+IX 
+Preface to the Fifth Edition  . . . . . . . . . . . . . . . . . . . . . . . . . . 
+Preface to the First Edition . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+X 
+Preface to the Third Edition  . . . . . . . . . . . . . . . . . . . . . . . . . .  XIII 
+XV 
+Preface to the Fourth Edition  . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+Introduction  ...................................... I *-63* 
+
+I.  The Fifth Edition 
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+I.  Revision of the Whole Edition  . . . . . . . . . . . . . . . . 
+2.  Revision of the Catholic Letters............... 
+2.1. The Text  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+2.2. The Textual Apparatus  . . . . . . . . . . . . . . . . . . . . 
+
+II.  The Text  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+III.  The Textual Apparatus  . . . . . . . . . . . . . . . . . . . . . . . . . . 
+I.  The Evaluation of Evidence for the Text  . . . . . . . . 
+2.  The Selection of Witnesses from Manuscripts, 
+
+Versions, and Quotations from Church Fathers  . . . 
+3.  The Greek Text Manuscripts  . . . . . . . . . . . . . . . . . 
+3.1. The Selection 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 
+3.2. The Presentation  . . . . . . . . . . . . . . . . . . . . . . . . . 
+4.  The Greek Lectionaries  . . . . . . . . . . . . . . . . . . . . . 
+5.  The Early Versions  . . . . . . . . . . . . . . . . . . . . . . . . . 
+6.  The Evidence from Church Fathers  . . . . . . . . . . . . 
+7.  The Diatessaron  . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+8.  Modem Bible Translations  . . . . . . . . . . . . . . . . . . . 
+
+IV.  The Discourse Segmentation Apparatus  . . . . . . . . . . . . . 
+
+I* 
+I* 
+2* 
+2* 
+4* 
+
+7* 
+
+8* 
+8* 
+
+9* 
+9* 
+9* 
+11 * 
+26* 
+30* 
+36* 
+44* 
+46* 
+51 * 
+
+V.  The Cross-Reference System  . . . . . . . . . . . . . . . . . . . . . 
+
+56* 
+
+VI.  Master List of Symbols and Abbreviations 
+
+. . . . . . . . . . 
+
+58* 
+
+Selected Bibliography  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+64* 
+
+
+VI 
+
+CONTENTS 
+
+Text and  Apparatus  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  1-856 
+
+Kata Mm'h'}a'lov  ............................... . 
+Kata MapKov  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+Kata AouKav  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+Kata 'Ico&vvriv 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flp&~rn; A7tocrt6A.cov  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoc; 'Pcoµaiouc; 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi;  Koptvi'Houi; a'  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi;  Koptv1"ioui; W . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+n poi;  ro:A.&tai; 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi; 'E<prnioui;  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi; <l>tAt7t7t'flcrioui;  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi; KoA.ocrcraE1c;  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi;  ElrncraAOVlKEt<;  a' . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi; ElrncraA.ovtKEt<; W . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi;Ttµo1"EOva'.  ... .......... .. . . . . ........ .. . 
+npoi; Ttµo1"EOv  p,  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi; Tiwv  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoc;  <l>tA.fiµova 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+flpoi; 'Eppaioui;  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+'IaKmPou  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+fIEtpoua'.. .. . . ... . ... . . . .. . ... . . ... ...... ... . 
+fl£tpou W . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+'Ico&vvou  a,  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+'Jco&vvou  p'  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+'Ico&vvou  y' 
+'IouOo: 
+ArtoKaAD\jlt<; 'Ico&vvou 
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+116 
+191 
+305 
+396 
+502 
+549 
+590 
+611 
+633 
+651 
+663 
+676 
+685 
+691 
+103 
+111 
+716 
+719 
+750 
+761 
+775 
+783 
+796 
+798 
+800 
+805 
+
+Index of Quotations 
+
+Old Testament Order  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+New Testament Order  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+857 
+860 
+
+Index of Allusions and Verbal Parallels 
+
+. . . . . . . . . . . . . . . . 
+
+864 
+
+
+CONTENTS 
+
+Principal Manuscripts and Versions Cited in the 
+Textual Apparatus  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+VII 
+
+884 
+
+List of Alternative Readings 
+
+. . . . . . . . . . . . . . . . . . . . . . . . . 
+
+890 
+
+Principal Symbols and  Abbreviations  . . . . . . . . . . . . . . . . . . 
+
+891 
+
+Map Index 
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+893 
+
+
+PREFACE TO  THE  FIFTH  EDITION 
+
+This Fifth Edition of the UBS  Greek New  Testament is  essentially  a 
+further revision of the Fourth Edition, in  which important corrections 
+and additions have been made.  For example, the readings of the new 
+Papyri  117  through  127  are now included in  the critical apparatus. 
+
+In the case of the Catholic  Letters a fundamentally  new  approach 
+has been followed. For this part of the New Testament the Editio Crit 
+ica Maior (ECM) is already available. The ECM represents a new lev 
+el of scientific research on the text and offers a text newly established 
+on  this  basis.  These new  insights  and  results  had to  be  incorporated 
+into the present edition, especially since they are also included in  the 
+28th  edition  of the  Nestle-Aland Novum  Testamentum  Graece,  with 
+which the Greek New Testament continues to share an identical text. 
+For this reason the text of the Catholic Letters was taken over from 
+the Editio Critica  Maior and the apparatus  was reconstructed on the 
+basis of this text. A certain inconsistency in the Fifth Edition could not 
+be avoided, because of the wish to transfer achievements made in the 
+context of the  ECM  to  the  hand  editions. The text  of the  remaining 
+New  Testament writings  will  remain  unchanged  until  progress  with 
+the ECM provides the  material and  knowledge  needed for a sustain 
+able revision of each part in tum. 
+
+Work  on  the  Fifth  Edition  of the  Greek  New  Testament  has  be -
+nefitted  from  generous  and  substantial  support  of  the  Deutsche 
+Bibelgesellschaft  by  the  American  Bible  Society.  This  has  made  it 
+possible for the Fifth Edition of the Greek New Testament to  appear 
+relatively  soon  after  the  28th  edition  of Nestle-Aland. 
+
+The  work  of  revision  was  undertaken  in  Stuttgart  by  Florian 
+Voss,  whom  I would  like to  thank  warmly for  his  commitment over 
+many  years.  He  was  supported by  colleagues  from  the  Institute  for 
+New  Testament  Textual  Research  in  Mtinster,  especially  Klaus 
+Wachtel  and  Beate von  Tschischwitz.  The first  proofs  were read by 
+Wolfgang Richter (Mtinster).  Roger Omanson undertook a thorough 
+revision  of the  Discourse  Segmentation  Apparatus  and  collaborated 
+
+
+x 
+
+PREFACE 
+
+in  expanding  the  apparatus  of textual  differences  in  modem  Bible 
+translations.  Lastly,  Simon  Crisp  is  to  be  thanked  for  checking  the 
+language  of the  Introduction  and  for  much  valuable  advice. 
+
+HOLGER  STRUTWOLF,  Munster/Westphalia 
+
+October 31, 2013 
+
+PREFACE  TO  THE  FIRST  EDITION 
+
+To  meet the  growing  need  for  an  edition  of the  Greek  New  Testa 
+ment  specially  adapted  to  the  requirements  of  Bible  translators 
+throughout  the  world,  the  American  Bible  Society,  the  National 
+Bible  Society  of Scotland,  and  the  Wi.irttemberg  Bible  Society  ap 
+pointed  in  1955  an  international  and  interdenominational  commit 
+tee  of textual  scholars  to  prepare  such  an  edition.  The  three  soci 
+eties  were  later  joined  by  the  Netherlands  Bible  Society  and  the 
+British and  Foreign  Bible  Society. 
+
+In  keeping  with  its  distinctive  purpose,  the  edition  has  the  fol 
+lowing  special  features:  ( l)  a  critical  apparatus  restricted  for  the 
+most part to  variant readings significant for translators or necessary 
+for  the  establishing of the  text;  (2)  an  indication  of the  relative de 
+gree  of certainty  for  each  variant  adopted  as  the  text;  (3)  a full  ci 
+tation  of representative  evidence  for  each  variant selected;  and  (4) 
+a  second  apparatus  giving  meaningful  differences  of punctuation. 
+Much new evidence from  Greek manuscripts and early versions has 
+been  cited.  A  supplementary  volume,  providing  a  summary  of the 
+Committee's  reasons  for  adopting  one  or  another  variant  reading, 
+will  also  be  published. 
+
+The Committee carried out its work in four principal stages: ( 1) on 
+the basis of Westcott and Hort's edition of the Greek New Testament, 
+a comparison was made of the text and apparatus of several other edi 
+tions,  including  those  of Nestle,  Bover,  Merk,  and  Vogels,  and  to 
+some extent those  of Tischendorf and  von  Soden,  in  order to  deter-
+
+
+PREFACE 
+
+XI 
+
+mine  which of the  variant readings  warranted further study;  (2) data 
+on  several  thousand  sets  of variants  were  gathered,  not  only  from 
+printed editions,  commentaries  and  technical  studies,  but also  from 
+hitherto  unused  papyri,  uncials,  minuscules,  and  lectionaries;  (3) 
+about six hundred variations  in  punctuation which appeared to  merit 
+consideration  were  selected  and  compared  in  editions  of the  Greek 
+text  and  in  the  principal  English,  German,  and  French  translations; 
+and finally, ( 4) the Greek text was established, the degree of certainty 
+for the reading adopted in  the text was estimated, and decisions were 
+made whether or not to include a set of variants in  the apparatus. 
+
+This  edition  has  certain  calculated  limitations:  (1)  the  sets  of 
+variants  have  generally  been  restricted  to  readings  meaningful  for 
+translators;  consequently  there  is  an  appreciable  reduction  in  the 
+number  of variants  in  the  apparatus  (but  there  is  fuller  attestation 
+for  the variants  selected).  (2) Citations of evidence from  the  major 
+lettered  uncials  and  the  Church  Fathers  have  been  derived  from 
+critical  editions  of the  Greek  New  Testament,  primarily  those  of 
+Tischendorf  and  von  Soden,  but  the  uncials  have  been  checked 
+where the printed evidence was contradictory or incomplete. (3) As 
+a rule,  no attempt has  been made to  represent the wide range of or 
+thographic variation in  the manuscripts; the orthography of Bauer's 
+Lexicon  (5th  edition)  has  been  followed. 1  (4)  The  cross  reference 
+system has been limited to  the citation of direct quotations, definite 
+allusions,  and  literary  and  other parallels. 
+
+The Editorial Committee which was responsible for preparing this 
+edition consisted of Kurt Aland, Matthew Black, Bruce M. Metzger, 
+and  Allen  Wikgren,  with  the  participation of Arthur Voobus  during 
+the  first  part of the  work.  The  project  was  initiated,  organized,  and 
+administered  by  Eugene  A. Nida,  who  also  took  part  in  Committee 
+discussions, especially those relating to major decisions of policy and 
+
+1 Exceptions chiefly involve proper names and citations of individual  manuscripts 
+within  variants.  In  a  few  cases  the  Committee  has  adopted  the  spelling  proposed  for 
+the  6th  edition  of Bauer  (e.g.  Mm'J1'aioi;.  Ma1'1'iai;.  and  Ma1'1'n-r  for  Mm1'aioi;. 
+Manha<;. and  Mm1'n-r; u-rpaapxt(J) for -rnpapxt(J) and -rnpaapxlii; for tEtpapxfii;). 
+Aramaic  words are printed without accents and  breathing marks. 
+
+
+XII 
+
+PREFACE 
+
+method. J. Harold Greenlee and Robert P. Markham, as  secretaries of 
+the  Committee,  handled a  mass  of detail  with skill and competence. 
+They were assisted by Karen Munson and the staff of the Institut ftir 
+neutestamentliche  Textforschung  at  Miinster/Westf.,  in  particular 
+Klaus Junack, Peter Weigandt, Paolo Ferreira, and Barbara Trill. 
+
+The  Committee  also  obtained  advice  by  correspondence  with  a 
+group  of  consultants,  representative  of  scholars  and  churches  in 
+many  areas,  on questions  arising  during  the  course  of the  project. 
+
+In the collation and evaluation of versional evidence, special help 
+was provided by Harold K.  Moulton and Brynmor F.  Price (Itala and 
+Vulgate),  N. Joseph  Kikuchi  (Syriac),  Robert McL. Wilson (Coptic), 
+1. A. Huisman (Gothic), A. F. J. Klijn (Armenian), Rochus Zuurmond 
+(Ethiopic,  for the Gospel of Matthew),  and T.  Amse-de Jong (Geor 
+gian).  In  the assembling of lectionary evidence,  assistance  was  pro 
+vided  at  Chicago by  David  Backus.  The  punctuation  apparatus  was 
+prepared  by  J. Harold  Greenlee,  Robert  P. Markham,  and  Harold 
+K. Moulton. 
+
+Of the  members  of the  Committee,  Kurt  Aland  was  responsible 
+for the Greek papyri, numbered uncials, and minuscules: Allen Wik 
+gren  for  the  lectionary  readings.  Matthew  Black  supervised  colla 
+tions  of Syriac data,  and  Bruce  M. Metzger  is  preparing the  supple 
+mentary  volume. 
+
+Since this  edition  is  intended  primarily for  translators,  it  is  not  to 
+be  regarded  as  in  competition  with  other  modem editions,  e.  g.  the 
+continuing  Nestle-Aland  editions,  which  provide  a  more  restricted 
+selection  of data  from  witnesses  on  a  much  wider  range  of variant 
+readings.  It is  the  intention  of the  Committee  from  time  to  time  to 
+revise  its  work  in  order  to  take  into  account  new  discoveries  and 
+fresh  evidence. 
+
+KURT  ALAND,  Miinster/Westph. 
+MATTHEW  BLACK,  St. Andrews 
+BRUCE  M. METZGER,  Princeton 
+ALLEN  WIKGREN,  Chicago 
+
+August 26,  1965 
+
+
+PREFACE 
+
+XIII 
+
+PREFACE  TO  THE  THIRD  EDITION 
+
+The  Second  Edition  of  the  Greek  New  Testament,  published  in 
+September,  1968,  contained  only  a  few  (although  in  certain  re 
+spects  quite  significant)  textual  changes.  The  principal  differences 
+between  the  First  and  Second  Editions  consisted  in  changes  in  the 
+evaluation of evidence for the variant readings, i.e., revisions  in  the 
+A.  B,  C,  and  D  ratings.  The  Third  Edition,  however,  contains  a 
+more  thorough  revision  of the  Greek  text.  In  a  series  of meetings 
+the  Committee  (including  Carlo  M. Martini,  who  has  been  a  mem 
+ber  of the  Committee  for  both  the  Second  and  Third  Editions)  un 
+dertook  a  thorough  review  of the  text  of the  First  Edition  by  care 
+fully  considering  not  only  a  number  of suggestions  made  by  spe 
+cialists  in  the  field  of New  Testament  studies,  but  also  numerous 
+recommendations resulting  from  the  experience  of the  members  of 
+the  Committee  as  they  worked  with  the  text  of the  First  Edition. 
+The  greater part of these  suggestions  for  further  modification came 
+from  Kurt  Aland,  who  had  been  making  a  detailed  analysis  of 
+changes  proposed  for  the  26th  edition  of the  Nestle-Aland  text.  A 
+number of these  were  textual  alterations  which  had  not been  previ 
+ously  discussed  by  the  Committee  in  their  work  on  the  First  Edi 
+tion.  As  a  result  of  the  Committee's  discussions,  more  than  five 
+hundred  changes  have  been  introduced  into  this  Third  Edition. 
+
+The  Committee,  sponsored  by  the  United  Bible  Societies,  has 
+thus  been  able  to establish  a single  text  for  the Third  Edition Greek 
+New  Testament  and  for  the  26th  edition  of the  Nestle-Aland  text. 
+That this step marks a significant advance will  be obvious to all  who 
+work  with  the  Greek  text  of the  New  Testament.  At  the  same  time 
+the  goals  of both  publications  remain  unchanged.  The  26th  edition 
+of the  Nestle-Aland  text  will  develop  even  further  in  the  direction 
+of handy-sized scientific edition  through  an  extension  and  improve 
+ment  of the  critical  apparatus,  and  this  Greek  New  Testament  will 
+continue  to  cite  more  extensive  evidence  for  a  more  select  number 
+of variants.  Though  the arrangement  and format  of the two publica-
+
+
+XIV 
+
+PREFACE 
+
+tions  will  be  different,  the  texts  will  be  the  same,  and  both  will  be 
+published  under the  editorship  of the  Committee. 
+
+All  the  textual  changes  agreed  upon  by  the  Committee  are  incor 
+porated  into  this  Third  Edition.  These  changes,  of course,  involve 
+corresponding  alterations  in  the  critical  apparatus.  The  editorial 
+work  has  been  undertaken  by  the  Institut  fiir  neutestamentliche 
+Textforschung  in  Mi.inster/Westphalia,  under  the  direction  of K. Ju 
+nack,  Secretary  to  the  Committee.  Editorial  changes  decided  upon 
+by  the  Committee  include  the  transposition  of  the  pericope  John 
+7 .53-8. l l  from the end of the Gospel to  its  traditional  location,  with 
+the  double  brackets  retained.  Several  minor  errors  both  in  the  text 
+and  in  the  apparatus  have been  corrected, and some alterations have 
+been made in  the evaluation of evidence.  A Textual  Commentary on 
+the  Greek  New  Testament  (l 971).  edited  by  Bruce  M. Metzger  on 
+behalf of the  Committee,  is  based  on  this  Third Edition. 
+
+Certain  additions  which  are  important  for  translation  committees 
+have  been  incorporated  into  the  punctuation  apparatus,  but  the 
+citations  of evidence  from  the  Translator's  New  Testament  (based 
+on  earlier  preliminary  publications)  have  been  eliminated.  The 
+thoroughly 
+evidence  for  Old  Testament  quotations  has  been 
+reviewed,  both  in  the  text  and  in  the  references.  The  Index  of 
+Quotations  has  been  completely  rewritten,  now  calling  attention 
+only  to  those  passages  which  are  clearly  quotations  from  the  Old 
+Testament,  and  eliminating  references  to  words  and  phrases  which 
+are  only  allusions  or  literary  echoes.  A  second  part,  listing  the 
+Old  Testament  quotations  in  their  New  Testament  order,  has  been 
+added  to  the Index of Quotations. The responsibility for  the revision 
+of  the  punctuation  apparatus  and  the  citations  of  quotations  has 
+rested  with  the  Translations  Department  of  the  American  Bible 
+Society,  which  has  worked  closely  with  the  Institut  fi.ir  neutesta 
+mentliche Textforschung  in  Mi.inster. 
+
+Plans  are  already  under  way  for  a  Fourth  Edition  of the  Greek 
+New  Testament,  which  will  contain  a  correspondingly  thorough  re 
+vision of the textual apparatus, with special emphasis upon evidence 
+from  the  ancient versions,  the  Diatessaron,  and  the  Church  Fathers. 
+In  addition,  the  evidence  from  Greek  manuscripts  will  be  carefully 
+
+
+PREFACE 
+
+xv 
+
+controlled by  direct comparison with  manuscript readings.  This  will 
+apply  particularly  to  the  evidence  which  could  not  be  so  treated  in 
+previous  editions.  In  the  listing  of manuscript  evidence,  the  Intro 
+duction  to the Third Edition contains only  the  completely  necessary 
+modifications (for example, the expansion of the lists of Greek man 
+uscripts cited for particular isolated readings), but the Fourth Edition 
+will  have a completely  new  treatment of textual  data. 
+
+January,  1975 
+
+PREFACE  TO  THE  FOURTH  EDITION 
+
+After  the  Third  Edition  of the  United  Bible  Societies'  Greek  New 
+Testament was  issued, realizing a common single text for both GNT 
+and  the  26th  edition  of  the  Novum  Testamentum  Graece  (Nestle 
+Aland),  the  Committee  made  plans  for  a  thorough  revision  of the 
+GNT apparatus in  all  of its  aspects.  The  familiar established  format 
+of the edition was never basically questioned, but its reliability, clar 
+ity,  and the accuracy of its  information required  improvement in  or 
+der  to  meet  the  needs  of its  many  users.  The  results  of many  years 
+of research  are  now  available,  most  important among  which  are  the 
+following  points. 
+
+The GNT continues to  offer "more extensive evidence for a more 
+select  number  of  variants"  (Preface  to  the  Third  Edition,  p. xi), 
+but the  selection of passages for the apparatus  was thoroughly  re 
+viewed  by  the  Committee.  This  resulted  in  eliminating  from  the 
+apparatus a large number of variant units where the readings were 
+of minor  significance,  concerned  only  with  the  minutest  textual 
+variations,  and  including  others  having  a  greater  importance  for 
+the  reader's understanding of the  history  of the  text and exegesis. 
+
+Further,  the  Committee  also  redefined  the  various  levels  in  the 
+evaluation  of evidence  on  the  basis  of their  relative  degrees  of 
+
+
+XVI 
+
+PREFACE 
+
+certainty. Thus the evaluations of all  the  1438  sets  of variants cit 
+ed in  the apparatus  have  been  completely  reconsidered. 
+
+Finally,  in  every  instance  very careful consideration was  given  to 
+the selection of representatives for each group of witnesses in order 
+to  reflect  faithfully  the  character  of the  textual  tradition  and  ex 
+clude elements  of uncertainty.  This  is  discussed in  more detail  in 
+the Introduction. 
+
+While  work  on  this  new  edition  was  proceeding,  the  consultants 
+of  the  UBS  Translations  Department  in  New  York  (especially 
+Roger Omanson)  proposed and developed a revision of the  punc 
+tuation apparatus.  In  its  new form  this segmentation apparatus no 
+longer indicates all the  punctuation marks found  in  representative 
+modem  translations,  because differences  in  the  systems followed 
+in  the  various editions could lead  to  confusion.  Instead,  they  note 
+only  the  major  and  minor  divisions  as  they  bear on  the  interpre 
+tation  of the  text. 
+
+The  text of the  edition  has  remained  unchanged.  This  should  not  be 
+misunderstood  to  mean  that  the  editors  now  consider the  text  as  es 
+tablished.  Work on the  text of the  Holy  Scriptures continues to  be a 
+task  of concern  for  each  of the  editors  who  will  offer the  results  of 
+their  research  in  future  editions  of  the  Greek  New  Testament.  Yet 
+the  editors  feel  that  at  the  present time  this  responsible  research  has 
+not  yet  advanced  sufficiently  to  authorize  making  specific  changes 
+in  the  text.  The  Committee  is  always  genuinely  grateful  to  readers 
+for  their proposals  and  suggestions. 
+
+The principles underlying the  present revision  were established at 
+a long  working session of the Committee in  1981  for  which detailed 
+preparations  had  been  made.  At  that  time  the  decisions  were  made 
+for  eliminations  and  inclusions  in  the  apparatus  of variant  readings, 
+and also for reconsidering the evaluation of readings. The guidelines 
+for  witnesses  to  be  included  in  the  apparatus  were  also  thoroughly 
+discussed  and  established.  There  were  some  further  refinements 
+made  as  particular  issues  continued  to  be  discussed  among  the  edi-
+
+
+PREFACE 
+
+XVII 
+
+tors  through  succeeding  years.  Participants  always  included  Kurt 
+Aland  and  also  Jan  de  Waard,  who  succeeded  doyen  Eugene  Nida 
+representing the  whole Committee  and  the  United  Bible  Societies. 
+The organization and  implementation of the  work.  including  the 
+selection,  collation,  and  multiple checking of the  various  groups of 
+witnesses, was done in the Institute for New Testament Textual Re 
+search at  Mi.inster/Westfalen,  with the assistance of specialists  from 
+elsewhere  to  whom  we  are  deeply  grateful.  While  their  fields  and 
+contributions  are  described  in  the  Introduction,  their  names  are  re 
+peated  here:  H.J. Frede  of Beuron  (Latin  manuscripts  and  Church 
+Fathers),  Chr. Hannick  (Armenian,  Georgian,  Old  Church  Slavon 
+ic),  E. Hammerschmidt (Ethiopic), Dom Louis Leloir (Diatessaron). 
+All  our colleagues  in  the  Institute  for  New  Testament Textual  Re 
+search  at  Mi.inster  have  been  engaged  through  the  years  with  work 
+on  the  Greek  New  Testament.  Their  particular  responsibilities  are 
+indicated  at  the  appropriate  places  in  the  Introduction.  Special  ac 
+knowledgment is  due  to  K. Junack for editing the critical  apparatus 
+from  the  mass  of individual  manuscripts  in  varying  formats  con 
+tributed  by the  participating scholars.  For their labors  in  proofread 
+ing  at  various  stages  of  production  we  are  indebted  to  B. Koster, 
+K. Wachtel,  and  M. Welte.  All  the  working  sessions,  meetings,  and 
+individual  projects  were  sponsored  by  the  United  Bible  Societies, 
+and  the  work  in  the  Munster Institute  by  the  Hermann  Kunst  Foun 
+dation  for  New  Testament  Textual  Research. 
+
+BARBARA  ALAND,  Miinster/Westph. 
+KURT  ALAND,  Mi.inster/Westph. 
+JOHANNES  KARA VIDOPOULOS,  Thessaloniki 
+CARLO  M. MARTINI,  Milano 
+BRUCE M. METZGER,  Princeton 
+
+October,  1992 
+
+
+INTRODUCTION 
+
+I. The Fifth Edition 
+
+The Fifth Edition of The  Greek New  Testament is,  like  its  predeces 
+sors,  intended to enable its readers  to  read,  understand, and translate 
+the New Testament in its original language in as competent and skilled 
+a manner as possible. To meet this aim the edition was revised in two 
+ways.  On the  one hand,  several improvements have  been  introduced 
+that concern the entire New Testament (see below I. I). In the Catholic 
+Epistles, on the other hand, the edition has been made consistent with 
+the Editio Critica Maior 1 (ECM) of the Greek New Testament, which 
+entailed some fundamental changes in this part of the New Testament 
+(see below 1.2), including textual changes in  the base text. This orien 
+tation towards the ECM was approved by  the editorial committee of 
+The Greek New Testament and seemed a natural step, because the text 
+of the ECM has been established on the basis of all the relevant mate 
+rial  from  the  Greek  manuscripts,  the early  versions,  and  the  Church 
+Fathers. 
+
+1.  Revision of the Whole Edition 
+
+Since the Third (corrected) Edition, the text of The Greek New Testa 
+ment has  been identical with  that of the  Nestle-Aland Novum  Testa 
+mentwn Graece, apart from differences in punctuation and capitaliza 
+tion, and a few differences in matters of spelling. The latter were har 
+monized in the present edition. Hence, in matters of spelling the Fifth 
+Edition of The Greek New Testament is fully consistent with the 28th 
+edition of the Novum Testamentum Graece. 
+
+1  Novum Testamentum Graecurn - Editio Critica  Maior IV.  The Catholic Letters. 
+ed.  B. Aland.  K. Alandt, G. Mink,  H. Strutwolf,  K. Wachtel.  Stuctgart:  German  Bible 
+Society. 2nd rev.  edition 2013. 
+
+
+2* 
+
+INTRODUCTION 
+
+In  the  case  of  the  textual  apparatus  several  changes  from  the 
+Fourth  Edition need  to  be  mentioned.  First,  the  readings of the  new 
+ly  discovered Papyri  117-127 have been introduced. Papyrus  127  in 
+particular  is  worth  mentioning  because  at  several  instances  in  Acts 
+it  presents  a text  similar to  Codex  Bezae  (05). 
+
+Second, at  the end of the  list of witnesses in  the textual apparatus 
+the reader will immediately notice new abbreviations. These represent 
+selected  modem  Bible  translations  (English,  German,  French,  and 
+Spanish). All instances where the text of these translations is based on 
+a variant reading instead of the main text of The Greek New Testament 
+are  indicated.  It may be of interest for translators as  well as for other 
+readers of these Bible translations to see where the respective transla 
+tions differ from the main text of The Greek New Testament. It should 
+be noted, however, that these translations are of course not witnesses 
+to  the  Greek  text.  In  fact,  their  inclusion  in  the  textual  apparatus  is 
+based  on practical  considerations, since  it  did  not  seem advisable  to 
+create another, separate apparatus.  But the  reader should be  aware of 
+the  categorical  difference  between  these  Bible  translations  and  the 
+textual witnesses listed at the beginning of the apparatus units. Further 
+details are given below on p. 46* ff. 
+
+Finally, it should be  noted that the  Discourse Segmentation Appa 
+
+ratus  has  undergone a thorough revision (cf.  p. 51 *ff.). 
+
+2.  Revision of the Catholic Letters 
+
+The  Editio  Critica  Maior  (ECM)  sets  new  standards  in  providing 
+source  material  relevant  to  the history of the  text and  in  analyzing  it 
+systematically.  Naturally  the  Fifth  Edition of The  Greek New  Testa 
+ment has benefitted from the research results of the ECM. This relates 
+to  the base text as  well as  to  the textual  apparatus. 
+
+2.1  The Text 
+
+Compared  to  the  Fourth  Edition, the text differs  at  the  following  33 
+passages: 
+
+
+INTRODUCTION 
+
+3* 
+
+ECM/NA28!UBSS 
+
+NA27!UBS4 
+
+ou Kau:pyal;Ei:m 
+~ Ka\}ou  €KE'i 
+Kat ou OtEKpi trT]'tE 
+AEmoµEvo1  c1ow 
+i:ou  Kupiou 
+
+ouK Epyal;nm 
+EKE'i  ~ Ka\}ou 
+OU  0\EKpl lrT]'tE 
+A.nrcoµEvo1 
+' 
+KUplOU 
+
+A. urcT] \}Evi:ai; 
+om. 
+om. 
+om. 
+µEpn 
+i:oui; 
+om. 
+om. 
+
+acrEPEtV 
+rcapa Kupicp 
+Kai:aA.movi:Ei; 
+" 
+ovi:coi; 
+om. 
+81' OV 
+oux EUPEml<JE'tat 
+i:a'ii; Emcr1:0A.a'ii; 
+cri: pEpA.Wcroum v 
+om. 
+
+om. 
+rcm8ia 
+EV  aui:q:i 
+. 
+EaU'tOV 
+
+' 
+
+A.urcriMvi:Ei; 
+[on] 
+(Etµt] 
+[ •0 l 
+' ovoµan 
+' 
+~ ouv 
+[•c!>l 
+Ciricrou l 
+
+acrEpE[ a) t v 
+napa Kupiou 
+Kai:aA.Emovi:Ei; 
+oA.iycoi; 
+[hµ&v] 
+81 · cbv 
+EUPEml<JE'tal 
+Emcri:oA.ali; 
+cri:pEPA.oum v 
+[aµ~vl 
+
+8E 
+'tEKVta 
+Ev  £aui:q:i 
+, 
+' 
+aui:ov 
+
+ypaq>cov  <JO\  KatV~V 
+TI  7tE1tAT]pCOµEVT] 
+
+Kmv~v ypaq>cov  crot 
+7tE1tAT]pCOµEVT]  TI 
+
+Jas 
+1,20 
+2,3 
+2,4 
+2, 15 
+4,10 
+I Pe 
+1,6 
+1,16 
+1,16 
+2,5 
+4,16 
+5,1 
+5,9 
+5,10 
+2Pe 
+2,6 
+2, 11 
+2,15 
+2,18 
+2,20 
+3,6 
+3,10 
+3,16 
+3,16 
+3,18 
+lJn 
+1,7 
+3,7 
+5,10 
+5,18 
+2Jn 
+5 
+12 
+
+
+4* 
+
+3Jn 
+4 
+Jd 
+5 
+18 
+18 
+
+INTRODUCTION 
+
+aArp'h:iC! 
+
+tft  cXAT]l>EtC! 
+
+a7ta~ 7tavm on 'ITJcrouc;  7tavw on [o] cipwc; a7ta~ 
+om. 
+om. 
+
+[ot1] 
+[wu] 
+
+The reconstructed text of the Catholic Letters reflects the ECM in one 
+further respect. Passages for which the editors of the ECM had to leave 
+open the decision as to which of the variants is  the initial text are spe 
+cially marked. The ECM has a split guiding line at these passages. In 
+The Greek New Testament the reading text remains unchanged in such 
+cases,  but the sign  •  (diamond) follows  the  word or phrase in  ques 
+tion. If there is an apparatus unit at such a place the same sign will be 
+found at the citation in the apparatus of the variant seen as equal to the 
+reading text.  At most places, however,  there  is  no  apparatus  unit be 
+cause the textual differences are of no relevance for translation and ex 
+egesis.  For  these  places  the  text  of the  alternative  readings  can  be 

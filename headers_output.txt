@@ -1,0 +1,1130 @@
+
+Extracting from scripture-app/The Greek New Testament UBS Fifth Revised Edition.pdf ...
+Verse not found in PDF.
+
+Extracting from scripture-app/Novum Testamentum Graece_ Nestle-Aland  (28 ed.) ( PDFDrive ).pdf ...
+Verse not found in PDF.
+
+Fetching online verse from https://sblgnt.com/passages/John/1/1 ...
+Verse not found online.
+
+--- Comparison ---
+NA28 PDF: None
+UBS5 PDF: None
+SBLGNT Online: None
+✅ NA28 PDF matches base text.
+✅ UBS5 PDF matches base text.
+✅ SBLGNT Online matches base text.
+
+--- Scanning for dictionaries/commentaries ---
+
+Scanning scripture-app/The Greek New Testament UBS Fifth Revised Edition.pdf for sections ...
+Found sections: dictionary, introduction, notes, lexicon, appendix, bibliography, index, references, commentary
+
+Scanning scripture-app/Novum Testamentum Graece_ Nestle-Aland  (28 ed.) ( PDFDrive ).pdf for sections ...
+No dictionary/commentary sections found.
+
+Scanning for possible section headers in scripture-app/The Greek New Testament UBS Fifth Revised Edition.pdf ...
+
+Possible section headers found:
+!4.ΙΟ-25
+!6.ΙU-18
+!II/JV
+!VIV
+!XIX
+!ΩΑΝΝΟΥ Α
+"  L  W  Δ 0105
+"  NIV  REB
+"  REB  EU  BJ  ΤΟΒ
+"  Α Β 5  33  81  88  307  436  442  642  1175  1243
+" 19 C:  BJ  NBS  ΤΟΒ 11
+""  REB  EU
+"'  NIV
+"'  REB  BJ
+"'  REB?  NBS?  DHH?
+"20 {Α} καl.  της  πορνείας  (see  footnotes  7  αnΔ 8)  \))74  Κ  Α Β C  D
+'  1 ΝΟ Ρ: TR  ΤΟΒ ΒΤΙ
+'  10 C:  AD GNB  REB  EU LB  BJ  NBS  ΤΟΒ 11
+'  12 C:  WH  11
+'  15 ΝΟ C:  AD TR  ΒΤΙ  11  • C:  AD TR  ΒΤΙ
+'  17  ΝΟ C:  WH  REB  11  • C:  WH  REB
+'  2 ΝΟ C:  EU  LB  BJ  ΤΟΒ
+'  42.4 LXX
+'  D  Ε 33  36  307  453  610  945
+'  I  1153
+'  IP"
+'  NRSV
+'  NRSV  REB  ΤΟΒ
+'  Κ Α 8 2  33  36 81  181  307 453 610 945
+'  Ν 2 Α C Ψ 048''• 33  81  307 436 442  ] 448  1611
+'  Ν Α Β C Ψ 33 36 81  181  307
+'  ΝΑ C  D* G Ψ 075 0121  0243  6"' 33 81  104 256 263
+'  ΝΑ Β C D 1  F G  Ψ 075  0150  6  33  81  104  256  263
+'  ΝΟ C:  WH
+'  Ρ:  DHH
+'"'  NIV  NRSV  ΒΤΙ DHH
+'))SI
+'1 ΝΟ C:  NBS"'
+'11 NOC: NA•,TR WHGNB"" NBS"'•TOB•'  11
+'16 C:  AD  NBS
+'16 ΝΟ C:  TR  WH  ΒΤΙ 11  "C: TR  WH  ΒΤΙ  11
+'2 ΝΟ C:  GNB  BJ  11
+'20 {Α} α'ίματος (see footnotes  6 arιd 7)  ςp•.1. 74  ΝΑ Β C  Ε Ψ 33  36 81  181
+'25 C:  GNB  NIV  NRSV REB  EU  LB  BJ  NBS  ΤΟΒ DHH  11
+'5ΝΟ C:  WH
+'7NOC:TR  11  "C:TR
+'8 ΝΟ C:  WH  "9 C:  NBS'"' ΤΟΒ'"'
+'8 Ρ:  GNB  NRSV  REB  LB
+';"  Β 6  263  1739  1881
+'C:  AD  TR  WH
+'C:  AD  Μ TR  REB  EU  LB  BJ  NBS  ΤΟΒ
+'C:  BJ  NBS  ΤΟΒ
+'C: AD  Μ
+'C: GNB  BJ  '3 C:  NBS""  11
+'C: GNB  NRSV  REB  EU
+'C: NA•,TR WH GNB•' REB"'•NBS"'
+'C: TR  GNB  REB  ΤΟΒ ΒΤΙ
+'IP"
+'J) 127
+'J)6
+'J)65
+'J)I 1[+14°]
+'J)J
+'J-11
+'J-16)
+'J.'12
+'J.)84
+'J.)85
+'J.)90
+'J._\124
+'J_)%
+'J_)66
+'J_)71
+'J_)74
+'J_)94
+'J_)97
+'J_)98
+'J_)I  12
+'J_)I 15
+'J_)I09
+'J_\6
+'P")
+'P"9
+'P36
+'P44
+'P47
+'P48
+'P57
+'P60
+'P79
+'P85
+'PIO?
+'PJ7
+'PSS
+'})I 11
+'}.\BJ
+'}.\SO
+'}_\6K
+'°  ΝΟ C:  AD  WH  NBS
+( 4 D-2)
+( 4 F-3}
+( KVKAOW)
+( UT!VO<;)
+(1 B-4,
+(1C-3,2 C-3)
+(1D-5,2 D-5)
+(2 B-7)
+(3 B-2, 4 E-2)
+(3 D-3)
+(3 E-2)
+(3) literary and other parallels. References to parallel passages are giv
+(4 E-2)
+(4D-2)
+(4F-5)
+(DHH)
+(GNB)  BJ  NBS  ΤΟΒ // C:  EU
+(See Introduction, pages  12*-36*)
+(See Introduction, pages  I 2*-35*)
+(See Introduction, pages 58*-63*)
+(See Introduction, pages 58*-{)3*)
+(TEAEW)
+(ΜΙ 10.28·31)
+(ΜΙ 16.5-12)
+)  NIV  REB  BJ  ΤΟΒ ΒΤΙ DHH?  EU  LB
+) .IR-25
++OJ 13
+/ Ι  178
+0 m)  in  a  commentary
+0141Γ!1'28 33  157  180 205  565  579 597 700 892  1006  1010  1071  1241
+0150  0243'  6  81  104  256  263  365  424  436  459  1 175  1319  1573  Ι 852
+0233 !' 28  157  180 205  597  828 892  1006  \Ο 10  1071  1241  1243  1292  1342
+0250 !' Γ·' 28 33  157  180 205 565 579 597 700 892'"'' 1006 1010  1071  1241
+1  28 33  157  180 205 597 892  1006  1Ο10
+1  BJ  ΒΤΙ
+1 CHRONICLES
+1 KINGS
+1 Ι .20-26
+1 ΝΟ C:  WH  NBS  ΤΟΒ
+1. Ι  Ι-17
+1.13-2.Β
+1.20-2.J
+1.21-2Η
+1.5 LXX
+1.9 LXX
+1.J2 LXX
+10.12 LXX
+10.13-ΙΚ
+10.29-.JB
+10.3'-]R
+10.4-JJ
+10.5-ΙJ
+10.7 LXX
+10.S
+100  8  Ρ 1175  1243  1448
+104.4 LXX
+11  28  33  157  180 205  565 579 597 700 892'"ΡΡ 1006  1010  ) 071  1241  J 243
+11.10 LXX
+11.31 LXX
+11.J.J 1
+11.Χ·19
+118.6 LXX
+12-ΙΗ
+12.22-Ι 3.;
+12.3 LXX
+12.J-15
+12.S
+12.Η-15
+12.Ι-7
+12.Ι-9
+12.ΙΙ-19
+12.ΙΟ-21
+13.14 LXX
+13.16 LXX
+13.S
+13.Η-12
+13.Ι-6
+13.Ι-9
+13.ΙΟ-22
+14  Citations  from  the commentary part  are frequently  more  faithful  than the  lemma
+14.28-3R
+14.63-Μ!
+14.JO
+14.Ι-6
+140.3 LXX
+15.3Η7
+15.Ι-6
+157  180  205  565  579 597  700 892  1006  \Ο \Ο 1071  1241  1243  1292  1342
+157  180  205  579  597  700  1006  1010'"Ι'Ρ  1241  1243  1292  1342  1424  1505
+157  180  205  597  700  892'"ΡΡ 1006  1010  1071  1241  1243  1292  1342  1424
+157  180 205 565  579 597 700  1006  !Ο 10  1071  1243  1292  1342  1424  1505
+157  180 205 565 579 597 700 892'"ΡΡ 1006  1010  1071  1241  1243  J 292  1342
+16.10 LXX
+16.2Μ-]7.4
+16.Ι-8
+16.Ι-9
+17.7 LXX
+17.JO
+18.ΙS-19
+180  205  565  579  597  700  892'"ΡΡ  1006  J0 J0  J07 1  1241  1243  1292  1342
+180 205 565 579 597 700 892'"ΡΡ 1006 1010 1071  1241  1243 1292 1342 1424
+1802055655795977008921006ΙΟΙΟ107112411243129213421424
+1889. [TR]
+19. 13-2U
+19.4 LXX
+19.6 LXX
+19.~-ΙΙ
+19.Ι-9
+19.ΙΜ-27
+1P'2
+2  SAMUEL
+2 B-5, 3 C-4)
+2 CHRONICLES
+2 CORINTHIANS
+2 E-1, 3 D-3, 4 H-4)
+2 KINGS
+2 MACCABEES
+2 PETER
+2 SAMUEL
+2 TIMOTHY
+2-1-2  LXX
+2.3-4 LXX
+2.6 LXX
+2.8 LXX
+2.J-11
+2.J-12
+2.R-3.6
+2.Ι-10
+2.Ι-11
+2.Ι-13
+20. ΙΗ-2R
+20.29-•Ο
+20.9-IO
+20.JO
+20.JU.]9
+20.Β-29
+20.Ι-9
+2012.  [NA)
+205  565  579  597  700  892'"PI'  1006  1010  1071  1241  1243  \292  J342  1424
+205  565  579  597  700  892'"ΡΡ  1006  1010  1071  1241  124)  1292  1342  1424
+205  565  579 597  700  892  1006  1010  1071  1241  1243  1292  1424  1505  Β)'Ζ
+205  565  597  700  892'"ΡΡ 1006  1010  1071  1241  1243  1292  1342  1424  1505
+20556557959770089210061010  ΙΟ71124112431292134214241505
+21. IJ-2~
+21.36--22. ΙΩ
+21.JΊ-22.>
+21.Ι-5
+21.ΙJ-2Ω
+21A2
+22. Ι  Ι-22
+22.2J-32
+22.7 IJ
+22.8 LXX
+22.S
+223 LXX
+23.19-JO
+23.22  LXX
+23.31  LXX
+23.S
+23.ΙΟ-18
+24. 19-JO
+24.12 LXX
+24.19 LXX
+24.6 LXX
+24.Ι Ι-2R
+24AH-S2
+25.17-JO
+25.22 LXX
+25.JΙ-45
+25.S
+256 263 365 424 436 459  1175  1241  1319  1573  1739  1852  188 Ι  1912  1962
+26.20 LXX
+27 LXX
+27. 18-JJ
+27.26 LXX
+27.9 LXX
+27.Ι Ι-19
+28.13 LXX
+28.16 LXX
+29.14 LXX
+2C-6)
+2D-5)
+2U-12
+2] .2R-33
+2Α-16
+3 D-3, 4 G-4)
+3 MACCABEES
+3. Ι  Ι-22
+3. ΙJ-19
+3.12-ΙΧ
+3.13 LXX
+3.15 LXX
+3.17-4.J
+3.34 LXX
+3.36 LXX
+3.4 LXX
+3.Η-21
+3.Ι-11
+3.Ι-7
+3.Ι-9
+3.Ι-R
+3.ΙJ-24
+3.ΙΟ-16
+31.S
+32.43 LXX
+33  81  307  436 442642J175  1243  14481611  1735  1852  1881  2344 2492
+33.2 LXX
+33.3,S
+333681181307453610945 1175167818912344/884NIVNRSVREB
+4 F-2, 4 G-2
+4 H-2)
+4 MACCABEES
+4. IU-17
+4.12-5.J
+4.13 LXX
+4.22-JO
+4.26 LXX
+4.4 LXX
+4.6 LXX
+4.J0-5.9
+4.J5-44
+4.Ι-11
+4.Ι-7
+4.Κ-15
+40.13 LXX
+40.3 LXX
+40.5 LXX
+43.20 LXX
+43.21  LXX
+43.2S
+43.S
+44.2S
+45.23 LXX
+46.27 LXX
+46.J
+47.31  LXX
+48.6  LXX
+4G-4
+4G-4)
+4H-4)
+4S.14
+4S.1S
+4S.23  LXX
+4S.9
+5. 13-2U
+5. Ι-14
+5. ΙΟ-15
+5.22-6.J
+5.24 LXX
+5.6·1U
+5.9 LXX
+5.I 1-14
+5.Ζ9-41
+5.ΙU-21
+5.Μ-20
+51.4 LXX
+52.15 LXX
+52.5 LXX
+53.1  LXX
+53.4-S
+55.3 LXX
+565  579 597 700  892'"ΡΡ 1006  1010  1071  1241  1243  1292  1342  1424  1505
+565579597700100610101241124312921342142415058)'Z[EGHN]
+597  892  1006  1010  1071  1241  1243  1292  1342  1424  1505  Β)'Ζ [Ε F G  Η Ν
+597 892  1006  1010 1071  1241  1243  1292  1342 1424  1505  Β)'Ζ [Ε F G  Ο ΣJ
+6  JI  2.28
+6  Β D  Ψ 0150  6  33  424  1241  1319  1852
+6  Ν* Α Β C  D  F  G  Ρ Ψ 6  33  81  104 263 424'
+6. Ι6-7Α
+6.10  LXX
+6.22-2Μ
+6.2]-:«J
+6.8-ΙJ
+6.9 LXX
+6.Ι-15
+6.Ι-7
+6.Ι-9
+60.3,S
+61.1  LXX
+61.JO
+65.1  LXX
+65.2 LXX
+66.S
+67.36  LXX
+6KVEW
+6Α2-50
+7. Ι-12
+7.14 LXX
+7.18  LXX
+7.2H-J~
+7.J-13
+7.R.19
+7.Η· IR
+7.Ι-7
+7.Ι-9
+7.ΙΟ-17
+74  AC D  ΕΨ 33  36 81  181307453 6149451175  1409  1678  1739  1891
+74  Ν Α Β C
+74  ΝΑ Β C Ε Ψ 33 36 81  181  307 453 610 945  1175
+75  G  L  Ν W'"PP  0141  0162 / 1  33
+75  Α Β C
+76  Ν'  Α Β C  L
+7A2-43
+7ΑΟ-48
+8 . .J0-3R
+8.17 LXX
+8.24 LXX
+8.29-3R
+8.3 LXX
+8.4 LXX
+8.4-6  LXX
+8.6 LXX
+8.J-12
+8.J9-44
+8.ZJ-9.7
+8.Ι-1 Ι
+8.ΙJ-9. 12
+8.ΙΟ-22
+81  ΙΟ4 256  263  365  424 459  1175  1241  1319  1573  1739  1881  1912  1962
+81' OV
+88.8  LXX
+9.11  LXX
+9.16 LXX
+9.18-JO
+9.23-10.J
+9.28 LXX
+9.JΩ-J5
+9.Ι-10
+9.Ι-8
+9.ΙJ-22
+978-3-438-051 18-9  Flexicover. with Greek-English Dictionary
+978-3-438-05117-2  Hardcover,  with Greek-English Dictionary
+; 47 C:  ΝΑ•' TR  WH  BJ  NBS
+;,  38 C:  GNB  ΒΤΙ (DHH)
+<I>  043
+<JKOJCEW
+A  CONCISE
+A  Concise Greek-English Dictionary of the New Testament
+A  SAMPLING  OF  SOME  GREEK  NT WORDS
+A  SAMPLING  OF  SOME GREEK  NT WORDS
+A  SAMPLING  OF SOME  GREEK  NT  WORDS
+A  SAMPLING  OF SOME  GREEK  NT WORDS
+A  SAMPLING  OF SOME GREEK  NT WORDS
+A 039
+A SAMPLING  OF  SOME  GREEK  NT WORDS
+A SAMPLING  OF SOME  GREEK  NT  WORDS
+A SAMPLING  OF SOME GREEK  NT  WORDS
+A SAMPLING  OF SOME GREEK  NT WORDS
+A SAMPLING OF SOME  GREEK  NT WORDS
+A.D.  1982-1983.
+ABBREVIATIONS
+ACTS
+AMERICAN  BIBLE  SOCIETY
+AMOS
+ASCENSION  OF  ISAIAH
+ASSUMPTION  OF  MOSES
+Apparatus (for details see the bibliography on p. 64*ff.):
+B 03
+BARBARA ALAND,  KURT ALAND,  JOHANNES  KARAVIDOPOULOS,
+BARCLAY  M. NEWMAN
+BARCLAY M. NEWMAN
+BARUCH
+BIBLIOGRAPHY
+BJ  11
+BJ  ΒΤΙ
+BJ  ΤΟΒ
+BJ  ΤΟΒ ΒΤΙ
+BJ?  ΤΟΒ? ΒΤΙ? DHH?
+BJTOB
+Baarda,  T.,  A  Syriac  Fragment  of Mar  Ephraem's  Commentary  011  the  Diatessaron,
+Both the function and the essential features of the dictionary as stated in
+C  W  Δ  Θ / 11  28  180  565  597  700  892  1006  1010  1243  1292  1342
+C2 DLZ2833157180205597828892' 10061010107112411243  1292
+CARLO M. MARTINI, AND  BRUCE METZGER
+CONTENTS
+Citations in the running commentary text when it differs from the
+Commentary  on John).
+D 05
+D W  Δ /' [' 3  28  157  180  205  565  579 597  700 892  1006  1010  1071  1241
+DANIEL
+DC/X
+DEUTERONOMY
+DEUTSCHE  BIBELGESELLSCHAFT
+DHH  ΒΤΙ BTI""
+DHH?
+DI  32.35
+DI  32.43
+Diatessaron Diatessaron quotations  preserved  in the commentary by
+ECCLESIASTES
+ECM/NA28!UBSS
+ECM:  218,  808,  1127,  1359,  1563,  1718,  2374.
+ENOCH
+EPHESIANS
+ESTHER
+EU  LB  BJ  NBS""  ΤΟΒ ΒΤΙ DHH
+EU  ΒΤΙ DHH
+EU  ΤΟΒ
+EU  ΤΟΒ ΒΤΙ DHH
+EU  ΤΟΒ ΒΤΙ DHH?
+EU? LB?  BJ  NBS?  ΤΟΒ ΒΤΙ DHH?
+EXODUS
+EZEKIEL
+EZRA
+FGΨ33 104256263365424*4591175124115731912196221272200
+FOIO
+G  Ψ 075  0150 6  33  81  104 365 436 459  1175  1241  1319  1573  1739  1881
+G012
+GALATIANS
+GENESIS
+GNB  EU  LB  ΒΤΙ DHH
+GNB?
+GREEK-ENGLISH  DICTIONARY
+Greek-English Lexicon  ................................... .
+H  NIV  REB  EU  LB
+H015
+HABAKKUK
+HAGGAI
+HEBREWS
+HI/IV
+HOSEA
+I  0170
+I  0171
+I  0172
+I  0176
+I  0186
+I  0207
+I  0208
+I  0220
+I  0222
+I  1021
+I  105.8-9
+I  1074
+I  1154
+I  1156
+I  1159
+I  1223
+I  1298
+I  13.35
+I  1333
+I  1356
+I  1364
+I  1365
+I  1439
+I  1443
+I  1552
+I  16.29
+I  1627
+I  170
+I  184
+I  2)5[
+I  2.8
+I  20.13
+I  26.19
+I  3.15
+I  3.17-19
+I  34.10
+I  35.19
+I  4.5
+I  5.13
+I  51.36
+I  59
+I  590
+I  599
+I  883
+I  884
+I  890
+I  A-8
+I  CORINTHIANS
+I  LXX
+I  PETER
+I  SAMUEL
+I 016
+I 1.17
+I 1298
+I 1590
+I 1627
+I 18
+I 211
+I 3.2
+I 3.6
+I 514
+I 524
+I 596
+I 858
+I MACCABEES
+I TIMOTHY
+I.  NEW  FEATURES WITHIN THE  MAIN  PART
+I.IS
+I.XX
+I0.13
+I0.22-27
+I0.6-JJ
+I016
+I2.6
+I6.5
+II.  NEW  FEATURES  OUTSIDE THE  MAIN  PART
+II/III
+III  M021
+III  W032
+III/IV
+III/IV?
+III/JV
+IJ'.)107
+IJ'.)121
+IJ'.)122
+IJ)4
+IJ)45
+IJ)49
+IJ)59
+IJ)61
+IJ)62
+IJ)63
+IJ)7
+IJ)79
+IJ)9
+IJ,)6'1[+67]
+IJ-''2  Α Ψ 5  33  81  307  436 442  642  1175  1243  1448  1735  1739  1852  2344
+IJ.)69
+IJ.)72
+IJ.)80
+IJ.)81
+IN  THE TEXTUAL  APPARATUS
+INDEX  OF  ALLUSIONS  AND  VERBAL  PARALLELS
+INDEX  OF  QUOT A TIO NS
+INDEX  OF  QUOT A TIONS
+INDEX  OF ALLUSIONS  AND  VERBAL  PARALLELS
+INDEX  OF ALLUSIONS  AND  VERBAL PARALLELS
+INDEX  OF QUOT A TIONS
+INDEX  OF QUOTATIONS
+INTRODUCTION
+IOA-15
+IP ..
+IP""
+IP"'
+IP"1
+IP"5
+IP"6
+IP"°
+IP'"
+IP''
+IP''"
+IP'06
+IP'09
+IP'20
+IP'6
+IP'°
+IP'°'
+IP102
+IP25
+IP26
+IP27
+IP28
+IP34
+IP36
+IP37
+IP38
+IP39
+IP40
+IP42
+IP43
+IP46
+IP54
+IP55
+IP56
+IP59
+IP60
+IP61
+IP62
+IP63
+IP65
+IP66
+IP69
+IP6S
+IP71
+IP86
+IP92
+IP95
+IP96
+IP98
+IP9J
+IPIOJ
+IPR?
+IP•'
+ISAIAH
+ISBN
+ISBN 978-3-438-06019-8
+IV/IV
+IV/V
+IV/V?
+IVIV
+IVN  '  IP""
+IX  I  1678
+IX/X
+IXIX
+Index of Allusions and Verbal Parallels
+Index of Quotations
+Introduction  ...................................... I *-63*
+Introduction  and  Salutation
+J  '
+J  28
+J 342
+J 5.Ι Ι-22
+J 80  205  565  579  597  700  892'"ΡΡ  J006  10} 0  1071  1241  1243  1292  1342
+J0.30
+J020
+J021
+J071
+J092
+JAMES
+JEREMIAH
+JI  2.28-32
+JI  2.32
+JI)  28  33  157  180  205  565  579  597  700  892  1006  1010  1071  1241  1243
+JOEL
+JOHN
+JOJO
+JONAH
+JOSHUA
+JUDGES
+JUDITH
+JV/V
+JVN?
+J\  039
+KVKAEVW
+L019
+LAMENTATIONS
+LB  BJ
+LB  BJ  NBS  ΤΟΒ DHH
+LB  NBS  DHH
+LB  NBS  ΤΟΒ DHH
+LEVITICUS
+LIST  OF  ALTERNATIVE  READINGS
+LIST OF GREEK  CHURCH  FATHERS
+LIST OF LATIN  CHURCH  FATHERS
+LIST OF LECTIONARIES
+LUKE
+Lexicon  (5th  edition)  has  been  followed. 1  (4)  The  cross  reference
+MAJUSCULES
+MALACHI
+MAP  INDEX
+MARK
+MATTHEW
+MICAH
+MINUSCULES
+ML23.21
+Map Index
+Mardin  Orth.  35,  fol.  143'-159v  with  an  introduction  (CSCO  400,  subs.  56).
+NA27!UBS4
+NAHUM
+NBS  ΤΟΒ
+NBS  ΤΟΒ ΒΤΙ DHH
+NBS  ΤΟΒ ΒΤΙ DHH?
+NBS 0
+NBS""  DHH
+NBS?  ΤΟΒ? ΒΤΙ DHH?
+NEHEMIAH
+NEW  TESTAMENT
+NEW TESTAMENT  BOOKS
+NIV  NRSV REB  EU  BJ ΒΤΙ DHH  11
+NIV  NRSV?  LB?  ΒΤΙ DHH?
+NIV  REB  EU  ΤΟΒ ΒΤΙ
+NRSV
+NRSV  BJ  ΒΤΙ
+NRSV  EU  LB  BJ  NBS  ΤΟΒ ΒΤΙ DHH
+NRSV  REB  EU  LB  BJ  NBS  ΤΟΒ ΒΤΙ DHH
+NRSV  REB  EU""  11
+NRSV  REB  ΒΤΙ  DHH  11
+NRSV"'•  LB  DHH
+NUMBERS
+No explanatory  term  is  given  in  the  index  for  cities  and  other well  known
+Now edited for the first time,  with  introduction and  notes on  this  version  of the
+O'KW
+OF THE  DICTIONARY
+OF THE  NEW TESTAMENT
+OTHER  ABBREVIATIONS
+OTHER  WRITINGS
+Original Greek.  Vol.  l.  Text;  vol. 2.  Introduction  [and] Appendix.  Cambridge
+Other  important  features  of  the  dictionary  include  the  following:
+PAPYRI
+PREFACE
+PREFACE  TO  THE  FIRST  EDITION
+PREFACE  TO  THE  FOURTH  EDITION
+PREFACE  TO  THE  THIRD  EDITION
+PREFACE TO  THE  FIFTH  EDITION
+PREFACE TO THE  FIRST  EDITION  1971
+PREFACE TO THE  REVISED  EDITION
+PRINCIPAL  MANUSCRIPTS  AND  VERSIONS
+PRINCIPAL  MANUSCRIPTS  AND  VERSIONS  CITED
+PRINCIPAL  SYMBOLS  AND  ABBREVIATIONS
+PRINCIPAL MANUSCRIPTS  AND  VERSIONS
+PRINCIPAL SYMBOLS  AND  ABBREVIATIONS
+PROVERBS
+PSALMS
+PSALMS  OF SOLOMON
+REB  BJ
+REB  BJ  ΤΟΒ
+REB  EU
+REB  EU  LB  BJ  ΤΟΒ
+REB  EU  LB  BJ  ΤΟΒ ΒΤΙ DHH
+REB  EU  ΒΤΙ?
+REB  EU?  LB?  ΒΤΙ DHH
+REB'
+ROMANS
+RUTH
+S0.6
+S0.8
+S2.10
+S2.11
+S2.13
+S2.1S
+S2.7
+S2.9
+S2.S
+S3.12
+S3.2
+S3.3
+S3.4
+S3.6
+S3.7
+S3.8-9
+S3.9
+S3.S
+S3.S-6
+S4.11-12
+S6.8
+S7.20
+S8.7
+S8.S
+SELECTED  BIBLIOGRAPHY
+SJ RACH
+SS.1
+SS.3
+SS.6
+SS.8
+SS.IO
+SUSANNA
+Selected Bibliography  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Serendipitous was the journey from the Concise Greek-English Dictionary
+T029
+TABLE  OF CONTENTS
+THAT  SHARE  SIMILAR  MEANINGS
+THE  GREEK
+THE ANCIENT NEAR EAST
+THE GREEK
+THE GREEK NEW TESTAMENT
+THE JOURNEYS  OF THE APOSTLE PAUL
+TJ<;
+TOBIT
+Testament  show  notes referring to  textual  variants  or even  have  dif
+Testament,  and  eliminating  references  to  words  and  phrases  which
+The cross-references, given at the bottom of the page with the principal
+This dictionary has been designed for  use in conjunction with the United
+UNITED  BIBLE  SOCIETIES
+UNITED  BIBLE SOCIETIES
+VI/VII
+VII/VIII
+VII?
+VIII
+VIII/IX
+VIINIII
+VIN!I
+VINII
+VIVI
+VJ/VII
+VJIJ
+VNI  D05
+W"ΙΡΡ Δ Θ Ψ* 28  157 205 565 579 597 700 8921
+W032
+WH  GNB  NJV  REB  EU  NBS  ΒΤΙ DHH
+WH // C:  ΝΑ"' EU  LB
+WISDOM
+X!XI1
+X-XIV
+X/XI?
+X/XP
+X033
+XI  I  1424
+XI-XV
+XI/XII
+XI/XII  :  1505
+XII  I  1342
+XII  I  1409
+XII  I  1735
+XII/XIII
+XII/XIII  I  1506
+XIII
+XIII  :  1739
+XIII  I  1689
+XIII  I  1709
+XIII/XIV
+XIJI
+XIUXIII
+XIV  !  1448
+XIV  I  1573
+XIV  I  1841
+XIV/XV
+XIV/XV  -
+XJII
+XVII
+XVIII
+YI/VII
+Z035
+ZECHARIAH
+[E 07] 1
+[E042]
+[E07]
+[E07] 1
+[F09]
+[H 013]
+[HOI3]
+[K 018]
+[KOI8]
+[L020J
+[L020]
+[N 022]
+[N022]
+[NIV)
+[O 023]
+[P 024]
+[P 025]
+[P024)
+[P024J
+[P025]
+[Q 026]
+[Q026]
+[ΒΤΙ]
+\ 9.ΙΟ-20
+\4.26-3Κ
+\})I IJ
+_ _  ,and Barbara Aland, The  Text of the New Testament.  An  Introduction to the Crit
+__ , Bezae  Codex  Cantabrigiensis,  edited with  a  critical  introduction,  annotations,
+__ ,A Textual Commentary  011  the  Greek New  Testament.  a Companion  Volume  to
+__ .A Greek-English Lexicon of the New Testamellf and Other Early Christian  Lit -
+a citation from  the commentary part of a commentary
+a citation from Ephraem 's commentary on the Diates
+added  to  the Index of Quotations. The responsibility for  the revision
+apparatus,  so  that  only  the  earliest  surviving  commentary  on  the
+been made in  the evaluation of evidence.  A Textual  Commentary on
+bibliography on p. 64*ff.):
+cally  the location of that  place on  the  map.  Cities are  indexed according to the
+cedes  the  commentary
+citation  in  a Church Father's running commentary (co"'),  a mar
+citation in the commentary section of a manuscript where
+cluded as a separate entity apart from the dictionary itself. This is more
+commentary
+commentary  manu
+commentary ( 0 m) in a
+commentary of a Church Father, when the citation differs
+commentary where it differs from the Syriac original.
+commentary where it differs from the Syriac text.
+commentary, to  be  cautious in  using  the  Diatessaron  as  a witness  to
+contributions  are  described  in  the  Introduction,  their  names  are  re
+dictionary.
+editor of the  Syriac  text  of Ephraem's commentary.  Differences  be
+entry where it  occurs in the dictionary: [Mt 15.39).
+footnotes  6 and 7)  (D it"  σκορπίον αύτψ after  μή) W  Δ Θ Ψ f' f 1J  28  33  180
+found  in  an appendix on p. 890. For information about the attestation
+from a MS in the library of the Earl of Crawford and Balcarres, with critical notes
+guage)  in  the  form  of  the  commentary  used  in  the  region  of  the
+indicated  at  the  appropriate  places  in  the  Introduction.  Special  ac
+introduced  to  enhance  the  value  and  usefulness  of  the  dictionary.  and
+introduction (He 7.19]
+l 387  l 5 14  17 51  1773  Ι 890  l 1780  (tlιe.1·e  /ectionarie.1·  lll'e  in  fσσtnotes 1 -7 of
+language  of the  Introduction  and  for  much  valuable  advice.
+modem translations in a very cautious way. In cases of doubt no notes
+more prominent location is  indexed.
+notes  purpose  and  sometimes
+of a  commentary  manuscript  in  witnessing  to  a  Father's  text.  because  later copyists
+references.  When  verse  numbers  in  English  editions  differ from  the
+reviewed,  both  in  the  text  and  in  the  references.  The  Index  of
+tament which precedes the commentary (com) in a com
+tary (com)  in  a commentary manuscript.
+text of the manuscript ('") on which the commentary is  based.
+that are bound with the dictionary.
+the  commentary
+the  manuscript is  cited; cf.  Bibliography.
+the Introduction.
+the commentary section (c0 m)  which accompanies the text
+the dictionary and with  The Greek New Testament. The first figure, in bold
+the dictionary when bound separately.
+the dictionary, and (4) cross references from  all place-names to  the maps
+tle-Aland  Greek-English  edition.  Cross-references  to  parallel  pas
+tween  the original Syriac form  of the  commentary and  its  Armenian
+which  variant  was  followed.  For  example,  in  NBS  the  notes  some
+~ (01), A (02), B (03), C (04), P (025), 'P (044), 048, 5, 81, 436, 442,
+·'  28  ΝΟ C:  WH  11
+Α 048  066  36  81  181  307  453  610  614  945  1175  1409  1678""  1739  1891
+Α 81  1175  /680
+ΑΠΟΚΑΛΥΨ!Σ ΙΩΑΝΝΟΥ
+ΑΠΟΚΑΛΥΨIΣ ΙΩΑΝΝΟΥ
+ΑΠΟΚΑΛΥΨIΣΙΩΑΝΝΟΥ
+ΑΠΟΚΑΛΥΨ\Σ ΙΩΑΝΝΟΥ
+ΑΠΟΚΑΛΥΨΙΣ !ΩΑΝΝΟΥ
+ΑΠΟΚΑΛΥΨΙΣ IΩΑΝΝΟΥ
+ΑΠΟΚΑΛΥΨΙΣ ΙΩΑΝΝΟΥ
+ΑΠΟΚΑΛΥΨΙΣΙΩΑΝΝΟΥ
+Β 597  168 112  176 112  1211 113  /387 112  1770 112  1773 112  1813 112  1950 113  11223 112
+Β C  Ρ 0150 33  104 256 263 365 436 459  1175  1319  1573 2127  2464 1596
+Β D F G Ψ 0150 6 33  81  104  256  263  365  424 459  1175  1241  1319  1506
+Γ 1  28  33  157  180  205  565  579  597  700  892  1006  1071  1241  1243  1292
+Δ Θ Ψ 0233 /' 3  28  180 565  597 892  1006  1010  1071  1243  1292  1342  1424
+Δ Θ Ψ 28  157  180  205  565  597  700  892  1006  1010  1071  1243  1292  1342
+Η' 104 256 263 365 424* 459  1241  1319  1573  1852  1881'  1912 2127 2200
+Θ 0250 !' !" 33  157  180  205  565 579 597 700 892  1006  1010  1071  1241
+Ι  .24-26)
+Ι  15
+Ι  2.ΙΟ-20
+Ι 603
+Ι S.32-39
+Ι Β.22-19.2
+Ι'\  Α Β* C
+Ι.12-2.6
+ΙΑΚΩΒΟΥ
+ΙΜ< 15.1-20)
+ΙΟ.1;.23
+ΙΟ7 Ι  / 253 112
+ΙΟΥΔΑ
+ΙΩΑΝΝΟΥ Α
+ΙΩΑΝΝΟΥ Β
+ΙΩΑΝΝΟΥ Γ
+Κ 2  Α D Ψ 075  6  104 256 263 365 424 459  1175  1241  1319  1573  1739  1852
+Κ Α C2  D2  Ι Ψ 075  0150  6 33  81  104  256  263  365  424 436 459  1175  1319
+ΚΑΤ Α ΜΑΘΘΑΙΟΝ
+ΚΑΤΑ !ΩΑΝΝΗΝ
+ΚΑΤΑ ΙΩΑΝΝΗΝ
+ΚΑΤΑ ΛΟΥΚΑΝ
+ΚΑΤΑ ΜΑΘΘΑ!ΟΝ
+ΚΑΤΑ ΜΑΘΘΑ/ΟΝ
+ΚΑΤΑ ΜΑΘΘΑIΟΝ
+ΚΑΤΑ ΜΑΘΘΑ\ΟΝ
+ΚΑΤΑ ΜΑΘΘΑΙΟΝ
+ΚΑΤΑ ΜΑΡΚΟΝ
+ΚΑΤΑIΩΑΝΝΗΝ
+ΚΑΤΑΙΩΑΝΝΗΝ
+Μ TR  WH GNB  NIV  NRSV  REB  EU  BJ  NBS  ΤΟΒ'"' DHH
+Ν 2  Α D2  Ψ 075  0150  0243  6  33  81  104  256  263  365  424  436 459  1175
+Ν' D F  G Ψ 6  256 263  365  424 459  1175  1241  1319  1573  1739  1881  1912
+ΝΑ EU  NBS  ΤΟΒ
+Π ΡΑΞΕΙΣ ΑΠΟΣΤΟΛΩΝ
+Π ΡΟΣ ΕΦΕΣΙΟΥΣ
+Π ΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Α
+ΠΕΊΡΟΥ Β
+ΠΕΤΡΟΥ Α
+ΠΕΤΡΟΥ Β
+ΠΡΑΞΕ!Σ ΑΠΟΣΤΟΛΩΝ
+ΠΡΑΞΕ\Σ ΑΠΟΣΤΟΛΩΝ
+ΠΡΑΞΕΙΣ ΑΠΌΣΤΟΛΩΝ
+ΠΡΑΞΕΙΣ ΑΠΟΣΤΌΛΩΝ
+ΠΡΑΞΕΙΣ ΑΠΟΣΤΟΛΏΝ
+ΠΡΑΞΕΙΣ ΑΠΟΣΤΟΛΩΝ
+ΠΡΟΣ ΓΑΛΑΤΑΣ
+ΠΡΟΣ ΕΒΡΑ\ΟΥΣ
+ΠΡΟΣ ΕΒΡΑΙΟΥΣ
+ΠΡΟΣ ΕΦΕΣΙΟΥΣ
+ΠΡΟΣ ΘΕΣΣΑΛΟΝ!ΚΕΙΣ Β
+ΠΡΟΣ ΘΕΣΣΑΛΟΝΙΚΕΙΣ Α
+ΠΡΟΣ ΘΕΣΣΑΛΟΝΙΚΕΙΣ Β
+ΠΡΟΣ ΚΟΛΟΣΣΑΕΙΣ
+ΠΡΟΣ ΚΟΡ!ΝΘ!ΟΥΣ Β
+ΠΡΟΣ ΚΟΡIΝΘΙΟΥΣ Β
+ΠΡΟΣ ΚΟΡ\ΝΘΙΟΥΣ Α
+ΠΡΟΣ ΚΟΡ\ΝΘΙΟΥΣ Β
+ΠΡΟΣ ΚΟΡΙΝΘ!ΟΥΣ Α
+ΠΡΟΣ ΚΟΡΙΝΘ!ΟΥΣ Β
+ΠΡΟΣ ΚΟΡΙΝΘ\ΟΥΣ Β
+ΠΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Α
+ΠΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Β
+ΠΡΟΣ ΡΩΜΑ!ΟΥΣ
+ΠΡΟΣ ΡΩΜΑ\ΟΥΣ
+ΠΡΟΣ ΡΩΜΑΙΟΥΣ
+ΠΡΟΣ ΤΙΜΟΘΕΟΝ Α
+ΠΡΟΣ ΤΙΜΟΘΕΟΝ Β
+ΠΡΟΣ ΤΙΤΟΝ
+ΠΡΟΣ Φ!Λ!ΠΠΗΣΙΟΥΣ
+ΠΡΟΣ ΦΙΛΗΜΟΝΑ
+ΠΡΟΣ ΦΙΛΙΠΠΗΣ!ΟΥΣ
+ΠΡΟΣ ΦΙΛΙΠΠΗΣΙΟΥΣ
+ΡΨ 075 0150 33 81  104 256"" 263 365 424* 436 459 1175  1241  1319  1573
+ΤΗΕ SHORTER  ENDING  OF  MARK
+ΤΟΒ ΒΤΙ
+ΤΟΒ ΒΤΙ DHH
+ΤΟΒ ΒΤΙ DHH? LB
+ΤΟΒ"'
+•  ('J.)66
+•  ΝΑ Β Ε Ψ 0165 33
+• 16 C:  TR  GNB  REB  11  'ΝΟ C:  (GNB)  REB
+
+Total unique headers: 1085
+
+Scanning for possible section headers in scripture-app/Novum Testamentum Graece_ Nestle-Aland  (28 ed.) ( PDFDrive ).pdf ...
+
+Possible section headers found:
+
+Total unique headers: 0
+
+Extracting section 'dictionary' from scripture-app/The Greek New Testament UBS Fifth Revised Edition.pdf ...
+Saved 'dictionary' section to scripture-app/dictionary_section.txt (86 lines)
+Extraction time: 354.10 seconds
+
+Extracting section 'commentary' from scripture-app/The Greek New Testament UBS Fifth Revised Edition.pdf ...
+Saved 'commentary' section to scripture-app/commentary_section.txt (237 lines)
+Extraction time: 360.23 seconds
