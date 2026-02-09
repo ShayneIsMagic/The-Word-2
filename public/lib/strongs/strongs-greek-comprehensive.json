@@ -1,0 +1,105 @@
+{
+  "G3056": {
+    "word": "λόγος",
+    "transliteration": "logos",
+    "pronunciation": "log'-os",
+    "definition": "word, reason",
+    "amplified": [
+      "Word (the divine expression - John 1:1)",
+      "word, speech, saying",
+      "reason, thought, logic",
+      "account, matter",
+      "the message (of the Gospel)"
+    ],
+    "usage_count": 330,
+    "root": "From G3004"
+  },
+  "G26": {
+    "word": "ἀγάπη",
+    "transliteration": "agape",
+    "pronunciation": "ag-ah'-pay",
+    "definition": "love (divine, unconditional)",
+    "amplified": [
+      "love (divine, selfless, unconditional)",
+      "affection, goodwill, benevolence",
+      "love-feast (fellowship meal)",
+      "God's love for humanity",
+      "the love we should have for God and others"
+    ],
+    "usage_count": 116,
+    "root": "From G25"
+  },
+  "G4102": {
+    "word": "πίστις",
+    "transliteration": "pistis",
+    "pronunciation": "pis'-tis",
+    "definition": "faith, belief",
+    "amplified": [
+      "faith (trust in God)",
+      "belief, conviction of truth",
+      "faithfulness, fidelity",
+      "that which is believed (the faith)",
+      "assurance, confidence"
+    ],
+    "usage_count": 244,
+    "root": "From G3982"
+  },
+  "G5485": {
+    "word": "χάρις",
+    "transliteration": "charis",
+    "pronunciation": "khar'-ece",
+    "definition": "grace",
+    "amplified": [
+      "grace (unmerited favor from God)",
+      "kindness, goodwill",
+      "thanks, gratitude",
+      "a gift, blessing",
+      "the divine influence on the heart"
+    ],
+    "usage_count": 156,
+    "root": "From G5463"
+  },
+  "G4151": {
+    "word": "πνεῦμα",
+    "transliteration": "pneuma",
+    "pronunciation": "pnyoo'-mah",
+    "definition": "spirit",
+    "amplified": [
+      "Spirit (the Holy Spirit)",
+      "spirit (of a person - inner being)",
+      "breath, wind",
+      "a spirit being (angel/demon)",
+      "disposition, attitude, mindset"
+    ],
+    "usage_count": 385,
+    "root": "From G4154"
+  },
+  "G2424": {
+    "word": "Ἰησοῦς",
+    "transliteration": "Iesous",
+    "pronunciation": "ee-ay-sooce'",
+    "definition": "Jesus",
+    "amplified": [
+      "Jesus (the Savior - from Hebrew Yeshua)",
+      "meaning: 'Yahweh saves' or 'Yahweh is salvation'",
+      "Joshua (OT figure, same name)",
+      "the Christ, the Messiah"
+    ],
+    "usage_count": 917,
+    "root": "From Hebrew H3091"
+  },
+  "G5547": {
+    "word": "Χριστός",
+    "transliteration": "Christos",
+    "pronunciation": "khris-tos'",
+    "definition": "Christ, Messiah",
+    "amplified": [
+      "Christ (the Anointed One)",
+      "Messiah (from Hebrew Mashiach)",
+      "the anointed King and Savior",
+      "title of Jesus as the promised deliverer"
+    ],
+    "usage_count": 569,
+    "root": "From G5548"
+  }
+}

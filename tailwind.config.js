@@ -9,20 +9,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Zero Barriers color scheme
-        'zb-red': {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
+        // LDS Scripture Study color scheme
+        'lds': {
+          50: '#e8f4fc',    // Light blue tint
+          100: '#d0e7f8',
+          200: '#a0d0f0',
+          300: '#70b9e7',
+          400: '#40a2de',
+          500: '#008cd5',
+          600: '#0077c0',   // Primary LDS brand blue
+          700: '#0062a8',
+          800: '#004d90',
+          900: '#003366',   // Darker blue
         },
-        'zb-green': {
+        'lds-green': {
           50: '#f0fdf4',
           100: '#dcfce7',
           200: '#bbf7d0',
@@ -38,8 +38,9 @@ module.exports = {
       fontFamily: {
         'greek': ['Noto Sans', 'system-ui', 'sans-serif'],
         'hebrew': ['Noto Sans Hebrew', 'system-ui', 'sans-serif'],
+        'scripture': ['Merriweather', 'Georgia', 'serif'],
       },
     },
   },
   plugins: [],
-} 
+}

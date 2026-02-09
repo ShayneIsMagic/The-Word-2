@@ -1,0 +1,70 @@
+{
+  "H430": {
+    "word": "אֱלֹהִים",
+    "transliteration": "elohim",
+    "definitions": [
+      "God (the one true God)",
+      "gods (when referring to pagan deities)",
+      "judges, rulers (divine representatives)",
+      "angels (heavenly beings)",
+      "the Almighty"
+    ],
+    "notes": "Plural form (of H433) emphasizing majesty. Used 2,600+ times in OT."
+  },
+  "H3068": {
+    "word": "יְהוָה",
+    "transliteration": "YHWH / Yahweh",
+    "definitions": [
+      "LORD (the self-existent One)",
+      "Jehovah (the covenant-keeping God)",
+      "the Eternal One",
+      "I AM (Exodus 3:14)"
+    ],
+    "notes": "The tetragrammaton. God's personal name, used 6,800+ times."
+  },
+  "H1254": {
+    "word": "בָּרָא",
+    "transliteration": "bara",
+    "definitions": [
+      "to create (ex nihilo - from nothing)",
+      "to shape, form",
+      "to bring into being",
+      "to produce (what is new)"
+    ],
+    "notes": "Used only of divine creation. Genesis 1:1, 21, 27."
+  },
+  "H7225": {
+    "word": "רֵאשִׁית",
+    "transliteration": "reshit",
+    "definitions": [
+      "beginning",
+      "first (in time)",
+      "chief, principal",
+      "firstfruits"
+    ],
+    "notes": "From \"rosh\" (head). Genesis 1:1 - \"In the beginning...\""
+  },
+  "H8064": {
+    "word": "שָׁמַיִם",
+    "transliteration": "shamayim",
+    "definitions": [
+      "heaven(s)",
+      "sky, firmament",
+      "the visible heavens (where birds fly)",
+      "the celestial heavens (where stars are)",
+      "the abode of God"
+    ],
+    "notes": "Dual/plural form. Can refer to atmospheric or divine heavens."
+  },
+  "H776": {
+    "word": "אֶרֶץ",
+    "transliteration": "erets",
+    "definitions": [
+      "earth",
+      "land, ground",
+      "country, territory",
+      "the whole world"
+    ],
+    "notes": "Used 2,500+ times. Context determines if land or whole earth."
+  }
+}

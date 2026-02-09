@@ -1,0 +1,162 @@
+{
+  "H1": {
+    "word": "אָב",
+    "transliteration": "ab",
+    "pronunciation": "awb",
+    "definition": "father",
+    "amplified": [
+      "father",
+      "ancestor",
+      "originator",
+      "patriarch",
+      "head of household"
+    ],
+    "usage_count": 1211,
+    "root": "Primary word"
+  },
+  "H2": {
+    "word": "אַב",
+    "transliteration": "ab",
+    "pronunciation": "ab",
+    "definition": "father (Aramaic)",
+    "amplified": [
+      "father (Aramaic form)",
+      "ancestor"
+    ],
+    "usage_count": 9,
+    "root": "Aramaic corresponding to H1"
+  },
+  "H430": {
+    "word": "אֱלֹהִים",
+    "transliteration": "elohim",
+    "pronunciation": "el-o-heem'",
+    "definition": "God, gods",
+    "amplified": [
+      "God (the one true God - plural of majesty)",
+      "gods, goddesses (pagan deities)",
+      "judges, rulers (as divine representatives)",
+      "angels (divine beings)",
+      "the Almighty"
+    ],
+    "usage_count": 2600,
+    "root": "Plural of H433"
+  },
+  "H3068": {
+    "word": "יְהוָה",
+    "transliteration": "YHWH",
+    "pronunciation": "yeh-ho-vaw'",
+    "definition": "LORD, Jehovah",
+    "amplified": [
+      "LORD (the self-existent One)",
+      "Yahweh (the covenant God)",
+      "Jehovah (He who causes to be)",
+      "The Eternal One",
+      "I AM (Exodus 3:14)"
+    ],
+    "usage_count": 6828,
+    "root": "From H1961 (to be)"
+  },
+  "H1254": {
+    "word": "בָּרָא",
+    "transliteration": "bara",
+    "pronunciation": "baw-raw'",
+    "definition": "to create",
+    "amplified": [
+      "to create (ex nihilo - from nothing)",
+      "to shape, fashion",
+      "to bring into existence",
+      "to produce something new",
+      "to cut, carve out"
+    ],
+    "usage_count": 54,
+    "root": "Primary verb - used only of divine creation"
+  },
+  "H7225": {
+    "word": "רֵאשִׁית",
+    "transliteration": "reshit",
+    "pronunciation": "ray-sheeth'",
+    "definition": "beginning, first",
+    "amplified": [
+      "beginning (in time)",
+      "first, firstfruits",
+      "chief, best part",
+      "principal thing"
+    ],
+    "usage_count": 51,
+    "root": "From H7218 (head)"
+  },
+  "H8064": {
+    "word": "שָׁמַיִם",
+    "transliteration": "shamayim",
+    "pronunciation": "shaw-mah'-yim",
+    "definition": "heaven, heavens, sky",
+    "amplified": [
+      "heaven(s) - the abode of God",
+      "sky, visible expanse",
+      "where birds fly (air)",
+      "where stars reside (space)",
+      "the celestial realm"
+    ],
+    "usage_count": 420,
+    "root": "Dual of an unused singular"
+  },
+  "H776": {
+    "word": "אֶרֶץ",
+    "transliteration": "erets",
+    "pronunciation": "eh'-rets",
+    "definition": "earth, land",
+    "amplified": [
+      "earth (the whole world)",
+      "land, country, territory",
+      "ground, soil",
+      "the inhabitants of the earth"
+    ],
+    "usage_count": 2504,
+    "root": "Primary word"
+  },
+  "H2617": {
+    "word": "חֶסֶד",
+    "transliteration": "chesed",
+    "pronunciation": "kheh'-sed",
+    "definition": "lovingkindness, mercy",
+    "amplified": [
+      "lovingkindness (covenant love)",
+      "mercy, steadfast love",
+      "grace, favor",
+      "loyalty, faithfulness",
+      "goodness, kindness"
+    ],
+    "usage_count": 248,
+    "root": "From H2616"
+  },
+  "H6662": {
+    "word": "צַדִּיק",
+    "transliteration": "tsaddiq",
+    "pronunciation": "tsad-deek'",
+    "definition": "righteous, just",
+    "amplified": [
+      "righteous (morally upright)",
+      "just, lawful",
+      "correct, right",
+      "justified, vindicated",
+      "one in right standing with God"
+    ],
+    "usage_count": 206,
+    "root": "From H6663"
+  },
+  "H539": {
+    "word": "אָמַן",
+    "transliteration": "aman",
+    "pronunciation": "aw-man'",
+    "definition": "to believe, be faithful",
+    "amplified": [
+      "to believe, have faith",
+      "to be faithful, trustworthy",
+      "to be established, confirmed",
+      "to trust in",
+      "amen (so be it)"
+    ],
+    "usage_count": 108,
+    "root": "Primary verb"
+  }
+}

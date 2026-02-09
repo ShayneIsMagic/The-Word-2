@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+Hebrew:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom fonts for Greek and Hebrew text */
+/* ===== LDS Scripture Study Theme ===== */
+:root {
+  --lds-primary: #0077c0;       /* LDS Brand Blue */
+  --lds-secondary: #003366;     /* Dark Blue */
+  --lds-accent: #40a2de;        /* Light Blue */
+  --lds-parchment: #faf6f0;     /* Parchment background */
+  --lds-parchment-dark: #f0e8d8; /* Darker parchment */
+}
 
 /* Base styles */
 @layer base {
@@ -25,15 +32,22 @@
     line-height: 1.6;
     direction: rtl;
   }
+
+  /* Scripture text styling */
+  .font-scripture {
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.8;
+  }
   
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
   
-  /* Focus styles */
+  /* Focus styles - LDS Blue */
   *:focus {
-    outline: 2px solid #ef4444;
+    outline: 2px solid #0077c0;
     outline-offset: 2px;
   }
   
@@ -71,9 +85,9 @@
 
 /* Component styles */
 @layer components {
-  /* Button styles */
+  /* Button styles - LDS Blue */
   .btn-primary {
-    @apply bg-zb-red-600 hover:bg-zb-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-lds-600 hover:bg-lds-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
   }
   
   .btn-secondary {
@@ -85,9 +99,9 @@
     @apply bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700;
   }
   
-  /* Input styles */
+  /* Input styles - LDS Blue focus */
   .input-field {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-zb-red-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lds-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white;
   }
   
   /* Badge styles */
@@ -95,34 +109,39 @@
     @apply inline-block px-2 py-1 text-xs font-medium rounded-full;
   }
   
-  .badge-red {
-    @apply bg-zb-red-100 text-zb-red-800 dark:bg-zb-red-900 dark:text-zb-red-200;
+  .badge-blue {
+    @apply bg-lds-100 text-lds-800 dark:bg-lds-900 dark:text-lds-200;
   }
   
   .badge-green {
-    @apply bg-zb-green-100 text-zb-green-800 dark:bg-zb-green-900 dark:text-zb-green-200;
+    @apply bg-lds-green-100 text-lds-green-800 dark:bg-lds-green-900 dark:text-lds-green-200;
   }
   
-  .badge-blue {
-    @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
-  }
-  
-  .badge-yellow {
+  .badge-gold {
     @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
   }
 }
 
 /* Utility styles */
 @layer utilities {
-  /* Text selection */
+  /* Text selection - LDS Blue */
   ::selection {
-    background-color: #fecaca;
-    color: #991b1b;
+    background-color: #d0e7f8;
+    color: #003366;
   }
   
   .dark ::selection {
-    background-color: #7f1d1d;
-    color: #fecaca;
+    background-color: #003366;
+    color: #d0e7f8;
+  }
+
+  /* Parchment background */
+  .bg-parchment {
+    background-color: var(--lds-parchment);
+  }
+
+  .bg-parchment-dark {
+    background-color: var(--lds-parchment-dark);
   }
   
   /* Animation utilities */
@@ -186,4 +205,4 @@
     box-shadow: none !important;
     border: 1px solid #ccc !important;
   }
-} 
+}

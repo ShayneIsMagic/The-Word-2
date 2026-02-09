@@ -25,7 +25,7 @@ export default function VerseCard({
           {(verse.greek || verse.hebrew) && (
             <button
               onClick={() => setShowDetails(!showDetails)}
-                             className="p-1 text-gray-500 hover:text-zb-red-600 dark:text-gray-400 dark:hover:text-zb-red-400"
+                             className="p-1 text-gray-500 hover:text-lds-600 dark:text-gray-400 dark:hover:text-lds-400"
               title="Toggle original text"
             >
               <LanguageIcon className="h-4 w-4" />
@@ -34,7 +34,7 @@ export default function VerseCard({
           {verse.strongs && verse.strongs.length > 0 && (
             <button
               onClick={() => setShowDetails(!showDetails)}
-                             className="p-1 text-gray-500 hover:text-zb-green-600 dark:text-gray-400 dark:hover:text-zb-green-400"
+                             className="p-1 text-gray-500 hover:text-lds-green-600 dark:text-gray-400 dark:hover:text-lds-green-400"
               title="Toggle Strong's numbers"
             >
               <AcademicCapIcon className="h-4 w-4" />
@@ -81,7 +81,7 @@ export default function VerseCard({
                 {verse.strongs.map((strong, index) => (
                   <span
                     key={index}
-                    className="inline-block px-2 py-1 text-xs bg-zb-red-100 text-zb-red-800 rounded dark:bg-zb-red-900 dark:text-zb-red-200"
+                    className="inline-block px-2 py-1 text-xs bg-lds-100 text-lds-800 rounded dark:bg-lds-900 dark:text-lds-200"
                   >
                     {strong}
                   </span>

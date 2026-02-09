@@ -1,0 +1,539 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-02-05T02:01:03.927544",
+    "description": "Complete Bible with word study - Amplified style",
+    "books_ot": 39,
+    "books_nt": 27
+  },
+  "books": [
+    {
+      "id": "genesis",
+      "name": "Genesis",
+      "abbreviation": "Gen",
+      "chapters": 50,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "exodus",
+      "name": "Exodus",
+      "abbreviation": "Exod",
+      "chapters": 40,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "leviticus",
+      "name": "Leviticus",
+      "abbreviation": "Lev",
+      "chapters": 27,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "numbers",
+      "name": "Numbers",
+      "abbreviation": "Num",
+      "chapters": 36,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "deuteronomy",
+      "name": "Deuteronomy",
+      "abbreviation": "Deut",
+      "chapters": 34,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "joshua",
+      "name": "Joshua",
+      "abbreviation": "Josh",
+      "chapters": 24,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "judges",
+      "name": "Judges",
+      "abbreviation": "Judg",
+      "chapters": 21,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "ruth",
+      "name": "Ruth",
+      "abbreviation": "Ruth",
+      "chapters": 4,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "1-samuel",
+      "name": "1 Samuel",
+      "abbreviation": "1Sam",
+      "chapters": 31,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "2-samuel",
+      "name": "2 Samuel",
+      "abbreviation": "2Sam",
+      "chapters": 24,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "1-kings",
+      "name": "1 Kings",
+      "abbreviation": "1Kgs",
+      "chapters": 22,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "2-kings",
+      "name": "2 Kings",
+      "abbreviation": "2Kgs",
+      "chapters": 25,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "1-chronicles",
+      "name": "1 Chronicles",
+      "abbreviation": "1Chr",
+      "chapters": 29,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "2-chronicles",
+      "name": "2 Chronicles",
+      "abbreviation": "2Chr",
+      "chapters": 36,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "ezra",
+      "name": "Ezra",
+      "abbreviation": "Ezra",
+      "chapters": 10,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "nehemiah",
+      "name": "Nehemiah",
+      "abbreviation": "Neh",
+      "chapters": 13,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "esther",
+      "name": "Esther",
+      "abbreviation": "Esth",
+      "chapters": 10,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "job",
+      "name": "Job",
+      "abbreviation": "Job",
+      "chapters": 42,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "psalms",
+      "name": "Psalms",
+      "abbreviation": "Ps",
+      "chapters": 150,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "proverbs",
+      "name": "Proverbs",
+      "abbreviation": "Prov",
+      "chapters": 31,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "ecclesiastes",
+      "name": "Ecclesiastes",
+      "abbreviation": "Eccl",
+      "chapters": 12,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "song-of-solomon",
+      "name": "Song of Solomon",
+      "abbreviation": "Song",
+      "chapters": 8,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "isaiah",
+      "name": "Isaiah",
+      "abbreviation": "Isa",
+      "chapters": 66,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "jeremiah",
+      "name": "Jeremiah",
+      "abbreviation": "Jer",
+      "chapters": 52,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "lamentations",
+      "name": "Lamentations",
+      "abbreviation": "Lam",
+      "chapters": 5,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "ezekiel",
+      "name": "Ezekiel",
+      "abbreviation": "Ezek",
+      "chapters": 48,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "daniel",
+      "name": "Daniel",
+      "abbreviation": "Dan",
+      "chapters": 12,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "hosea",
+      "name": "Hosea",
+      "abbreviation": "Hos",
+      "chapters": 14,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "joel",
+      "name": "Joel",
+      "abbreviation": "Joel",
+      "chapters": 3,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "amos",
+      "name": "Amos",
+      "abbreviation": "Amos",
+      "chapters": 9,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "obadiah",
+      "name": "Obadiah",
+      "abbreviation": "Obad",
+      "chapters": 1,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "jonah",
+      "name": "Jonah",
+      "abbreviation": "Jonah",
+      "chapters": 4,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "micah",
+      "name": "Micah",
+      "abbreviation": "Mic",
+      "chapters": 7,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "nahum",
+      "name": "Nahum",
+      "abbreviation": "Nah",
+      "chapters": 3,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "habakkuk",
+      "name": "Habakkuk",
+      "abbreviation": "Hab",
+      "chapters": 3,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "zephaniah",
+      "name": "Zephaniah",
+      "abbreviation": "Zeph",
+      "chapters": 3,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "haggai",
+      "name": "Haggai",
+      "abbreviation": "Hag",
+      "chapters": 2,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "zechariah",
+      "name": "Zechariah",
+      "abbreviation": "Zech",
+      "chapters": 14,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "malachi",
+      "name": "Malachi",
+      "abbreviation": "Mal",
+      "chapters": 4,
+      "testament": "OT",
+      "language": "hebrew"
+    },
+    {
+      "id": "matthew",
+      "name": "Matthew",
+      "abbreviation": "Matt",
+      "chapters": 28,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "mark",
+      "name": "Mark",
+      "abbreviation": "Mark",
+      "chapters": 16,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "luke",
+      "name": "Luke",
+      "abbreviation": "Luke",
+      "chapters": 24,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "john",
+      "name": "John",
+      "abbreviation": "John",
+      "chapters": 21,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "acts",
+      "name": "Acts",
+      "abbreviation": "Acts",
+      "chapters": 28,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "romans",
+      "name": "Romans",
+      "abbreviation": "Rom",
+      "chapters": 16,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "1-corinthians",
+      "name": "1 Corinthians",
+      "abbreviation": "1Cor",
+      "chapters": 16,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "2-corinthians",
+      "name": "2 Corinthians",
+      "abbreviation": "2Cor",
+      "chapters": 13,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "galatians",
+      "name": "Galatians",
+      "abbreviation": "Gal",
+      "chapters": 6,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "ephesians",
+      "name": "Ephesians",
+      "abbreviation": "Eph",
+      "chapters": 6,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "philippians",
+      "name": "Philippians",
+      "abbreviation": "Phil",
+      "chapters": 4,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "colossians",
+      "name": "Colossians",
+      "abbreviation": "Col",
+      "chapters": 4,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "1-thessalonians",
+      "name": "1 Thessalonians",
+      "abbreviation": "1Thess",
+      "chapters": 5,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "2-thessalonians",
+      "name": "2 Thessalonians",
+      "abbreviation": "2Thess",
+      "chapters": 3,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "1-timothy",
+      "name": "1 Timothy",
+      "abbreviation": "1Tim",
+      "chapters": 6,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "2-timothy",
+      "name": "2 Timothy",
+      "abbreviation": "2Tim",
+      "chapters": 4,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "titus",
+      "name": "Titus",
+      "abbreviation": "Titus",
+      "chapters": 3,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "philemon",
+      "name": "Philemon",
+      "abbreviation": "Phlm",
+      "chapters": 1,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "hebrews",
+      "name": "Hebrews",
+      "abbreviation": "Heb",
+      "chapters": 13,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "james",
+      "name": "James",
+      "abbreviation": "Jas",
+      "chapters": 5,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "1-peter",
+      "name": "1 Peter",
+      "abbreviation": "1Pet",
+      "chapters": 5,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "2-peter",
+      "name": "2 Peter",
+      "abbreviation": "2Pet",
+      "chapters": 3,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "1-john",
+      "name": "1 John",
+      "abbreviation": "1John",
+      "chapters": 5,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "2-john",
+      "name": "2 John",
+      "abbreviation": "2John",
+      "chapters": 1,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "3-john",
+      "name": "3 John",
+      "abbreviation": "3John",
+      "chapters": 1,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "jude",
+      "name": "Jude",
+      "abbreviation": "Jude",
+      "chapters": 1,
+      "testament": "NT",
+      "language": "greek"
+    },
+    {
+      "id": "revelation",
+      "name": "Revelation",
+      "abbreviation": "Rev",
+      "chapters": 22,
+      "testament": "NT",
+      "language": "greek"
+    }
+  ]
+}

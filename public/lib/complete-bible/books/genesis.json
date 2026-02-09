@@ -1,0 +1,148 @@
+{
+  "id": "genesis",
+  "name": "Genesis",
+  "abbreviation": "Gen",
+  "chapters": 50,
+  "testament": "OT",
+  "language": "hebrew",
+  "verses": {
+    "1-1": {
+      "original": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ",
+      "language": "hebrew",
+      "kjv": "In the beginning God created the heaven and the earth.",
+      "esv": "In the beginning, God created the heavens and the earth.",
+      "amplified": "In the beginning [before all time] God (Elohim—Father, Son, Holy Spirit) created [by forming from nothing] the heavens and the earth.",
+      "words": [
+        {
+          "strongs": "H7225",
+          "original": "בְּרֵאשִׁית",
+          "english": "In the beginning"
+        },
+        {
+          "strongs": "H1254",
+          "original": "בָּרָא",
+          "english": "created"
+        },
+        {
+          "strongs": "H430",
+          "original": "אֱלֹהִים",
+          "english": "God"
+        },
+        {
+          "strongs": "H853",
+          "original": "אֵת",
+          "english": "(direct object marker)"
+        },
+        {
+          "strongs": "H8064",
+          "original": "הַשָּׁמַיִם",
+          "english": "the heavens"
+        },
+        {
+          "strongs": "H853",
+          "original": "וְאֵת",
+          "english": "and (marker)"
+        },
+        {
+          "strongs": "H776",
+          "original": "הָאָרֶץ",
+          "english": "the earth"
+        }
+      ],
+      "notes": [
+        "H430 Elohim is plural in form, used with singular verbs - a hint of the Trinity",
+        "H1254 bara - to create from nothing, used only of divine creation"
+      ]
+    },
+    "1-2": {
+      "original": "וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם",
+      "language": "hebrew",
+      "kjv": "And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
+      "esv": "The earth was without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the face of the waters.",
+      "amplified": "The earth was formless and void [a waste—empty and dark], and darkness was upon the face of the deep [primeval ocean]. The Spirit of God was moving (hovering, brooding) over the face of the waters.",
+      "words": [
+        {
+          "strongs": "H776",
+          "original": "וְהָאָרֶץ",
+          "english": "And the earth"
+        },
+        {
+          "strongs": "H1961",
+          "original": "הָיְתָה",
+          "english": "was"
+        },
+        {
+          "strongs": "H8414",
+          "original": "תֹהוּ",
+          "english": "formless/without form"
+        },
+        {
+          "strongs": "H922",
+          "original": "וָבֹהוּ",
+          "english": "and void/empty"
+        },
+        {
+          "strongs": "H7307",
+          "original": "וְרוּחַ",
+          "english": "And the Spirit"
+        },
+        {
+          "strongs": "H430",
+          "original": "אֱלֹהִים",
+          "english": "of God"
+        },
+        {
+          "strongs": "H7363",
+          "original": "מְרַחֶפֶת",
+          "english": "was hovering/moving"
+        }
+      ],
+      "notes": [
+        "H7307 ruach - Spirit, wind, or breath. Here clearly the Spirit of God.",
+        "H7363 rachaph - to hover, brood (like a bird over its nest)"
+      ]
+    },
+    "1-3": {
+      "original": "וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר",
+      "language": "hebrew",
+      "kjv": "And God said, Let there be light: and there was light.",
+      "esv": "And God said, \"Let there be light,\" and there was light.",
+      "amplified": "And God said, \"Let there be light\"; and there was light [the creation of light was immediate].",
+      "words": [
+        {
+          "strongs": "H559",
+          "original": "וַיֹּאמֶר",
+          "english": "And said"
+        },
+        {
+          "strongs": "H430",
+          "original": "אֱלֹהִים",
+          "english": "God"
+        },
+        {
+          "strongs": "H1961",
+          "original": "יְהִי",
+          "english": "Let there be"
+        },
+        {
+          "strongs": "H216",
+          "original": "אוֹר",
+          "english": "light"
+        },
+        {
+          "strongs": "H1961",
+          "original": "וַיְהִי",
+          "english": "and there was"
+        },
+        {
+          "strongs": "H216",
+          "original": "אוֹר",
+          "english": "light"
+        }
+      ],
+      "notes": [
+        "H216 or - light, both physical light and metaphorical enlightenment"
+      ]
+    }
+  }
+}
