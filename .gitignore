@@ -39,3 +39,75 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env
+
+# Large PDF files (keep locally, don't commit)
+*.pdf
+
+# Extraction logs and temporary files
+*.log
+extraction_*.txt
+*_log.txt
+
+# Large data files (keep locally, don't commit)
+public/lib/original-texts/*.json
+!public/lib/original-texts/.gitkeep
+
+# Scraped LDS structure data (can be regenerated)
+data/*.json
+!data/.gitkeep
+
+# Backup files
+*backup*
+*.backup
+backups/
+
+# Temporary extraction files
+*.tmp
+*.temp
+
+# Python cache & virtual environment
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Large binary & database files (keep locally, don't commit)
+bible_databases/
+*.pdf.zip
+PDF Extraction/
+
+# IDE settings
+.vscode/
+
+# Debug/fix notes (not production docs — keep governance MDs)
+eslint-audit.json
+lint-results.txt
+500_ERROR_FIXED.md
+CHECK_500_ERROR.md
+CLEAN_INSTALL.md
+CSS_IMPORT_FINAL_FIX.md
+CSS_IMPORT_FIX.md
+DEBUG_500_ERROR.md
+DO_THIS_NOW.md
+FINAL_500_FIX.md
+FIX_500_ERROR.md
+FIX_EVERYTHING.md
+FIX_LOCKFILE.md
+QUICK_500_FIX.md
+REACT_VERSION_FIX.md
+RESTART_SERVER.md
+TAILWIND_ORIGINAL.md
+TAILWIND_REMOVAL.md
+TEST_LOCALLY.md
+TURBOPACK_FIX.md
+WRONG_DIRECTORY_FIX.md
+AUTHENTICATE_AND_PUSH.md
+PUSH_TO_GITHUB.md
+WHAT_WAS_PUSHED.md
+USE_EXISTING_SOLUTION.md
+
+# Environment and secrets
+.env
+.env.local
+.env*.local

@@ -42,11 +42,11 @@ export default function SearchBar({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
-          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-zb-red-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lds-500 focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"
         />
         {isSearching && (
           <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-zb-red-500"></div>
+                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-lds-500"></div>
           </div>
         )}
       </div>

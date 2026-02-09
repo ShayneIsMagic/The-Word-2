@@ -102,23 +102,23 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-[#faf6f0] dark:from-gray-900 dark:to-gray-800">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+      <header className="bg-lds-600 dark:bg-lds-900 shadow-sm border-b border-lds-700 dark:border-lds-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
               {(selectedBook || selectedVerse) && (
                 <button
                   onClick={handleBack}
-                  className="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                  className="p-2 text-white/80 hover:text-white"
                 >
                   <ArrowLeftIcon className="h-5 w-5" />
                 </button>
               )}
               <div className="flex items-center space-x-2">
-                <BookOpenIcon className="h-8 w-8 text-zb-red-600 dark:text-zb-red-400" />
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <BookOpenIcon className="h-8 w-8 text-white" />
+                <h1 className="text-2xl font-bold text-white">
                   The Word
                 </h1>
               </div>
@@ -157,7 +157,7 @@ export default function Home() {
                 }}
                 className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
                   activeTab === tab.id
-                    ? 'border-zb-red-500 text-zb-red-600 dark:text-zb-red-400'
+                    ? 'border-lds-500 text-lds-600 dark:text-lds-400'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
                 }`}
               >
@@ -259,7 +259,7 @@ export default function Home() {
                 </div>
                 <button
                   onClick={handleStudyMode}
-                  className="px-4 py-2 bg-zb-red-600 hover:bg-zb-red-700 text-white font-semibold rounded-lg transition-colors flex items-center space-x-2"
+                  className="px-4 py-2 bg-lds-600 hover:bg-lds-700 text-white font-semibold rounded-lg transition-colors flex items-center space-x-2"
                 >
                   <SparklesIcon className="h-4 w-4" />
                   <span>Advanced Study</span>

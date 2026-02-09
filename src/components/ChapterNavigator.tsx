@@ -42,7 +42,7 @@ export default function ChapterNavigator({
         <button
           onClick={handlePrevious}
           disabled={selectedChapter <= 1}
-          className="p-2 text-gray-500 hover:text-zb-red-600 disabled:text-gray-300 disabled:cursor-not-allowed dark:text-gray-400 dark:hover:text-zb-red-400 dark:disabled:text-gray-600"
+          className="p-2 text-gray-500 hover:text-lds-600 disabled:text-gray-300 disabled:cursor-not-allowed dark:text-gray-400 dark:hover:text-lds-400 dark:disabled:text-gray-600"
         >
           <ChevronLeftIcon className="h-5 w-5" />
         </button>
@@ -52,7 +52,7 @@ export default function ChapterNavigator({
           <select
             value={selectedChapter}
             onChange={(e) => handleChapterChange(Number(e.target.value))}
-            className="px-3 py-1 text-sm border border-gray-300 rounded-md bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-zb-red-500 focus:border-transparent"
+            className="px-3 py-1 text-sm border border-gray-300 rounded-md bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-2 focus:ring-lds-500 focus:border-transparent"
           >
             {Array.from({ length: totalChapters }, (_, i) => i + 1).map(chapter => (
               <option key={chapter} value={chapter}>
@@ -66,7 +66,7 @@ export default function ChapterNavigator({
         <button
           onClick={handleNext}
           disabled={selectedChapter >= totalChapters}
-          className="p-2 text-gray-500 hover:text-zb-red-600 disabled:text-gray-300 disabled:cursor-not-allowed dark:text-gray-400 dark:hover:text-zb-red-400 dark:disabled:text-gray-600"
+          className="p-2 text-gray-500 hover:text-lds-600 disabled:text-gray-300 disabled:cursor-not-allowed dark:text-gray-400 dark:hover:text-lds-400 dark:disabled:text-gray-600"
         >
           <ChevronRightIcon className="h-5 w-5" />
         </button>

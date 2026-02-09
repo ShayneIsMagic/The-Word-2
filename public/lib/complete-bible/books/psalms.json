@@ -1,0 +1,43 @@
+{
+  "id": "psalms",
+  "name": "Psalms",
+  "abbreviation": "Ps",
+  "chapters": 150,
+  "testament": "OT",
+  "language": "hebrew",
+  "verses": {
+    "1-1": {
+      "original": "מִזְמוֹר לְדָוִד יְהוָה רֹעִי לֹא אֶחְסָר",
+      "language": "hebrew",
+      "kjv": "The LORD is my shepherd; I shall not want.",
+      "esv": "The LORD is my shepherd; I shall not want.",
+      "amplified": "The LORD is my Shepherd [to feed, to guide, and to shield me], I shall not lack [anything].",
+      "words": [
+        {
+          "strongs": "H3068",
+          "original": "יְהוָה",
+          "english": "The LORD (YHWH)"
+        },
+        {
+          "strongs": "H7462",
+          "original": "רֹעִי",
+          "english": "my shepherd"
+        },
+        {
+          "strongs": "H3808",
+          "original": "לֹא",
+          "english": "not"
+        },
+        {
+          "strongs": "H2637",
+          "original": "אֶחְסָר",
+          "english": "I shall lack/want"
+        }
+      ],
+      "notes": [
+        "H3068 YHWH - The divine name, often translated LORD (all caps)",
+        "H7462 ra'ah - to shepherd, tend, feed. David the shepherd knew this intimately."
+      ]
+    }
+  }
+}

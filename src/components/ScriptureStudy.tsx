@@ -302,18 +302,18 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
   const getTranslationText = () => {
     const verseKey = getCurrentVerseKey();
     if (isOldTestament()) {
-      return (bhsTranslations as Record<string, string>)[verseKey] || 'Translation not available for this verse.';
+      return (bhsTranslations as any)[verseKey] || 'Translation not available for this verse.';
     } else {
-      return (na28Translations as Record<string, string>)[verseKey] || 'Translation not available for this verse.';
+      return (na28Translations as any)[verseKey] || 'Translation not available for this verse.';
     }
   };
 
   const getWordStudyData = () => {
     const verseKey = getCurrentVerseKey();
     if (isOldTestament()) {
-      return (keyHebrewWords as Record<string, any[]>)[verseKey] || [];
+      return (keyHebrewWords as any)[verseKey] || [];
     } else {
-      return (keyGreekWords as Record<string, any[]>)[verseKey] || [];
+      return (keyGreekWords as any)[verseKey] || [];
     }
   };
 
@@ -338,7 +338,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
   }, [currentBook, currentChapter]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-[#faf6f0] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Header */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6 mb-6">
@@ -351,7 +351,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                 <ArrowLeftIcon className="h-5 w-5" />
               </button>
               <div className="flex items-center space-x-3">
-                <BookOpenIcon className="h-10 w-10 text-zb-red-600 dark:text-zb-red-400" />
+                <BookOpenIcon className="h-10 w-10 text-lds-600 dark:text-lds-400" />
                 <div>
                   <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                     📖 LDS Scripture Study
@@ -377,7 +377,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                   setCurrentBook(book || null);
                   setCurrentChapter(1);
                 }}
-                className="px-3 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-zb-red-500 focus:ring-2 focus:ring-zb-red-200 dark:focus:ring-zb-red-800 transition-colors"
+                className="px-3 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-lds-500 focus:ring-2 focus:ring-lds-200 dark:focus:ring-lds-800 transition-colors"
               >
                 <option value="">Select Book</option>
                 {books.map(book => (
@@ -393,7 +393,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                   <select 
                     value={currentChapter}
                     onChange={(e) => setCurrentChapter(Number(e.target.value))}
-                    className="px-3 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-zb-red-500 focus:ring-2 focus:ring-zb-red-200 dark:focus:ring-zb-red-800 transition-colors"
+                    className="px-3 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-lds-500 focus:ring-2 focus:ring-lds-200 dark:focus:ring-lds-800 transition-colors"
                   >
                     {Array.from({ length: currentBook.chapters }, (_, i) => i + 1).map(ch => (
                       <option key={ch} value={ch}>{ch}</option>
@@ -406,7 +406,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                   <select 
                     value={currentVerse?.verse || ''}
                     onChange={(e) => handleVerseSelect(Number(e.target.value))}
-                    className="px-3 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-zb-red-500 focus:ring-2 focus:ring-zb-red-200 dark:focus:ring-zb-red-800 transition-colors"
+                    className="px-3 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-lds-500 focus:ring-2 focus:ring-lds-200 dark:focus:ring-lds-800 transition-colors"
                   >
                     {currentChapterData?.verses.map(v => (
                       <option key={v.number} value={v.number}>{v.number}</option>
@@ -416,7 +416,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
 
                 <button 
                   onClick={handleLoadVerse}
-                  className="px-4 py-2 bg-zb-red-600 hover:bg-zb-red-700 text-white font-semibold rounded-lg transition-colors flex items-center space-x-2"
+                  className="px-4 py-2 bg-lds-600 hover:bg-lds-700 text-white font-semibold rounded-lg transition-colors flex items-center space-x-2"
                 >
                   <AcademicCapIcon className="h-4 w-4" />
                   <span>📍 Go to Verse</span>
@@ -429,7 +429,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                 onClick={() => setShowJST(!showJST)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                   showJST 
-                    ? 'bg-zb-green-600 text-white' 
+                    ? 'bg-lds-green-600 text-white' 
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                 }`}
               >
@@ -439,7 +439,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                 onClick={() => setShowGreek(!showGreek)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                   showGreek 
-                    ? 'bg-zb-green-600 text-white' 
+                    ? 'bg-lds-green-600 text-white' 
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                 }`}
               >
@@ -449,7 +449,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                 onClick={() => setShowNA28(!showNA28)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                   showNA28 
-                    ? 'bg-zb-green-600 text-white' 
+                    ? 'bg-lds-green-600 text-white' 
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                 }`}
               >
@@ -459,7 +459,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                 onClick={() => setShowCFM(!showCFM)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                   showCFM 
-                    ? 'bg-zb-green-600 text-white' 
+                    ? 'bg-lds-green-600 text-white' 
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                 }`}
               >
@@ -477,7 +477,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
               {currentVerse ? (
                 <>
                   {/* Verse Header */}
-                  <div className="border-b-4 border-zb-red-500 pb-4 mb-6">
+                  <div className="border-b-4 border-lds-500 pb-4 mb-6">
                     <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                       {currentVerse.book} {currentVerse.chapter}:{currentVerse.verse}
                     </div>
@@ -488,12 +488,12 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
 
                   {/* Main Scripture Text */}
                   <div className="font-serif text-xl leading-relaxed text-gray-900 dark:text-white mb-6">
-                    <span className="font-bold text-zb-red-600 dark:text-zb-red-400 mr-2">
+                    <span className="font-bold text-lds-600 dark:text-lds-400 mr-2">
                       {currentVerse.verse}
                     </span>
                     {loading ? (
                       <div className="flex items-center justify-center py-8">
-                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-zb-red-600"></div>
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-lds-600"></div>
                         <span className="ml-3 text-gray-600 dark:text-gray-400">Loading verse...</span>
                       </div>
                     ) : (
@@ -503,8 +503,8 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
 
                   {/* JST Text */}
                   {showJST && (
-                    <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-zb-green-500 rounded-lg p-6 mb-6">
-                      <span className="font-semibold text-zb-green-700 dark:text-zb-green-300 mb-3 block">
+                    <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-lds-green-500 rounded-lg p-6 mb-6">
+                      <span className="font-semibold text-lds-green-700 dark:text-lds-green-300 mb-3 block">
                         🔄 Joseph Smith Translation
                       </span>
                       <div className="text-gray-800 dark:text-gray-200">
@@ -639,7 +639,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
             {/* Commentary Panel */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6">
               <div className="flex items-center space-x-2 mb-4">
-                <ChatBubbleLeftRightIcon className="h-5 w-5 text-zb-red-600 dark:text-zb-red-400" />
+                <ChatBubbleLeftRightIcon className="h-5 w-5 text-lds-600 dark:text-lds-400" />
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">💬 Commentary</h3>
               </div>
               
@@ -650,7 +650,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                     onClick={() => setActiveCommentary(type)}
                     className={`flex-1 px-3 py-2 text-sm font-medium transition-colors ${
                       activeCommentary === type
-                        ? 'bg-zb-red-600 text-white'
+                        ? 'bg-lds-600 text-white'
                         : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >
@@ -660,8 +660,8 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
               </div>
 
               <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                <div className="italic text-gray-800 dark:text-gray-200 mb-3 border-l-4 border-zb-red-500 pl-4">
-                  {(commentaries[activeCommentary] as Record<string, string>)[getCurrentVerseKey()] || 
+                <div className="italic text-gray-800 dark:text-gray-200 mb-3 border-l-4 border-lds-500 pl-4">
+                  {(commentaries[activeCommentary] as any)[getCurrentVerseKey()] || 
                    'Commentary not available for this verse.'}
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -674,7 +674,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
             {/* Cross References */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6">
               <div className="flex items-center space-x-2 mb-4">
-                <LinkIcon className="h-5 w-5 text-zb-red-600 dark:text-zb-red-400" />
+                <LinkIcon className="h-5 w-5 text-lds-600 dark:text-lds-400" />
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">🔗 Cross References</h3>
               </div>
               
@@ -684,7 +684,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
                     key={index}
                     className="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
                   >
-                    <span className="font-semibold text-zb-red-600 dark:text-zb-red-400 mr-3">
+                    <span className="font-semibold text-lds-600 dark:text-lds-400 mr-3">
                       {ref.reference}
                     </span>
                     <span className="text-sm text-gray-600 dark:text-gray-400">
@@ -698,7 +698,7 @@ export default function ScriptureStudy({ onBack, selectedBook, selectedVerse }: 
             {/* Study Tools */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6">
               <div className="flex items-center space-x-2 mb-4">
-                <WrenchScrewdriverIcon className="h-5 w-5 text-zb-red-600 dark:text-zb-red-400" />
+                <WrenchScrewdriverIcon className="h-5 w-5 text-lds-600 dark:text-lds-400" />
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">🛠️ Study Tools</h3>
               </div>
               

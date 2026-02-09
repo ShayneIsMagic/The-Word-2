@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { ScriptureProvider } from '@/context/ScriptureContext';
 
 export const metadata: Metadata = {
   title: 'The Word - Advanced Scripture Study',
@@ -23,7 +24,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <ThemeProvider>
-          {children}
+          <ScriptureProvider>
+            {children}
+          </ScriptureProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,0 +1,360 @@
+{
+  "hebrew": {
+    "H430": {
+      "original": "אֱלֹהִים",
+      "transliteration": "Elohim",
+      "primary": "God",
+      "alternates": [
+        "gods",
+        "mighty one",
+        "divine being",
+        "supreme God"
+      ],
+      "pos": "noun"
+    },
+    "H3068": {
+      "original": "יְהוָה",
+      "transliteration": "YHWH/Yahweh",
+      "primary": "LORD",
+      "alternates": [
+        "Jehovah",
+        "the Eternal",
+        "the Self-Existent One"
+      ],
+      "pos": "proper noun"
+    },
+    "H1254": {
+      "original": "בָּרָא",
+      "transliteration": "bara",
+      "primary": "create",
+      "alternates": [
+        "shape",
+        "form",
+        "fashion",
+        "make from nothing"
+      ],
+      "pos": "verb"
+    },
+    "H7225": {
+      "original": "רֵאשִׁית",
+      "transliteration": "reshith",
+      "primary": "beginning",
+      "alternates": [
+        "first",
+        "chief",
+        "firstfruits",
+        "starting point"
+      ],
+      "pos": "noun"
+    },
+    "H8064": {
+      "original": "שָׁמַיִם",
+      "transliteration": "shamayim",
+      "primary": "heavens",
+      "alternates": [
+        "sky",
+        "air",
+        "celestial realm",
+        "visible heavens"
+      ],
+      "pos": "noun"
+    },
+    "H776": {
+      "original": "אֶרֶץ",
+      "transliteration": "erets",
+      "primary": "earth",
+      "alternates": [
+        "land",
+        "ground",
+        "country",
+        "territory"
+      ],
+      "pos": "noun"
+    },
+    "H5315": {
+      "original": "נֶפֶשׁ",
+      "transliteration": "nephesh",
+      "primary": "soul",
+      "alternates": [
+        "life",
+        "being",
+        "self",
+        "person",
+        "creature"
+      ],
+      "pos": "noun"
+    },
+    "H7307": {
+      "original": "רוּחַ",
+      "transliteration": "ruach",
+      "primary": "spirit",
+      "alternates": [
+        "wind",
+        "breath",
+        "mind",
+        "Spirit (of God)"
+      ],
+      "pos": "noun"
+    },
+    "H2617": {
+      "original": "חֶסֶד",
+      "transliteration": "chesed",
+      "primary": "lovingkindness",
+      "alternates": [
+        "mercy",
+        "steadfast love",
+        "faithfulness",
+        "covenant love",
+        "grace"
+      ],
+      "pos": "noun"
+    },
+    "H6666": {
+      "original": "צְדָקָה",
+      "transliteration": "tsedaqah",
+      "primary": "righteousness",
+      "alternates": [
+        "justice",
+        "rightness",
+        "what is right",
+        "vindication"
+      ],
+      "pos": "noun"
+    },
+    "H539": {
+      "original": "אָמַן",
+      "transliteration": "aman",
+      "primary": "believe",
+      "alternates": [
+        "trust",
+        "confirm",
+        "support",
+        "be faithful",
+        "be established"
+      ],
+      "pos": "verb"
+    },
+    "H3722": {
+      "original": "כָּפַר",
+      "transliteration": "kaphar",
+      "primary": "atone",
+      "alternates": [
+        "cover",
+        "make atonement",
+        "reconcile",
+        "forgive",
+        "purge"
+      ],
+      "pos": "verb"
+    },
+    "H4899": {
+      "original": "מָשִׁיחַ",
+      "transliteration": "mashiach",
+      "primary": "Messiah",
+      "alternates": [
+        "anointed one",
+        "Christ",
+        "the Anointed"
+      ],
+      "pos": "noun"
+    },
+    "H1285": {
+      "original": "בְּרִית",
+      "transliteration": "berith",
+      "primary": "covenant",
+      "alternates": [
+        "treaty",
+        "agreement",
+        "alliance",
+        "pledge"
+      ],
+      "pos": "noun"
+    },
+    "H8451": {
+      "original": "תּוֹרָה",
+      "transliteration": "torah",
+      "primary": "law",
+      "alternates": [
+        "instruction",
+        "teaching",
+        "direction",
+        "guidance"
+      ],
+      "pos": "noun"
+    }
+  },
+  "greek": {
+    "G2316": {
+      "original": "θεός",
+      "transliteration": "theos",
+      "primary": "God",
+      "alternates": [
+        "divine being",
+        "deity",
+        "the Godhead"
+      ],
+      "pos": "noun"
+    },
+    "G2962": {
+      "original": "κύριος",
+      "transliteration": "kyrios",
+      "primary": "Lord",
+      "alternates": [
+        "master",
+        "sir",
+        "owner",
+        "ruler"
+      ],
+      "pos": "noun"
+    },
+    "G3056": {
+      "original": "λόγος",
+      "transliteration": "logos",
+      "primary": "Word",
+      "alternates": [
+        "message",
+        "speech",
+        "reason",
+        "account",
+        "matter"
+      ],
+      "pos": "noun"
+    },
+    "G26": {
+      "original": "ἀγάπη",
+      "transliteration": "agape",
+      "primary": "love",
+      "alternates": [
+        "divine love",
+        "unconditional love",
+        "charity"
+      ],
+      "pos": "noun"
+    },
+    "G4102": {
+      "original": "πίστις",
+      "transliteration": "pistis",
+      "primary": "faith",
+      "alternates": [
+        "belief",
+        "trust",
+        "faithfulness",
+        "conviction"
+      ],
+      "pos": "noun"
+    },
+    "G5485": {
+      "original": "χάρις",
+      "transliteration": "charis",
+      "primary": "grace",
+      "alternates": [
+        "favor",
+        "blessing",
+        "gift",
+        "gratitude"
+      ],
+      "pos": "noun"
+    },
+    "G1343": {
+      "original": "δικαιοσύνη",
+      "transliteration": "dikaiosyne",
+      "primary": "righteousness",
+      "alternates": [
+        "justice",
+        "justification",
+        "rightness"
+      ],
+      "pos": "noun"
+    },
+    "G4991": {
+      "original": "σωτηρία",
+      "transliteration": "soteria",
+      "primary": "salvation",
+      "alternates": [
+        "deliverance",
+        "preservation",
+        "safety",
+        "rescue"
+      ],
+      "pos": "noun"
+    },
+    "G3340": {
+      "original": "μετανοέω",
+      "transliteration": "metanoeo",
+      "primary": "repent",
+      "alternates": [
+        "change one's mind",
+        "turn around",
+        "have a change of heart"
+      ],
+      "pos": "verb"
+    },
+    "G907": {
+      "original": "βαπτίζω",
+      "transliteration": "baptizo",
+      "primary": "baptize",
+      "alternates": [
+        "immerse",
+        "dip",
+        "wash",
+        "submerge"
+      ],
+      "pos": "verb"
+    },
+    "G5547": {
+      "original": "Χριστός",
+      "transliteration": "Christos",
+      "primary": "Christ",
+      "alternates": [
+        "Anointed One",
+        "Messiah"
+      ],
+      "pos": "noun"
+    },
+    "G4151": {
+      "original": "πνεῦμα",
+      "transliteration": "pneuma",
+      "primary": "spirit",
+      "alternates": [
+        "Spirit",
+        "wind",
+        "breath",
+        "ghost"
+      ],
+      "pos": "noun"
+    },
+    "G932": {
+      "original": "βασιλεία",
+      "transliteration": "basileia",
+      "primary": "kingdom",
+      "alternates": [
+        "reign",
+        "royal power",
+        "dominion"
+      ],
+      "pos": "noun"
+    },
+    "G2222": {
+      "original": "ζωή",
+      "transliteration": "zoe",
+      "primary": "life",
+      "alternates": [
+        "living",
+        "existence",
+        "eternal life"
+      ],
+      "pos": "noun"
+    },
+    "G225": {
+      "original": "ἀλήθεια",
+      "transliteration": "aletheia",
+      "primary": "truth",
+      "alternates": [
+        "reality",
+        "sincerity",
+        "truthfulness"
+      ],
+      "pos": "noun"
+    }
+  }
+}

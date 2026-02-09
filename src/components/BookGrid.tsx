@@ -41,10 +41,10 @@ export default function BookGrid({ books, onBookSelect, className = "" }: BookGr
 
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
-             'Law': 'bg-zb-red-100 text-zb-red-800 dark:bg-zb-red-900 dark:text-zb-red-200',
+             'Law': 'bg-lds-100 text-lds-800 dark:bg-lds-900 dark:text-lds-200',
        'Poetry': 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
        'Prophets': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-       'Gospel': 'bg-zb-green-100 text-zb-green-800 dark:bg-zb-green-900 dark:text-zb-green-200',
+       'Gospel': 'bg-lds-green-100 text-lds-green-800 dark:bg-lds-green-900 dark:text-lds-green-200',
       'History': 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200',
       'Pauline Epistles': 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
       'Apocalyptic': 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200',
@@ -69,7 +69,7 @@ export default function BookGrid({ books, onBookSelect, className = "" }: BookGr
                 onClick={() => setFilter(testament)}
                                  className={`px-3 py-1 text-sm rounded-full transition-colors ${
                    filter === testament
-                     ? 'bg-zb-red-500 text-white'
+                     ? 'bg-lds-500 text-white'
                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
                  }`}
               >
@@ -103,7 +103,7 @@ export default function BookGrid({ books, onBookSelect, className = "" }: BookGr
             className="group p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-200 hover:scale-105 text-left"
           >
             <div className="flex items-start justify-between mb-2">
-                             <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-zb-red-600 dark:group-hover:text-zb-red-400">
+                             <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-lds-600 dark:group-hover:text-lds-400">
                 {book.name}
               </h3>
               <span className="text-xs text-gray-500 dark:text-gray-400">

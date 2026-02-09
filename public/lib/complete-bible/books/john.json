@@ -1,0 +1,86 @@
+{
+  "id": "john",
+  "name": "John",
+  "abbreviation": "John",
+  "chapters": 21,
+  "testament": "NT",
+  "language": "greek",
+  "verses": {
+    "1-1": {
+      "original": "Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος.",
+      "language": "greek",
+      "kjv": "In the beginning was the Word, and the Word was with God, and the Word was God.",
+      "esv": "In the beginning was the Word, and the Word was with God, and the Word was God.",
+      "amplified": "In the beginning [before all time] was the Word (Christ), and the Word was with God, and the Word was God Himself.",
+      "words": [
+        {
+          "strongs": "G1722",
+          "original": "Ἐν",
+          "english": "In"
+        },
+        {
+          "strongs": "G746",
+          "original": "ἀρχῇ",
+          "english": "the beginning"
+        },
+        {
+          "strongs": "G1510",
+          "original": "ἦν",
+          "english": "was"
+        },
+        {
+          "strongs": "G3588",
+          "original": "ὁ",
+          "english": "the"
+        },
+        {
+          "strongs": "G3056",
+          "original": "λόγος",
+          "english": "Word"
+        },
+        {
+          "strongs": "G2316",
+          "original": "θεόν",
+          "english": "God"
+        }
+      ],
+      "notes": [
+        "G3056 logos - Word, also reason, message. John identifies Jesus as the eternal Word.",
+        "The Greek grammar emphasizes the Word's deity while distinguishing persons."
+      ]
+    },
+    "1-14": {
+      "original": "Καὶ ὁ λόγος σὰρξ ἐγένετο καὶ ἐσκήνωσεν ἐν ἡμῖν",
+      "language": "greek",
+      "kjv": "And the Word was made flesh, and dwelt among us",
+      "esv": "And the Word became flesh and dwelt among us",
+      "amplified": "And the Word (Christ) became flesh and lived among us [as a human being], and we saw His glory",
+      "words": [
+        {
+          "strongs": "G3056",
+          "original": "λόγος",
+          "english": "Word"
+        },
+        {
+          "strongs": "G4561",
+          "original": "σὰρξ",
+          "english": "flesh"
+        },
+        {
+          "strongs": "G1096",
+          "original": "ἐγένετο",
+          "english": "became"
+        },
+        {
+          "strongs": "G4637",
+          "original": "ἐσκήνωσεν",
+          "english": "dwelt/tabernacled"
+        }
+      ],
+      "notes": [
+        "G4637 skenoo - to pitch a tent, tabernacle. Christ 'pitched his tent' among us.",
+        "This is the doctrine of the Incarnation - God becoming man."
+      ]
+    }
+  }
+}

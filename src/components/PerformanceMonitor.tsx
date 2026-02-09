@@ -44,22 +44,22 @@ export default function PerformanceMonitor() {
   }, [isOnline, isInstalled]);
 
      const getPerformanceColor = (loadTime: number) => {
-     if (loadTime < 1000) return 'text-zb-green-600 dark:text-zb-green-400';
+     if (loadTime < 1000) return 'text-lds-green-600 dark:text-lds-green-400';
      if (loadTime < 3000) return 'text-yellow-600 dark:text-yellow-400';
-     return 'text-zb-red-600 dark:text-zb-red-400';
+     return 'text-lds-600 dark:text-lds-400';
    };
 
      const getMemoryColor = (memory: number) => {
-     if (memory < 50) return 'text-zb-green-600 dark:text-zb-green-400';
+     if (memory < 50) return 'text-lds-green-600 dark:text-lds-green-400';
      if (memory < 100) return 'text-yellow-600 dark:text-yellow-400';
-     return 'text-zb-red-600 dark:text-zb-red-400';
+     return 'text-lds-600 dark:text-lds-400';
    };
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4">
         <div className="flex items-center space-x-2 mb-2">
-          <CheckCircleIcon className="h-4 w-4 text-zb-green-600 dark:text-zb-green-400" />
+          <CheckCircleIcon className="h-4 w-4 text-lds-green-600 dark:text-lds-green-400" />
           <span className="text-sm font-medium text-gray-900 dark:text-white">
             Performance
           </span>
@@ -93,11 +93,11 @@ export default function PerformanceMonitor() {
               <span className="text-gray-600 dark:text-gray-400">Status:</span>
               <div className="flex items-center space-x-1">
                                  {metrics.isOnline ? (
-                   <WifiIcon className="h-3 w-3 text-zb-green-600 dark:text-zb-green-400" />
+                   <WifiIcon className="h-3 w-3 text-lds-green-600 dark:text-lds-green-400" />
                  ) : (
-                   <SignalSlashIcon className="h-3 w-3 text-zb-red-600 dark:text-zb-red-400" />
+                   <SignalSlashIcon className="h-3 w-3 text-lds-600 dark:text-lds-400" />
                  )}
-                 <span className={metrics.isOnline ? 'text-zb-green-600 dark:text-zb-green-400' : 'text-zb-red-600 dark:text-zb-red-400'}>
+                 <span className={metrics.isOnline ? 'text-lds-green-600 dark:text-lds-green-400' : 'text-lds-600 dark:text-lds-400'}>
                   {metrics.isOnline ? 'Online' : 'Offline'}
                 </span>
               </div>
@@ -106,7 +106,7 @@ export default function PerformanceMonitor() {
             {metrics.isInstalled && (
               <div className="flex items-center justify-between">
                 <span className="text-gray-600 dark:text-gray-400">PWA:</span>
-                <span className="text-zb-green-600 dark:text-zb-green-400">Installed</span>
+                <span className="text-lds-green-600 dark:text-lds-green-400">Installed</span>
               </div>
             )}
           </div>
