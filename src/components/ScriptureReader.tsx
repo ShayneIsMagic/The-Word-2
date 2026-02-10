@@ -584,13 +584,14 @@ export default function ScriptureReader() {
             {/* Column 1: Original Language */}
             <div className="bg-[#faf9f6] dark:bg-[#2d3748] border-r border-gray-200 dark:border-gray-700 p-4">
               <div className="space-y-3">
-                {/* Psalm Superscription (if present) */}
+                {/* Psalm Introduction / Superscription */}
                 {chapterVerses[0]?.superscription && (
-                  <div className={`text-sm italic text-gray-500 dark:text-gray-400 pb-2 border-b border-gray-200 dark:border-gray-600 ${
-                    selectedBook?.testament === 'OT' ? 'text-right font-hebrew' : 'font-greek'
-                  }`}>
-                    <span className="text-[10px] text-[#00457c] dark:text-blue-400 font-sans uppercase tracking-wider mr-2">Superscription:</span>
-                    {chapterVerses[0].superscription}
+                  <div className="pb-3 mb-2 border-b border-gray-200 dark:border-gray-600">
+                    <p className={`text-base italic text-gray-600 dark:text-gray-300 leading-relaxed ${
+                      selectedBook?.testament === 'OT' ? 'text-right font-hebrew' : 'font-greek'
+                    }`}>
+                      {chapterVerses[0].superscription}
+                    </p>
                   </div>
                 )}
                 {chapterVerses.map((verse) => (

@@ -159,13 +159,14 @@ export default function ChapterPage() {
             </div>
           ) : (
             <div className="space-y-4">
-              {/* Psalm superscription */}
+              {/* Psalm Introduction */}
               {verses[0]?.superscription && (
-                <div className={`p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 text-sm italic ${
-                  isOldTestament ? 'text-right font-hebrew' : ''
-                } text-amber-800 dark:text-amber-200`}>
-                  <span className="text-[10px] font-sans uppercase tracking-wider mr-2 not-italic">Superscription:</span>
-                  {verses[0].superscription}
+                <div className="p-4 rounded-lg bg-[#faf9f6] dark:bg-gray-700/50 border-l-4 border-[#00457c] dark:border-blue-500 mb-2">
+                  <p className={`text-base italic leading-relaxed ${
+                    isOldTestament ? 'text-right font-hebrew text-gray-700 dark:text-gray-200' : 'text-gray-700 dark:text-gray-200'
+                  }`}>
+                    {verses[0].superscription}
+                  </p>
                 </div>
               )}
 
