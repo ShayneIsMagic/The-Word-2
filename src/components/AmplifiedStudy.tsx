@@ -156,45 +156,8 @@ const GREEK_AMPLIFIED: Record<string, WordDefinition> = {
   },
 };
 
-// Sample verse data (to be replaced with full data)
-const SAMPLE_VERSES: Record<string, VerseData> = {
-  'genesis-1-1': {
-    book: 'Genesis',
-    chapter: 1,
-    verse: 1,
-    englishText: 'In the beginning God created the heaven and the earth.',
-    originalText: 'בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ',
-    language: 'hebrew',
-    words: [
-      HEBREW_AMPLIFIED['H7225'],  // reshit - beginning
-      HEBREW_AMPLIFIED['H1254'],  // bara - created
-      HEBREW_AMPLIFIED['H430'],   // elohim - God
-    ],
-  },
-  'john-1-1': {
-    book: 'John',
-    chapter: 1,
-    verse: 1,
-    englishText: 'In the beginning was the Word, and the Word was with God, and the Word was God.',
-    originalText: 'Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος.',
-    language: 'greek',
-    words: [
-      GREEK_AMPLIFIED['G3056'],  // logos - Word
-    ],
-  },
-  'john-3-16': {
-    book: 'John',
-    chapter: 3,
-    verse: 16,
-    englishText: 'For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.',
-    originalText: 'Οὕτως γὰρ ἠγάπησεν ὁ θεὸς τὸν κόσμον, ὥστε τὸν υἱὸν τὸν μονογενῆ ἔδωκεν, ἵνα πᾶς ὁ πιστεύων εἰς αὐτὸν μὴ ἀπόληται ἀλλ᾽ ἔχῃ ζωὴν αἰώνιον.',
-    language: 'greek',
-    words: [
-      GREEK_AMPLIFIED['G26'],    // agape - love
-      GREEK_AMPLIFIED['G4102'],  // pistis - faith/believe
-    ],
-  },
-};
+// NOTE: SAMPLE_VERSES removed — all verse data now comes from ScriptureContext
+// which loads real data from the 21 translation JSON files + Hebrew OT + Greek NT.
 
 // ============================================================================
 // Component
@@ -343,7 +306,7 @@ export default function AmplifiedStudy({ onBack }: AmplifiedStudyProps) {
   // Search filter for books
   const searchFilteredBooks = filteredBooks.filter(book =>
     book.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    book.abbr.toLowerCase().includes(searchQuery.toLowerCase())
+    book.abbreviation.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (

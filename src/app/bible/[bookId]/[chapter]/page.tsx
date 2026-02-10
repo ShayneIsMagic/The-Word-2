@@ -11,118 +11,38 @@ import {
   LanguageIcon,
   AcademicCapIcon
 } from '@heroicons/react/24/outline';
-import { getChapter } from '@/lib/genesis-matthew';
+import { 
+  useScripture, 
+  ALL_BIBLE_BOOKS, 
+  AVAILABLE_TRANSLATIONS, 
+  type TranslationKey 
+} from '@/context/ScriptureContext';
 import { detectLanguage } from '@/lib/language-detector';
-
-// Book metadata
-const BOOK_DATA: Record<string, { name: string; chapters: number; testament: 'old' | 'new' }> = {
-  'genesis': { name: 'Genesis', chapters: 50, testament: 'old' },
-  'exodus': { name: 'Exodus', chapters: 40, testament: 'old' },
-  'leviticus': { name: 'Leviticus', chapters: 27, testament: 'old' },
-  'numbers': { name: 'Numbers', chapters: 36, testament: 'old' },
-  'deuteronomy': { name: 'Deuteronomy', chapters: 34, testament: 'old' },
-  'joshua': { name: 'Joshua', chapters: 24, testament: 'old' },
-  'judges': { name: 'Judges', chapters: 21, testament: 'old' },
-  'ruth': { name: 'Ruth', chapters: 4, testament: 'old' },
-  '1-samuel': { name: '1 Samuel', chapters: 31, testament: 'old' },
-  '2-samuel': { name: '2 Samuel', chapters: 24, testament: 'old' },
-  '1-kings': { name: '1 Kings', chapters: 22, testament: 'old' },
-  '2-kings': { name: '2 Kings', chapters: 25, testament: 'old' },
-  '1-chronicles': { name: '1 Chronicles', chapters: 29, testament: 'old' },
-  '2-chronicles': { name: '2 Chronicles', chapters: 36, testament: 'old' },
-  'ezra': { name: 'Ezra', chapters: 10, testament: 'old' },
-  'nehemiah': { name: 'Nehemiah', chapters: 13, testament: 'old' },
-  'esther': { name: 'Esther', chapters: 10, testament: 'old' },
-  'job': { name: 'Job', chapters: 42, testament: 'old' },
-  'psalms': { name: 'Psalms', chapters: 150, testament: 'old' },
-  'proverbs': { name: 'Proverbs', chapters: 31, testament: 'old' },
-  'ecclesiastes': { name: 'Ecclesiastes', chapters: 12, testament: 'old' },
-  'song-of-solomon': { name: 'Song of Solomon', chapters: 8, testament: 'old' },
-  'isaiah': { name: 'Isaiah', chapters: 66, testament: 'old' },
-  'jeremiah': { name: 'Jeremiah', chapters: 52, testament: 'old' },
-  'lamentations': { name: 'Lamentations', chapters: 5, testament: 'old' },
-  'ezekiel': { name: 'Ezekiel', chapters: 48, testament: 'old' },
-  'daniel': { name: 'Daniel', chapters: 12, testament: 'old' },
-  'hosea': { name: 'Hosea', chapters: 14, testament: 'old' },
-  'joel': { name: 'Joel', chapters: 3, testament: 'old' },
-  'amos': { name: 'Amos', chapters: 9, testament: 'old' },
-  'obadiah': { name: 'Obadiah', chapters: 1, testament: 'old' },
-  'jonah': { name: 'Jonah', chapters: 4, testament: 'old' },
-  'micah': { name: 'Micah', chapters: 7, testament: 'old' },
-  'nahum': { name: 'Nahum', chapters: 3, testament: 'old' },
-  'habakkuk': { name: 'Habakkuk', chapters: 3, testament: 'old' },
-  'zephaniah': { name: 'Zephaniah', chapters: 3, testament: 'old' },
-  'haggai': { name: 'Haggai', chapters: 2, testament: 'old' },
-  'zechariah': { name: 'Zechariah', chapters: 14, testament: 'old' },
-  'malachi': { name: 'Malachi', chapters: 4, testament: 'old' },
-  'matthew': { name: 'Matthew', chapters: 28, testament: 'new' },
-  'mark': { name: 'Mark', chapters: 16, testament: 'new' },
-  'luke': { name: 'Luke', chapters: 24, testament: 'new' },
-  'john': { name: 'John', chapters: 21, testament: 'new' },
-  'acts': { name: 'Acts', chapters: 28, testament: 'new' },
-  'romans': { name: 'Romans', chapters: 16, testament: 'new' },
-  '1-corinthians': { name: '1 Corinthians', chapters: 16, testament: 'new' },
-  '2-corinthians': { name: '2 Corinthians', chapters: 13, testament: 'new' },
-  'galatians': { name: 'Galatians', chapters: 6, testament: 'new' },
-  'ephesians': { name: 'Ephesians', chapters: 6, testament: 'new' },
-  'philippians': { name: 'Philippians', chapters: 4, testament: 'new' },
-  'colossians': { name: 'Colossians', chapters: 4, testament: 'new' },
-  '1-thessalonians': { name: '1 Thessalonians', chapters: 5, testament: 'new' },
-  '2-thessalonians': { name: '2 Thessalonians', chapters: 3, testament: 'new' },
-  '1-timothy': { name: '1 Timothy', chapters: 6, testament: 'new' },
-  '2-timothy': { name: '2 Timothy', chapters: 4, testament: 'new' },
-  'titus': { name: 'Titus', chapters: 3, testament: 'new' },
-  'philemon': { name: 'Philemon', chapters: 1, testament: 'new' },
-  'hebrews': { name: 'Hebrews', chapters: 13, testament: 'new' },
-  'james': { name: 'James', chapters: 5, testament: 'new' },
-  '1-peter': { name: '1 Peter', chapters: 5, testament: 'new' },
-  '2-peter': { name: '2 Peter', chapters: 3, testament: 'new' },
-  '1-john': { name: '1 John', chapters: 5, testament: 'new' },
-  '2-john': { name: '2 John', chapters: 1, testament: 'new' },
-  '3-john': { name: '3 John', chapters: 1, testament: 'new' },
-  'jude': { name: 'Jude', chapters: 1, testament: 'new' },
-  'revelation': { name: 'Revelation', chapters: 22, testament: 'new' },
-};
-
-interface VerseData {
-  number: number;
-  text: string;
-  hebrew?: string;
-  greek?: string;
-  strongs?: string[];
-}
+import { 
+  getJSTFootnote, 
+  getCrossReferences, 
+  getLDSScriptureUrl 
+} from '@/lib/lds-scripture-api';
 
 export default function ChapterPage() {
   const params = useParams();
   const bookId = params.bookId as string;
   const chapter = parseInt(params.chapter as string, 10);
-  
-  const [verses, setVerses] = useState<VerseData[]>([]);
+  const scripture = useScripture();
+
   const [selectedVerse, setSelectedVerse] = useState<number | null>(null);
   const [showOriginal, setShowOriginal] = useState(false);
-  const [selectedTranslation, setSelectedTranslation] = useState('KJV');
-  const [loading, setLoading] = useState(true);
+  const [selectedTranslation, setSelectedTranslation] = useState<TranslationKey>('kjv');
+  const [showJST, setShowJST] = useState(true);
 
-  const bookData = BOOK_DATA[bookId];
-  const isOldTestament = bookData?.testament === 'old';
+  // Find book from shared context
+  const bookData = ALL_BIBLE_BOOKS.find(b => b.id === bookId);
+  const isOldTestament = bookData?.testament === 'OT';
 
-  useEffect(() => {
-    setLoading(true);
-    // Try to get chapter data from local data
-    const chapterData = getChapter(bookId, chapter);
-    
-    if (chapterData && chapterData.verses.length > 0) {
-      setVerses(chapterData.verses);
-    } else {
-      // Generate placeholder verses for books not yet populated
-      const placeholderVerses: VerseData[] = Array.from({ length: 25 }, (_, i) => ({
-        number: i + 1,
-        text: `[Verse ${i + 1} - Data not yet loaded. Visit churchofjesuschrist.org or bible.com for this content.]`,
-      }));
-      setVerses(placeholderVerses);
-    }
-    setLoading(false);
-  }, [bookId, chapter]);
+  // Get verses from ScriptureContext (real backend data)
+  const verses = bookData 
+    ? scripture.getChapterVerses(bookData.name, chapter, selectedTranslation)
+    : [];
 
   if (!bookData) {
     return (
@@ -162,17 +82,16 @@ export default function ChapterPage() {
               </div>
             </div>
             
-            {/* Translation Selector */}
+            {/* Translation Selector + Toggle */}
             <div className="flex items-center space-x-2">
               <select
                 value={selectedTranslation}
-                onChange={(e) => setSelectedTranslation(e.target.value)}
+                onChange={(e) => setSelectedTranslation(e.target.value as TranslationKey)}
                 className="px-3 py-1 text-sm border border-white/30 rounded-lg bg-white/10 text-white"
               >
-                <option value="KJV" className="text-gray-900">KJV</option>
-                <option value="ESV" className="text-gray-900">ESV</option>
-                <option value="NIV" className="text-gray-900">NIV</option>
-                <option value="NASB" className="text-gray-900">NASB</option>
+                {AVAILABLE_TRANSLATIONS.map(t => (
+                  <option key={t.key} value={t.key} className="text-gray-900">{t.abbr}</option>
+                ))}
               </select>
               
               <button
@@ -181,6 +100,16 @@ export default function ChapterPage() {
                 title={isOldTestament ? 'Show Hebrew' : 'Show Greek'}
               >
                 <LanguageIcon className="h-5 w-5" />
+              </button>
+
+              <button
+                onClick={() => setShowJST(!showJST)}
+                className={`px-2 py-1 rounded-lg text-xs font-medium transition-colors ${
+                  showJST ? 'bg-white/20 text-white' : 'text-white/70 hover:bg-white/10'
+                }`}
+                title="Joseph Smith Translation"
+              >
+                📜 JST
               </button>
             </div>
           </div>
@@ -223,69 +152,86 @@ export default function ChapterPage() {
       {/* Verses */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-[#faf9f6] dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-6 sm:p-8">
-          {loading ? (
+          {scripture.isLoading ? (
             <div className="flex items-center justify-center py-12">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#00457c]"></div>
               <span className="ml-3 text-gray-600 dark:text-gray-400">Loading chapter...</span>
             </div>
           ) : (
             <div className="space-y-4">
+              {/* Psalm superscription */}
+              {verses[0]?.superscription && (
+                <div className={`p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 text-sm italic ${
+                  isOldTestament ? 'text-right font-hebrew' : ''
+                } text-amber-800 dark:text-amber-200`}>
+                  <span className="text-[10px] font-sans uppercase tracking-wider mr-2 not-italic">Superscription:</span>
+                  {verses[0].superscription}
+                </div>
+              )}
+
               {verses.map((verse) => {
-                const originalText = verse.hebrew || verse.greek || '';
-                const detectedLang = originalText ? detectLanguage(originalText) : null;
+                const detectedLang = verse.originalText ? detectLanguage(verse.originalText) : null;
+                const jst = showJST && bookData ? getJSTFootnote(bookData.name, chapter, verse.verse) : null;
+                const refs = bookData ? getCrossReferences(bookData.name, chapter, verse.verse) : [];
                 
                 return (
                   <div
-                    key={verse.number}
-                    id={`verse-${verse.number}`}
-                    onClick={() => setSelectedVerse(selectedVerse === verse.number ? null : verse.number)}
+                    key={verse.verse}
+                    id={`verse-${verse.verse}`}
+                    onClick={() => setSelectedVerse(selectedVerse === verse.verse ? null : verse.verse)}
                     className={`p-3 rounded-lg cursor-pointer transition-all ${
-                      selectedVerse === verse.number
+                      selectedVerse === verse.verse
                         ? 'bg-[#e8f4fc] dark:bg-blue-900/30 border-l-4 border-[#00457c]'
                         : 'hover:bg-gray-50 dark:hover:bg-gray-700/50'
                     }`}
                   >
-                    {/* Verse Text */}
+                    {/* English Verse Text */}
                     <p className="text-gray-900 dark:text-white leading-relaxed font-serif">
                       <span className="font-bold mr-2 text-[#00457c] dark:text-blue-400">
-                        {verse.number}
+                        {verse.verse}
                       </span>
-                      {verse.text}
+                      {verse.englishText || `[${bookData.name} ${chapter}:${verse.verse}]`}
                     </p>
                     
                     {/* Original Language (if toggled) */}
-                    {showOriginal && originalText && (
+                    {showOriginal && verse.originalText && (
                       <div className="mt-2 p-3 rounded-lg bg-[#e8f4fc] dark:bg-blue-900/20">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-                            {isOldTestament ? 'Hebrew (BHS)' : 'Greek (NA28)'}
+                            {isOldTestament ? 'Hebrew (WLC)' : 'Greek (TR)'}
                           </span>
                           {detectedLang && (
                             <span className="text-xs text-green-600 dark:text-green-400">
-                              ✓ Detected: {detectedLang.language}
+                              ✓ {detectedLang.language}
                             </span>
                           )}
                         </div>
                         <p className={`text-lg leading-relaxed ${isOldTestament ? 'font-hebrew text-right text-[#003366] dark:text-blue-200' : 'font-greek text-[#003366] dark:text-blue-200'}`}>
-                          {originalText}
+                          {verse.originalText}
                         </p>
                       </div>
                     )}
-                    
-                    {/* Strong's Numbers (if verse selected) */}
-                    {selectedVerse === verse.number && verse.strongs && verse.strongs.length > 0 && (
-                      <div className="mt-2 flex flex-wrap gap-1">
-                        {verse.strongs.map((strong, idx) => (
-                          <a
-                            key={idx}
-                            href={`https://www.blueletterbible.org/lexicon/${strong}/kjv/wlc/0-1/`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-2 py-0.5 text-xs rounded-full bg-[#e8f4fc] dark:bg-blue-800 text-[#00457c] dark:text-blue-200 hover:opacity-80"
-                          >
-                            {strong}
-                          </a>
-                        ))}
+
+                    {/* JST Footnote */}
+                    {jst && selectedVerse === verse.verse && (
+                      <div className="mt-2 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700">
+                        <p className="text-xs font-semibold text-blue-700 dark:text-blue-300 mb-1">📜 JST (Joseph Smith Translation)</p>
+                        <p className="text-sm italic text-blue-900 dark:text-blue-100">&quot;{jst.jst}&quot;</p>
+                        <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">{jst.note}</p>
+                      </div>
+                    )}
+
+                    {/* Cross-References */}
+                    {refs.length > 0 && selectedVerse === verse.verse && (
+                      <div className="mt-2 p-3 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700">
+                        <p className="text-xs font-semibold text-green-700 dark:text-green-300 mb-1">🔗 Cross-References</p>
+                        <div className="space-y-1">
+                          {refs.map((ref, idx) => (
+                            <p key={idx} className="text-xs text-green-800 dark:text-green-200">
+                              <span className="font-semibold">{ref.verse}</span> — {ref.text}
+                            </p>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
@@ -300,7 +246,7 @@ export default function ChapterPage() {
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">View this chapter on trusted sources:</p>
           <div className="flex flex-wrap gap-2">
             <a
-              href={`https://www.churchofjesuschrist.org/study/scriptures/${isOldTestament ? 'ot' : 'nt'}/${bookId}/${chapter}?lang=eng`}
+              href={getLDSScriptureUrl(bookData.name, chapter)}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-800/50 flex items-center space-x-2"
@@ -345,12 +291,20 @@ export default function ChapterPage() {
             <div />
           )}
           
-          <Link
-            href="/bible"
-            className="px-4 py-2 text-[#00457c] dark:text-blue-400 hover:text-[#003366] dark:hover:text-blue-300"
-          >
-            All Books
-          </Link>
+          <div className="flex space-x-3">
+            <Link
+              href="/bible"
+              className="px-4 py-2 text-[#00457c] dark:text-blue-400 hover:text-[#003366] dark:hover:text-blue-300"
+            >
+              All Books
+            </Link>
+            <Link
+              href="/reader"
+              className="px-4 py-2 text-[#00457c] dark:text-blue-400 hover:text-[#003366] dark:hover:text-blue-300"
+            >
+              3-Column Reader
+            </Link>
+          </div>
           
           {nextChapter ? (
             <Link
@@ -368,6 +322,3 @@ export default function ChapterPage() {
     </div>
   );
 }
-
-
-

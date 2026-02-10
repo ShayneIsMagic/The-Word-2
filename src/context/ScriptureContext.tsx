@@ -157,6 +157,34 @@ function bookNameToId(name: string): string {
 }
 
 // ============================================================================
+// Hebrew ↔ English Verse Alignment
+// ============================================================================
+// The Hebrew (Masoretic) versification differs from English (KJV) versification.
+// Most notably: Psalm superscriptions are verse 1 in Hebrew but unnumbered in English.
+// When Hebrew has N+1 verses vs KJV N verses, Hebrew verse 1 is the superscription
+// and Hebrew verse 2 = English verse 1. We detect this and offset accordingly.
+//
+// For JPS (which follows Hebrew numbering), we apply the reverse: JPS verse 1 is
+// the superscription, and JPS verse 2 = KJV verse 1.
+
+// Translations that follow Hebrew (Masoretic) verse numbering for Psalms
+const HEBREW_VERSIFICATION_TRANSLATIONS: TranslationKey[] = ['jps'];
+
+function getHebrewVerseOffset(
+  bookName: string,
+  chapter: number,
+  hebrewVerseCount: number,
+  englishVerseCount: number
+): number {
+  // Only applies to Psalms (the primary source of superscription offsets)
+  if (bookName.toLowerCase() !== 'psalms') return 0;
+  const diff = hebrewVerseCount - englishVerseCount;
+  // If Hebrew has 1 or 2 more verses, it's a superscription offset
+  if (diff === 1 || diff === 2) return diff;
+  return 0;
+}
+
+// ============================================================================
 // KJV data structure (kjv-complete.json)
 // ============================================================================
 
@@ -312,18 +340,51 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
     return null;
   }, [kjvData, translationCache, findVerse, loadTranslation]);
 
-  const getChapterVerses = useCallback((bookName: string, chapter: number, translation: TranslationKey): Array<{ verse: number; originalText: string; englishText: string }> => {
+  const getChapterVerses = useCallback((bookName: string, chapter: number, translation: TranslationKey): Array<{ verse: number; originalText: string; englishText: string; superscription?: string }> => {
     const bookId = bookNameToId(bookName);
     const book = ALL_BIBLE_BOOKS.find(b => b.name.toLowerCase() === bookName.toLowerCase());
     const isOT = book?.testament === 'OT';
-    const count = getVerseCount(bookName, chapter);
-    const result: Array<{ verse: number; originalText: string; englishText: string }> = [];
+    const englishCount = getVerseCount(bookName, chapter);
+    const result: Array<{ verse: number; originalText: string; englishText: string; superscription?: string }> = [];
 
-    for (let v = 1; v <= count; v++) {
-      const key = `${bookId}-${chapter}-${v}`;
-      const originalText = isOT ? (hebrewData[key] || '') : (greekData[key] || '');
-      const englishText = getTranslationVerse(translation, bookName, chapter, v) || findVerse(kjvData, bookName, chapter, v) || '';
-      result.push({ verse: v, originalText, englishText });
+    // Calculate Hebrew verse offset (Psalms superscriptions)
+    let hebrewOffset = 0;
+    if (isOT && bookName.toLowerCase() === 'psalms') {
+      // Count actual Hebrew verses for this chapter
+      let hebrewCount = 0;
+      for (let v = 1; v <= englishCount + 3; v++) {
+        if (hebrewData[`${bookId}-${chapter}-${v}`]) hebrewCount = v;
+      }
+      hebrewOffset = getHebrewVerseOffset(bookName, chapter, hebrewCount, englishCount);
+    }
+
+    // Check if the selected translation follows Hebrew versification (e.g., JPS)
+    const translationFollowsHebrew = HEBREW_VERSIFICATION_TRANSLATIONS.includes(translation);
+
+    // If Hebrew has a superscription (offset > 0), include it as metadata on verse 1
+    const superscriptionText = hebrewOffset > 0 ? (hebrewData[`${bookId}-${chapter}-1`] || '') : '';
+
+    for (let v = 1; v <= englishCount; v++) {
+      // Hebrew verse number: offset by the superscription count
+      const hebrewVerseNum = v + hebrewOffset;
+      const hebrewKey = `${bookId}-${chapter}-${hebrewVerseNum}`;
+      const originalText = isOT ? (hebrewData[hebrewKey] || '') : (greekData[`${bookId}-${chapter}-${v}`] || '');
+
+      // English text: for JPS, adjust verse number since JPS follows Hebrew numbering
+      let englishText: string;
+      if (translationFollowsHebrew && hebrewOffset > 0) {
+        // JPS verse 2 = KJV verse 1, etc.
+        englishText = getTranslationVerse(translation, bookName, chapter, hebrewVerseNum) || findVerse(kjvData, bookName, chapter, v) || '';
+      } else {
+        englishText = getTranslationVerse(translation, bookName, chapter, v) || findVerse(kjvData, bookName, chapter, v) || '';
+      }
+
+      result.push({
+        verse: v,
+        originalText,
+        englishText,
+        ...(v === 1 && superscriptionText ? { superscription: superscriptionText } : {}),
+      });
     }
 
     return result;
