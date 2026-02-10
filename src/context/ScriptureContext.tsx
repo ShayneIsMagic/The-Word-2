@@ -52,8 +52,9 @@ export const AVAILABLE_TRANSLATIONS: TranslationInfo[] = [
   { key: 'litv', name: 'Literal Translation', abbr: 'LITV', file: 'litv-bible.json' },
   { key: 'mkjv', name: 'Modern KJV', abbr: 'MKJV', file: 'mkjv-bible.json' },
   { key: 'nheb', name: 'New Heart English Bible', abbr: 'NHEB', file: 'nheb-bible.json' },
-  { key: 'oeb', name: 'Open English Bible', abbr: 'OEB', file: 'oeb-bible.json' },
-  { key: 'tyndale', name: 'Tyndale Bible', abbr: 'Tyndale', file: 'tyndale-bible.json' },
+  // Hidden: OEB (67% empty) and Tyndale (75% empty) — re-enable when data is complete
+  // { key: 'oeb', name: 'Open English Bible', abbr: 'OEB', file: 'oeb-bible.json' },
+  // { key: 'tyndale', name: 'Tyndale Bible', abbr: 'Tyndale', file: 'tyndale-bible.json' },
   { key: 'webster', name: "Webster's Bible", abbr: 'Webster', file: 'webster-bible.json' },
   { key: 'ylt', name: "Young's Literal Translation", abbr: 'YLT', file: 'ylt-bible.json' },
   { key: 'akjv', name: 'American KJV', abbr: 'AKJV', file: 'akjv-bible.json' },

@@ -22,7 +22,7 @@ import { ThemeToggle } from '@/components/ThemeProvider';
 const PRIMARY_TRANSLATIONS: TranslationKey[] = ['kjv', 'esv', 'net', 'leb', 'geneva', 'jubilee'];
 const KJV_FAMILY: TranslationKey[] = ['mkjv', 'kjvpce', 'akjv'];
 const LITERAL_TRANSLATIONS: TranslationKey[] = ['litv', 'ylt', 'asv', 'darby'];
-const OTHER_TRANSLATIONS: TranslationKey[] = ['bsb', 'jps', 'tyndale', 'drc', 'webster', 'bbe', 'nheb', 'oeb'];
+const OTHER_TRANSLATIONS: TranslationKey[] = ['bsb', 'jps', 'drc', 'webster', 'bbe', 'nheb'];
 
 // ============================================================================
 // Hebrew/Greek Pronunciation Data (expanded with cross-translation comparisons)
