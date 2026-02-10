@@ -584,7 +584,7 @@ export default function AmplifiedStudy({ onBack }: AmplifiedStudyProps) {
                     <div className="flex items-center space-x-2">
                       <LanguageIcon className="h-5 w-5 text-amber-600" />
                       <h3 className="font-bold text-gray-900 dark:text-white">
-                        {selectedBook.testament === 'OT' ? 'Hebrew (WLC)' : 'Greek (TR)'}
+                        {selectedBook.testament === 'OT' ? 'Hebrew (WLC)' : 'Greek (SBLGNT)'}
                       </h3>
                     </div>
                     <div className="flex items-center space-x-2">

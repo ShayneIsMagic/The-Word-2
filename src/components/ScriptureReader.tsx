@@ -555,7 +555,7 @@ export default function ScriptureReader() {
           <div className="px-4 py-3 border-r border-gray-200 dark:border-gray-700">
             <h3 className="font-semibold text-[#00457c] dark:text-blue-300 flex items-center space-x-2">
               <span className="text-lg">🔤</span>
-              <span>{selectedBook?.testament === 'OT' ? 'Hebrew (WLC)' : 'Greek (TR)'}</span>
+              <span>{selectedBook?.testament === 'OT' ? 'Hebrew (WLC)' : 'Greek (SBLGNT)'}</span>
             </h3>
             <p className="text-xs text-gray-500 dark:text-gray-400">Original Language</p>
           </div>
