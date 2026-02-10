@@ -1,0 +1,48 @@
+# Large database files (11GB)
+bible_databases/
+
+# PDF files (~940MB)
+*.pdf
+*.pdf.zip
+PDF Extraction/
+
+# Python virtual environment
+.venv/
+
+# Data extraction artifacts
+__pycache__/
+*.pyc
+extraction_*.txt
+*_log.txt
+
+# Backup files
+*backup*
+backups/
+
+# Debug/fix markdown notes
+eslint-audit.json
+lint-results.txt
+500_ERROR_FIXED.md
+CHECK_500_ERROR.md
+CLEAN_INSTALL.md
+CSS_IMPORT_FINAL_FIX.md
+CSS_IMPORT_FIX.md
+DEBUG_500_ERROR.md
+DO_THIS_NOW.md
+FINAL_500_FIX.md
+FIX_500_ERROR.md
+FIX_EVERYTHING.md
+FIX_LOCKFILE.md
+QUICK_500_FIX.md
+REACT_VERSION_FIX.md
+RESTART_SERVER.md
+TAILWIND_ORIGINAL.md
+TAILWIND_REMOVAL.md
+TEST_LOCALLY.md
+TURBOPACK_FIX.md
+WRONG_DIRECTORY_FIX.md
+AUTHENTICATE_AND_PUSH.md
+PUSH_TO_GITHUB.md
+WHAT_WAS_PUSHED.md
+USE_EXISTING_SOLUTION.md
+
