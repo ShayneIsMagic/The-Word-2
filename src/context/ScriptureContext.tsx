@@ -32,7 +32,7 @@ export interface SearchResult {
   text: string;
 }
 
-export type TranslationKey = 'kjv' | 'esv' | 'asv' | 'bbe' | 'bsb' | 'darby' | 'drc' | 'geneva' | 'jps' | 'jubilee' | 'leb' | 'litv' | 'mkjv' | 'net' | 'nheb' | 'oeb' | 'tyndale' | 'webster' | 'ylt' | 'akjv' | 'kjvpce';
+export type TranslationKey = 'kjv' | 'esv' | 'asv' | 'bbe' | 'bsb' | 'darby' | 'drc' | 'geneva' | 'jps' | 'jubilee' | 'leb' | 'litv' | 'mkjv' | 'net' | 'nheb' | 'oeb' | 'tyndale' | 'webster' | 'ylt' | 'akjv' | 'kjvpce' | 'french-lxx' | 'german-na28';
 
 export interface TranslationInfo {
   key: TranslationKey;
@@ -40,7 +40,30 @@ export interface TranslationInfo {
   abbr: string;
   file: string;
   description?: string;
+  language?: string;          // 'english' (default) | 'french' | 'german'
+  testamentOnly?: 'NT';       // If the translation only covers NT
 }
+
+// ============================================================================
+// Greek Text Traditions (for the original text column — NT only)
+// ============================================================================
+
+export type GreekTextTradition = 'sblgnt' | 'textus-receptus' | 'byzantine';
+
+export interface GreekTextTraditionInfo {
+  key: GreekTextTradition;
+  name: string;
+  abbr: string;
+  file: string;
+  description: string;
+  format: 'key-value' | 'kjv-bible';  // How the data is structured
+}
+
+export const GREEK_TEXT_TRADITIONS: GreekTextTraditionInfo[] = [
+  { key: 'sblgnt', name: 'SBL Greek New Testament', abbr: 'SBLGNT', file: 'greek-nt-clean.json', description: 'Modern critical text (2010)', format: 'key-value' },
+  { key: 'textus-receptus', name: 'Textus Receptus', abbr: 'TR', file: 'greek-nt-tr.json', description: 'Received Text behind KJV (1550/1894)', format: 'kjv-bible' },
+  { key: 'byzantine', name: 'Byzantine Majority Text', abbr: 'Byz', file: 'byzantine-nt.json', description: 'Majority text tradition (Robinson-Pierpont)', format: 'kjv-bible' },
+];
 
 // ============================================================================
 // Constants
@@ -69,6 +92,9 @@ export const AVAILABLE_TRANSLATIONS: TranslationInfo[] = [
   { key: 'ylt', name: "Young's Literal Translation", abbr: 'YLT', file: 'ylt-bible.json' },
   { key: 'akjv', name: 'American KJV', abbr: 'AKJV', file: 'akjv-bible.json' },
   { key: 'kjvpce', name: 'KJV Pure Cambridge', abbr: 'KJVPCE', file: 'kjvpce-bible.json' },
+  // Non-English translations
+  { key: 'french-lxx', name: 'French Septuagint (Giguet 1872)', abbr: 'FreLXX', file: 'septuagint-lxx.json', description: 'French translation of LXX (84 books incl. Apocrypha)', language: 'french' },
+  { key: 'german-na28', name: 'Leonberger Bibel (NA28)', abbr: 'GerNA28', file: 'german-na28.json', description: 'German translation, NT from NA28', language: 'german', testamentOnly: 'NT' },
 ];
 
 export const LICENSED_TRANSLATIONS_NOTE = `Some translations (NIV, NRSV, NASB, NA28, UBS) are copyrighted and cannot be bundled.
@@ -324,6 +350,9 @@ interface ScriptureContextValue {
   getTranslationVerse: (translation: TranslationKey, bookName: string, chapter: number, verse: number) => string | null;
   getBookByName: (name: string) => BibleBook | null;
   searchVerses: (query: string, limit: number) => SearchResult[];
+  // Greek text tradition
+  greekTextTradition: GreekTextTradition;
+  setGreekTextTradition: (tradition: GreekTextTradition) => void;
   // Apocrypha
   showApocrypha: boolean;
   setShowApocrypha: (show: boolean) => void;
@@ -393,6 +422,11 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
   const [apocryphaLoaded, setApocryphaLoaded] = useState(false);
   const [apocryphaCache, setApocryphaCache] = useState<Record<string, ApocryphaFile>>({});
 
+  // Greek text tradition state
+  const [greekTextTradition, setGreekTextTraditionState] = useState<GreekTextTradition>('sblgnt');
+  const [altGreekData, setAltGreekData] = useState<Record<string, string>>({});
+  const [altGreekLoading, setAltGreekLoading] = useState(false);
+
   // Dead Sea Scrolls state (completely separate from Apocrypha)
   const [showDSS, setShowDSSState] = useState(false);
   const [dssLoading, setDSSLoading] = useState(false);
@@ -447,6 +481,10 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
       if (savedApoc === 'true') setShowApocryphaState(true);
       const savedDSS = localStorage.getItem('showDeadSeaScrolls');
       if (savedDSS === 'true') setShowDSSState(true);
+      const savedGreek = localStorage.getItem('greekTextTradition') as GreekTextTradition | null;
+      if (savedGreek && GREEK_TEXT_TRADITIONS.some(t => t.key === savedGreek)) {
+        setGreekTextTraditionState(savedGreek);
+      }
     } catch {
       // localStorage not available
     }
@@ -515,6 +553,44 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
     loadDSS();
   }, [showDSS, dssLoaded, dssLoading]);
 
+  // Set Greek text tradition and lazy-load the data
+  const setGreekTextTradition = useCallback((tradition: GreekTextTradition) => {
+    setGreekTextTraditionState(tradition);
+    try { localStorage.setItem('greekTextTradition', tradition); } catch {}
+
+    // If switching to SBLGNT, the data is already in greekData (loaded at startup)
+    if (tradition === 'sblgnt') return;
+
+    // Check if we already have this tradition loaded
+    const info = GREEK_TEXT_TRADITIONS.find(t => t.key === tradition);
+    if (!info || altGreekLoading) return;
+
+    // Load the alternate Greek text
+    setAltGreekLoading(true);
+    fetch(`/lib/original-texts/${info.file}`)
+      .then(r => r.ok ? r.json() : null)
+      .then((data: KJVBible | null) => {
+        if (data?.books) {
+          // Convert KJVBible format to flat key-value for NT books only
+          const flat: Record<string, string> = {};
+          for (const book of data.books) {
+            const id = bookNameToId(book.name);
+            // Only include books that have actual text (NT books)
+            const hasText = book.chapters.some(ch => ch.verses.some(v => v.text));
+            if (!hasText) continue;
+            for (const ch of book.chapters) {
+              for (const v of ch.verses) {
+                if (v.text) flat[`${id}-${ch.chapter}-${v.verse}`] = v.text;
+              }
+            }
+          }
+          setAltGreekData(flat);
+        }
+      })
+      .catch(err => console.error(`Error loading ${tradition} Greek text:`, err))
+      .finally(() => setAltGreekLoading(false));
+  }, [altGreekLoading]);
+
   // Load an additional Apocrypha translation on demand
   const loadApocryphaTranslation = useCallback(async (key: ApocryphaTranslationKey): Promise<ApocryphaFile | null> => {
     if (apocryphaCache[key]) return apocryphaCache[key];
@@ -580,18 +656,21 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
     return ALL_BIBLE_BOOKS.find(b => b.name.toLowerCase() === name.toLowerCase()) || null;
   }, []);
 
+  // Resolve the active Greek text data based on selected tradition
+  const activeGreekData = greekTextTradition === 'sblgnt' ? greekData : altGreekData;
+
   const getVerseData = useCallback((bookName: string, chapter: number, verse: number): { originalText: string; englishText: string; language: string } => {
     const bookId = bookNameToId(bookName);
     const key = `${bookId}-${chapter}-${verse}`;
     const book = ALL_BIBLE_BOOKS.find(b => b.name.toLowerCase() === bookName.toLowerCase());
     const isOT = book?.testament === 'OT';
 
-    const originalText = isOT ? (hebrewData[key] || '') : (greekData[key] || '');
+    const originalText = isOT ? (hebrewData[key] || '') : (activeGreekData[key] || '');
     const englishText = findVerse(kjvData, bookName, chapter, verse) || '';
     const language = isOT ? 'hebrew' : 'greek';
 
     return { originalText, englishText, language };
-  }, [hebrewData, greekData, kjvData, findVerse]);
+  }, [hebrewData, activeGreekData, kjvData, findVerse]);
 
   const getTranslationVerse = useCallback((translation: TranslationKey, bookName: string, chapter: number, verse: number): string | null => {
     if (translation === 'kjv') {
@@ -634,7 +713,7 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
       // Hebrew verse number: offset by the superscription count
       const hebrewVerseNum = v + hebrewOffset;
       const hebrewKey = `${bookId}-${chapter}-${hebrewVerseNum}`;
-      const originalText = isOT ? (hebrewData[hebrewKey] || '') : (greekData[`${bookId}-${chapter}-${v}`] || '');
+      const originalText = isOT ? (hebrewData[hebrewKey] || '') : (activeGreekData[`${bookId}-${chapter}-${v}`] || '');
 
       // English text: for JPS, adjust verse number since JPS follows Hebrew numbering
       let englishText: string;
@@ -654,7 +733,7 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
     }
 
     return result;
-  }, [hebrewData, greekData, kjvData, getVerseCount, getTranslationVerse, findVerse]);
+  }, [hebrewData, activeGreekData, kjvData, getVerseCount, getTranslationVerse, findVerse]);
 
   const searchVerses = useCallback((query: string, limit: number): SearchResult[] => {
     if (!kjvData || !query || query.length < 2) return [];
@@ -789,6 +868,9 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
     getTranslationVerse,
     getBookByName,
     searchVerses,
+    // Greek text tradition
+    greekTextTradition,
+    setGreekTextTradition,
     // Apocrypha
     showApocrypha,
     setShowApocrypha,
@@ -836,6 +918,9 @@ export function useScripture(): ScriptureContextValue {
       getTranslationVerse: () => null,
       getBookByName: () => null,
       searchVerses: () => [],
+      // Greek text tradition fallbacks
+      greekTextTradition: 'sblgnt' as GreekTextTradition,
+      setGreekTextTradition: () => {},
       // Apocrypha fallbacks
       showApocrypha: false,
       setShowApocrypha: () => {},

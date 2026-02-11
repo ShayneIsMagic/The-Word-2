@@ -18,11 +18,13 @@ import {
   AVAILABLE_TRANSLATIONS,
   APOCRYPHA_BOOKS,
   APOCRYPHA_TRANSLATIONS,
+  GREEK_TEXT_TRADITIONS,
   type BibleBook,
   type ApocryphaBook,
   type DSSBook,
   type TranslationKey,
   type ApocryphaTranslationKey,
+  type GreekTextTradition,
 } from '@/context/ScriptureContext';
 import { ThemeToggle } from '@/components/ThemeProvider';
 
@@ -34,6 +36,7 @@ const PRIMARY_TRANSLATIONS: TranslationKey[] = ['kjv', 'esv', 'net', 'leb', 'gen
 const KJV_FAMILY: TranslationKey[] = ['mkjv', 'kjvpce', 'akjv'];
 const LITERAL_TRANSLATIONS: TranslationKey[] = ['litv', 'ylt', 'asv', 'darby'];
 const OTHER_TRANSLATIONS: TranslationKey[] = ['bsb', 'jps', 'drc', 'webster', 'bbe', 'nheb'];
+const NON_ENGLISH_TRANSLATIONS: TranslationKey[] = ['french-lxx', 'german-na28'];
 
 // ============================================================================
 // Hebrew/Greek Pronunciation Data (expanded with cross-translation comparisons)
@@ -634,6 +637,12 @@ export default function ScriptureReader() {
                         return info ? <option key={key} value={key}>{info.abbr} - {info.name}</option> : null;
                       })}
                     </optgroup>
+                    <optgroup label="🌍 Non-English">
+                      {NON_ENGLISH_TRANSLATIONS.map(key => {
+                        const info = getTranslationInfo(key);
+                        return info ? <option key={key} value={key}>{info.abbr} - {info.name}</option> : null;
+                      })}
+                    </optgroup>
                   </select>
                 </div>
 
@@ -679,6 +688,12 @@ export default function ScriptureReader() {
                       </optgroup>
                       <optgroup label="📚 Other">
                         {OTHER_TRANSLATIONS.map(key => {
+                          const info = getTranslationInfo(key);
+                          return info ? <option key={key} value={key}>{info.abbr} - {info.name}</option> : null;
+                        })}
+                      </optgroup>
+                      <optgroup label="🌍 Non-English">
+                        {NON_ENGLISH_TRANSLATIONS.map(key => {
                           const info = getTranslationInfo(key);
                           return info ? <option key={key} value={key}>{info.abbr} - {info.name}</option> : null;
                         })}
@@ -792,6 +807,25 @@ export default function ScriptureReader() {
                   }`} />
                 </button>
               </div>
+
+              {/* Greek Text Tradition Selector (NT only) */}
+              {selectedBook?.testament === 'NT' && (
+                <div className="mb-3">
+                  <label className="text-sm text-gray-700 dark:text-gray-300 mb-1 block">Greek Text Tradition</label>
+                  <select
+                    value={scripture.greekTextTradition}
+                    onChange={(e) => scripture.setGreekTextTradition(e.target.value as GreekTextTradition)}
+                    className="w-full text-sm bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-md px-3 py-1.5 text-gray-800 dark:text-gray-200"
+                  >
+                    {GREEK_TEXT_TRADITIONS.map(t => (
+                      <option key={t.key} value={t.key}>{t.abbr} — {t.name}</option>
+                    ))}
+                  </select>
+                  <p className="text-[10px] text-gray-400 dark:text-gray-500 mt-1">
+                    {GREEK_TEXT_TRADITIONS.find(t => t.key === scripture.greekTextTradition)?.description}
+                  </p>
+                </div>
+              )}
 
               {/* Selected Word Display */}
               {selectedWord && (
@@ -1152,7 +1186,7 @@ export default function ScriptureReader() {
               <div className="px-4 py-3 border-r border-gray-200 dark:border-gray-700">
                 <h3 className="font-semibold text-[#00457c] dark:text-blue-300 flex items-center space-x-2">
                   <span className="text-lg">🔤</span>
-                  <span>{selectedBook?.testament === 'OT' ? 'Hebrew (WLC)' : 'Greek (SBLGNT)'}</span>
+                  <span>{selectedBook?.testament === 'OT' ? 'Hebrew (WLC)' : `Greek (${GREEK_TEXT_TRADITIONS.find(t => t.key === scripture.greekTextTradition)?.abbr || 'SBLGNT'})`}</span>
                 </h3>
                 <p className="text-xs text-gray-500 dark:text-gray-400">Original Language</p>
               </div>

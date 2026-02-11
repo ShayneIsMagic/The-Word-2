@@ -1,0 +1,1 @@
+public/lib/original-texts/*.json filter=lfs diff=lfs merge=lfs -text
