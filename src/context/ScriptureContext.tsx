@@ -9,10 +9,20 @@ import React, { createContext, useContext, useState, useEffect, ReactNode, useCa
 export interface BibleBook {
   id: string;
   name: string;
-  testament: 'OT' | 'NT';
+  testament: 'OT' | 'NT' | 'DC';  // DC = Deuterocanonical / Apocrypha
   chapters: number;
   abbreviation: string;
   category?: string;
+}
+
+export interface ApocryphaBook extends BibleBook {
+  testament: 'DC';
+  bookid: number;  // bolls.life book ID
+  originalLanguage: 'hebrew' | 'aramaic' | 'greek';
+  originalLanguageNote: string;
+  dateComposed: string;
+  manuscriptEvidence: string[];
+  dssFragments: string[];
 }
 
 export interface SearchResult {
@@ -64,6 +74,112 @@ export const AVAILABLE_TRANSLATIONS: TranslationInfo[] = [
 export const LICENSED_TRANSLATIONS_NOTE = `Some translations (NIV, NRSV, NASB, NA28, UBS) are copyrighted and cannot be bundled.
 Use external links to read these on their respective websites.
 All translations included in this app are public domain or openly licensed.`;
+
+// ============================================================================
+// Apocrypha / Deuterocanonical Translations
+// ============================================================================
+
+export type ApocryphaTranslationKey = 'kjv-apoc' | 'lxxe' | 'nrsvce' | 'nabre' | 'cevd' | 'rsv2ce' | 'lxx-greek';
+
+// ============================================================================
+// Dead Sea Scrolls Types
+// ============================================================================
+
+export interface DSSSection {
+  name: string;
+  chapters?: string;
+  description?: string;
+}
+
+export interface DSSExternalLink {
+  label: string;
+  url: string;
+}
+
+export interface DSSBook {
+  id: string;
+  name: string;
+  abbreviation: string;
+  category: string;
+  original_language: string;
+  translation?: string;
+  source?: string;
+  license?: string;
+  date_composed: string;
+  qumran_refs: string;
+  sections?: DSSSection[];
+  significance?: string;
+  external_links?: DSSExternalLink[];
+  chapters: Array<{ chapter: number; verses: Array<{ verse: number; text: string }> }>;
+  total_chapters: number;
+  total_verses: number;
+  text_status?: 'metadata_only';
+  text_note?: string;
+}
+
+export interface DSSCollection {
+  info: {
+    collection: string;
+    books_with_full_text: number;
+    books_with_metadata_only: number;
+    total_verses: number;
+    academic_sources: string[];
+    copyright_note: string;
+  };
+  books: DSSBook[];
+}
+
+export interface ApocryphaTranslationInfo {
+  key: ApocryphaTranslationKey;
+  name: string;
+  abbr: string;
+  file: string;
+  language: 'english' | 'greek';
+  license: string;
+}
+
+export const APOCRYPHA_TRANSLATIONS: ApocryphaTranslationInfo[] = [
+  { key: 'kjv-apoc', name: 'King James Version (1611)', abbr: 'KJV', file: 'apocrypha-kjv.json', language: 'english', license: 'Public Domain' },
+  { key: 'lxxe', name: "Brenton's English Septuagint (1851)", abbr: 'LXXE', file: 'apocrypha-lxxe.json', language: 'english', license: 'Public Domain' },
+  { key: 'nrsvce', name: 'NRSV Catholic Edition (1993)', abbr: 'NRSVCE', file: 'apocrypha-nrsvce.json', language: 'english', license: 'Copyrighted' },
+  { key: 'nabre', name: 'New American Bible Revised Ed.', abbr: 'NABRE', file: 'apocrypha-nabre.json', language: 'english', license: 'Copyrighted' },
+  { key: 'cevd', name: 'Contemporary English Version', abbr: 'CEVD', file: 'apocrypha-cevd.json', language: 'english', license: 'Copyrighted' },
+  { key: 'rsv2ce', name: 'RSV Catholic Edition', abbr: 'RSV2CE', file: 'apocrypha-rsv2ce.json', language: 'english', license: 'Copyrighted' },
+  { key: 'lxx-greek', name: 'Septuagint Greek (Rahlfs)', abbr: 'LXX', file: 'apocrypha-lxx-greek.json', language: 'greek', license: 'Public Domain' },
+];
+
+// ============================================================================
+// Apocrypha / Deuterocanonical Books (Academic Metadata)
+// ============================================================================
+
+export const APOCRYPHA_BOOKS: ApocryphaBook[] = [
+  // Historical
+  { id: '1-esdras', name: '1 Esdras', testament: 'DC', chapters: 9, abbreviation: '1 Esd', category: 'Historical', bookid: 67, originalLanguage: 'greek', originalLanguageNote: 'Composed in Greek; parallel to Ezra-Nehemiah with additions', dateComposed: '~150 BC', manuscriptEvidence: ['Septuagint codices (Vaticanus, Alexandrinus, Sinaiticus)'], dssFragments: [] },
+  { id: 'tobit', name: 'Tobit', testament: 'DC', chapters: 14, abbreviation: 'Tob', category: 'Historical', bookid: 68, originalLanguage: 'aramaic', originalLanguageNote: 'Written in Aramaic; Dead Sea Scrolls fragments confirm (4Q196-200: 4 Aramaic, 1 Hebrew)', dateComposed: '~200 BC', manuscriptEvidence: ['Septuagint (two recensions)', 'Vulgate'], dssFragments: ['4Q196 (Aramaic)', '4Q197 (Aramaic)', '4Q198 (Aramaic)', '4Q199 (Aramaic)', '4Q200 (Hebrew)'] },
+  { id: 'judith', name: 'Judith', testament: 'DC', chapters: 16, abbreviation: 'Jdt', category: 'Historical', bookid: 69, originalLanguage: 'hebrew', originalLanguageNote: 'Likely composed in Hebrew (Jerome attested an Aramaic copy); original lost', dateComposed: '~150-100 BC', manuscriptEvidence: ['Septuagint codices', 'Old Latin', 'Vulgate'], dssFragments: [] },
+  { id: '1-maccabees', name: '1 Maccabees', testament: 'DC', chapters: 16, abbreviation: '1 Macc', category: 'Historical', bookid: 74, originalLanguage: 'hebrew', originalLanguageNote: 'Composed in Hebrew (attested by Jerome and Origen); Hebrew original lost', dateComposed: '~104-63 BC', manuscriptEvidence: ['Septuagint codices (Sinaiticus, Alexandrinus)', 'Josephus paraphrase'], dssFragments: [] },
+  { id: '2-maccabees', name: '2 Maccabees', testament: 'DC', chapters: 15, abbreviation: '2 Macc', category: 'Historical', bookid: 75, originalLanguage: 'greek', originalLanguageNote: 'Composed in Greek; epitome of Jason of Cyrene\'s 5-volume history', dateComposed: '~124-63 BC', manuscriptEvidence: ['Septuagint codices (Alexandrinus, Venetus)'], dssFragments: [] },
+  { id: '3-maccabees', name: '3 Maccabees', testament: 'DC', chapters: 7, abbreviation: '3 Macc', category: 'Historical', bookid: 76, originalLanguage: 'greek', originalLanguageNote: 'Composed in Greek; unrelated to the Maccabean revolt despite the name', dateComposed: '~1st century BC', manuscriptEvidence: ['Septuagint (Alexandrinus, Venetus)'], dssFragments: [] },
+  { id: '4-maccabees', name: '4 Maccabees', testament: 'DC', chapters: 18, abbreviation: '4 Macc', category: 'Philosophical', bookid: 80, originalLanguage: 'greek', originalLanguageNote: 'Composed in Greek; philosophical discourse on reason vs. passions', dateComposed: '~1st century AD', manuscriptEvidence: ['Septuagint (Sinaiticus, Alexandrinus, Venetus)'], dssFragments: [] },
+  { id: '2-esdras', name: '2 Esdras (4 Ezra)', testament: 'DC', chapters: 16, abbreviation: '2 Esd', category: 'Apocalyptic', bookid: 77, originalLanguage: 'hebrew', originalLanguageNote: 'Core (ch. 3-14) composed in Hebrew → Greek (lost) → Latin. Ch. 1-2, 15-16 are later Christian additions', dateComposed: '~100 AD (core)', manuscriptEvidence: ['Latin Vulgate (primary witness)', 'Syriac', 'Ethiopic'], dssFragments: [] },
+  // Wisdom
+  { id: 'wisdom-of-solomon', name: 'Wisdom of Solomon', testament: 'DC', chapters: 19, abbreviation: 'Wis', category: 'Wisdom', bookid: 70, originalLanguage: 'greek', originalLanguageNote: 'Composed in Greek (Alexandrian provenance); no Semitic original exists', dateComposed: '~50 BC – 40 AD', manuscriptEvidence: ['Septuagint codices', 'Papyrus fragments'], dssFragments: [] },
+  { id: 'sirach', name: 'Sirach (Ecclesiasticus)', testament: 'DC', chapters: 51, abbreviation: 'Sir', category: 'Wisdom', bookid: 71, originalLanguage: 'hebrew', originalLanguageNote: 'Written in Hebrew by Ben Sira (~180 BC); ~68% of Hebrew recovered from Cairo Genizah + Dead Sea Scrolls + Masada scroll', dateComposed: '~180 BC', manuscriptEvidence: ['Cairo Genizah MSS A-F', 'Masada scroll', 'Septuagint'], dssFragments: ['2Q18 (Sir 6:20-31)', '11Q5 col. XXI (Sir 51:13-30)'] },
+  // Prophetic
+  { id: 'baruch', name: 'Baruch', testament: 'DC', chapters: 6, abbreviation: 'Bar', category: 'Prophetic', bookid: 73, originalLanguage: 'hebrew', originalLanguageNote: 'Chapters 1-5 likely composed in Hebrew and Greek; no Semitic original survives', dateComposed: '~200-60 BC (composite)', manuscriptEvidence: ['Septuagint codices'], dssFragments: [] },
+  { id: 'epistle-of-jeremiah', name: 'Epistle of Jeremiah', testament: 'DC', chapters: 1, abbreviation: 'EpJer', category: 'Prophetic', bookid: 72, originalLanguage: 'hebrew', originalLanguageNote: 'Likely composed in Hebrew or Aramaic; earliest witness is Greek fragment from Qumran (7Q2)', dateComposed: '~300-100 BC', manuscriptEvidence: ['7Q2 (Greek papyrus from Qumran)', 'Septuagint codices'], dssFragments: ['7Q2 (Greek)'] },
+  // Additions to Daniel
+  { id: 'prayer-of-azariah', name: 'Prayer of Azariah & Song of Three', testament: 'DC', chapters: 1, abbreviation: 'PrAzar', category: 'Additions to Daniel', bookid: 88, originalLanguage: 'hebrew', originalLanguageNote: 'Likely composed in Hebrew or Aramaic; inserted into Daniel 3:23-24 in Greek/Latin Bibles', dateComposed: '~2nd-1st century BC', manuscriptEvidence: ['Septuagint (Theodotion and OG)', 'Papyrus 967'], dssFragments: [] },
+  { id: 'susanna', name: 'Susanna', testament: 'DC', chapters: 1, abbreviation: 'Sus', category: 'Additions to Daniel', bookid: 78, originalLanguage: 'greek', originalLanguageNote: 'Debated origin; wordplay in Greek suggests Greek composition. Daniel ch. 13 in Catholic Bibles', dateComposed: '~2nd-1st century BC', manuscriptEvidence: ['Septuagint (Theodotion preferred)', 'Old Greek'], dssFragments: [] },
+  { id: 'bel-and-dragon', name: 'Bel and the Dragon', testament: 'DC', chapters: 1, abbreviation: 'Bel', category: 'Additions to Daniel', bookid: 79, originalLanguage: 'greek', originalLanguageNote: 'Likely composed in Greek or Aramaic; Daniel ch. 14 in Catholic Bibles', dateComposed: '~2nd-1st century BC', manuscriptEvidence: ['Septuagint (Theodotion and OG)', 'Papyrus 967'], dssFragments: [] },
+  // Additions
+  { id: 'esther-greek', name: 'Additions to Esther', testament: 'DC', chapters: 10, abbreviation: 'AddEsth', category: 'Additions', bookid: 81, originalLanguage: 'greek', originalLanguageNote: 'Greek expansions of Hebrew Esther; adds ~107 verses (prayers, letters, religious content)', dateComposed: '~114 BC or 2nd-1st century BC', manuscriptEvidence: ['Septuagint (two Greek versions)'], dssFragments: [] },
+  // Liturgical
+  { id: 'prayer-of-manasseh', name: 'Prayer of Manasseh', testament: 'DC', chapters: 1, abbreviation: 'PrMan', category: 'Liturgical', bookid: 83, originalLanguage: 'greek', originalLanguageNote: 'Likely composed in Greek; expansion of 2 Chronicles 33:11-13', dateComposed: '~2nd-1st century BC', manuscriptEvidence: ['Apostolic Constitutions', 'Codex Alexandrinus (in Odes)'], dssFragments: [] },
+  // Poetry
+  { id: 'psalms-of-solomon', name: 'Psalms of Solomon', testament: 'DC', chapters: 18, abbreviation: 'PsSol', category: 'Poetry', bookid: 85, originalLanguage: 'hebrew', originalLanguageNote: 'Composed in Hebrew; Hebrew original lost. Greek and Syriac survive', dateComposed: '~63-30 BC', manuscriptEvidence: ['Greek manuscripts (11 MSS)', 'Syriac translation'], dssFragments: [] },
+  { id: 'odes', name: 'Odes', testament: 'DC', chapters: 14, abbreviation: 'Odes', category: 'Liturgical', bookid: 86, originalLanguage: 'greek', originalLanguageNote: 'Compilation of biblical and extrabiblical prayers/hymns for liturgical use', dateComposed: 'Compilation ~5th century AD; individual odes much earlier', manuscriptEvidence: ['Codex Alexandrinus (appended to Psalms)'], dssFragments: [] },
+];
 
 // ============================================================================
 // All 66 Bible Books
@@ -201,13 +317,33 @@ interface KJVBible { translation: string; books: KJVBook[]; }
 interface ScriptureContextValue {
   isLoading: boolean;
   isLoaded: boolean;
-  getBooksByTestament: (testament: 'OT' | 'NT') => BibleBook[];
+  getBooksByTestament: (testament: 'OT' | 'NT' | 'DC') => BibleBook[];
   getVerseCount: (bookName: string, chapter: number) => number;
-  getChapterVerses: (bookName: string, chapter: number, translation: TranslationKey) => Array<{ verse: number; originalText: string; englishText: string }>;
+  getChapterVerses: (bookName: string, chapter: number, translation: TranslationKey) => Array<{ verse: number; originalText: string; englishText: string; superscription?: string }>;
   getVerseData: (bookName: string, chapter: number, verse: number) => { originalText: string; englishText: string; language: string };
   getTranslationVerse: (translation: TranslationKey, bookName: string, chapter: number, verse: number) => string | null;
   getBookByName: (name: string) => BibleBook | null;
   searchVerses: (query: string, limit: number) => SearchResult[];
+  // Apocrypha
+  showApocrypha: boolean;
+  setShowApocrypha: (show: boolean) => void;
+  apocryphaLoading: boolean;
+  apocryphaLoaded: boolean;
+  getApocryphaBooks: () => ApocryphaBook[];
+  getApocryphaBookById: (id: string) => ApocryphaBook | null;
+  getApocryphaChapterVerses: (bookId: string, chapter: number, translation: ApocryphaTranslationKey) => Array<{ verse: number; text: string; originalText?: string }>;
+  getApocryphaVerseCount: (bookId: string, chapter: number) => number;
+  getAvailableApocryphaTranslations: (bookId: string) => ApocryphaTranslationInfo[];
+  // Dead Sea Scrolls
+  showDSS: boolean;
+  setShowDSS: (show: boolean) => void;
+  dssLoading: boolean;
+  dssLoaded: boolean;
+  getDSSBooks: () => DSSBook[];
+  getDSSBookById: (id: string) => DSSBook | null;
+  getDSSChapterVerses: (bookId: string, chapter: number) => Array<{ verse: number; text: string }>;
+  getDSSVerseCount: (bookId: string, chapter: number) => number;
+  getDSSCollection: () => DSSCollection | null;
 }
 
 const ScriptureContext = createContext<ScriptureContextValue | null>(null);
@@ -215,6 +351,31 @@ const ScriptureContext = createContext<ScriptureContextValue | null>(null);
 // ============================================================================
 // Provider
 // ============================================================================
+
+// ============================================================================
+// Apocrypha data structure (same as KJV format but with metadata)
+// ============================================================================
+
+interface ApocryphaFileBook {
+  name: string;
+  id: string;
+  bookid: number;
+  category: string;
+  original_language: string;
+  original_language_note: string;
+  date_composed: string;
+  manuscript_evidence: string[];
+  dss_fragments: string[];
+  chapters: { chapter: number; verses: { verse: number; text: string }[] }[];
+}
+
+interface ApocryphaFile {
+  translation: string;
+  translation_code: string;
+  language: string;
+  type: string;
+  books: ApocryphaFileBook[];
+}
 
 export function ScriptureProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -225,6 +386,18 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
   const [hebrewData, setHebrewData] = useState<Record<string, string>>({});
   const [greekData, setGreekData] = useState<Record<string, string>>({});
   const [translationCache, setTranslationCache] = useState<Record<string, KJVBible>>({});
+
+  // Apocrypha state
+  const [showApocrypha, setShowApocryphaState] = useState(false);
+  const [apocryphaLoading, setApocryphaLoading] = useState(false);
+  const [apocryphaLoaded, setApocryphaLoaded] = useState(false);
+  const [apocryphaCache, setApocryphaCache] = useState<Record<string, ApocryphaFile>>({});
+
+  // Dead Sea Scrolls state (completely separate from Apocrypha)
+  const [showDSS, setShowDSSState] = useState(false);
+  const [dssLoading, setDSSLoading] = useState(false);
+  const [dssLoaded, setDSSLoaded] = useState(false);
+  const [dssCollection, setDSSCollection] = useState<DSSCollection | null>(null);
 
   // Load core data on mount
   useEffect(() => {
@@ -267,6 +440,97 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
     loadCoreData();
   }, []);
 
+  // Load preferences from localStorage on mount
+  useEffect(() => {
+    try {
+      const savedApoc = localStorage.getItem('showApocrypha');
+      if (savedApoc === 'true') setShowApocryphaState(true);
+      const savedDSS = localStorage.getItem('showDeadSeaScrolls');
+      if (savedDSS === 'true') setShowDSSState(true);
+    } catch {
+      // localStorage not available
+    }
+  }, []);
+
+  // Toggle Apocrypha preference
+  const setShowApocrypha = useCallback((show: boolean) => {
+    setShowApocryphaState(show);
+    try { localStorage.setItem('showApocrypha', String(show)); } catch {}
+  }, []);
+
+  // Lazy-load Apocrypha data when enabled
+  useEffect(() => {
+    if (!showApocrypha || apocryphaLoaded || apocryphaLoading) return;
+
+    async function loadApocrypha() {
+      setApocryphaLoading(true);
+      try {
+        // Load KJV Apocrypha (primary English) and LXX Greek (original language) first
+        const [kjvApocRes, lxxGreekRes] = await Promise.all([
+          fetch('/lib/original-texts/apocrypha-kjv.json').then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch('/lib/original-texts/apocrypha-lxx-greek.json').then(r => r.ok ? r.json() : null).catch(() => null),
+        ]);
+
+        const cache: Record<string, ApocryphaFile> = {};
+        if (kjvApocRes) cache['kjv-apoc'] = kjvApocRes;
+        if (lxxGreekRes) cache['lxx-greek'] = lxxGreekRes;
+        setApocryphaCache(cache);
+        setApocryphaLoaded(true);
+      } catch (err) {
+        console.error('Error loading Apocrypha data:', err);
+        setApocryphaLoaded(true);
+      } finally {
+        setApocryphaLoading(false);
+      }
+    }
+    loadApocrypha();
+  }, [showApocrypha, apocryphaLoaded, apocryphaLoading]);
+
+  // Toggle DSS preference
+  const setShowDSS = useCallback((show: boolean) => {
+    setShowDSSState(show);
+    try { localStorage.setItem('showDeadSeaScrolls', String(show)); } catch {}
+  }, []);
+
+  // Lazy-load DSS data when enabled
+  useEffect(() => {
+    if (!showDSS || dssLoaded || dssLoading) return;
+
+    async function loadDSS() {
+      setDSSLoading(true);
+      try {
+        const res = await fetch('/lib/original-texts/dss-texts.json');
+        if (res.ok) {
+          const data: DSSCollection = await res.json();
+          setDSSCollection(data);
+        }
+        setDSSLoaded(true);
+      } catch (err) {
+        console.error('Error loading DSS data:', err);
+        setDSSLoaded(true);
+      } finally {
+        setDSSLoading(false);
+      }
+    }
+    loadDSS();
+  }, [showDSS, dssLoaded, dssLoading]);
+
+  // Load an additional Apocrypha translation on demand
+  const loadApocryphaTranslation = useCallback(async (key: ApocryphaTranslationKey): Promise<ApocryphaFile | null> => {
+    if (apocryphaCache[key]) return apocryphaCache[key];
+    const info = APOCRYPHA_TRANSLATIONS.find(t => t.key === key);
+    if (!info) return null;
+    try {
+      const res = await fetch(`/lib/original-texts/${info.file}`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      setApocryphaCache(prev => ({ ...prev, [key]: data }));
+      return data;
+    } catch {
+      return null;
+    }
+  }, [apocryphaCache]);
+
   // Load an additional translation on demand
   const loadTranslation = useCallback(async (key: TranslationKey): Promise<KJVBible | null> => {
     if (key === 'kjv') return kjvData;
@@ -307,9 +571,10 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
   }, [kjvData]);
 
   // ---- API methods ----
-  const getBooksByTestament = useCallback((testament: 'OT' | 'NT'): BibleBook[] => {
+  const getBooksByTestament = useCallback((testament: 'OT' | 'NT' | 'DC'): BibleBook[] => {
+    if (testament === 'DC') return showApocrypha ? APOCRYPHA_BOOKS : [];
     return ALL_BIBLE_BOOKS.filter(b => b.testament === testament);
-  }, []);
+  }, [showApocrypha]);
 
   const getBookByName = useCallback((name: string): BibleBook | null => {
     return ALL_BIBLE_BOOKS.find(b => b.name.toLowerCase() === name.toLowerCase()) || null;
@@ -415,6 +680,105 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
     return results;
   }, [kjvData]);
 
+  // ---- Apocrypha API methods ----
+
+  const getApocryphaBooks = useCallback((): ApocryphaBook[] => {
+    if (!showApocrypha) return [];
+    return APOCRYPHA_BOOKS;
+  }, [showApocrypha]);
+
+  const getApocryphaBookById = useCallback((id: string): ApocryphaBook | null => {
+    return APOCRYPHA_BOOKS.find(b => b.id === id) || null;
+  }, []);
+
+  const getApocryphaVerseCount = useCallback((bookId: string, chapter: number): number => {
+    // Use KJV Apocrypha as the default source for verse counts
+    const kjvApoc = apocryphaCache['kjv-apoc'];
+    if (!kjvApoc) return 30;
+    const book = kjvApoc.books.find(b => b.id === bookId);
+    if (!book) return 30;
+    const ch = book.chapters.find(c => c.chapter === chapter);
+    return ch?.verses.length || 30;
+  }, [apocryphaCache]);
+
+  const getApocryphaChapterVerses = useCallback((bookId: string, chapter: number, translation: ApocryphaTranslationKey): Array<{ verse: number; text: string; originalText?: string }> => {
+    const result: Array<{ verse: number; text: string; originalText?: string }> = [];
+
+    // Get the requested translation data
+    const translationData = apocryphaCache[translation];
+    const lxxData = apocryphaCache['lxx-greek'];
+
+    // Find the book in the requested translation
+    const book = translationData?.books.find(b => b.id === bookId);
+    const lxxBook = lxxData?.books.find(b => b.id === bookId);
+    if (!book) {
+      // Try loading the translation on demand
+      loadApocryphaTranslation(translation);
+      return [];
+    }
+
+    const ch = book.chapters.find(c => c.chapter === chapter);
+    const lxxCh = lxxBook?.chapters.find(c => c.chapter === chapter);
+    if (!ch) return [];
+
+    for (const v of ch.verses) {
+      const lxxVerse = lxxCh?.verses.find(lv => lv.verse === v.verse);
+      result.push({
+        verse: v.verse,
+        text: v.text,
+        originalText: lxxVerse?.text || undefined,
+      });
+    }
+
+    return result;
+  }, [apocryphaCache, loadApocryphaTranslation]);
+
+  const getAvailableApocryphaTranslations = useCallback((bookId: string): ApocryphaTranslationInfo[] => {
+    // Check which translations have this specific book
+    // For now, return all translations — the UI will handle missing books gracefully
+    // We can refine this once we have all data files
+    const meta = APOCRYPHA_BOOKS.find(b => b.id === bookId);
+    if (!meta) return [];
+
+    // All translations that include this bookid
+    // KJV has 15 books, LXXE has 15, NRSVCE/NABRE/RSV2CE have 7, CEVD has 12, LXX has 14
+    // For now return all — the API will return empty verses if a book isn't in a translation
+    return APOCRYPHA_TRANSLATIONS;
+  }, []);
+
+  // ---- Dead Sea Scrolls API methods ----
+
+  const getDSSBooks = useCallback((): DSSBook[] => {
+    if (!showDSS || !dssCollection) return [];
+    return dssCollection.books;
+  }, [showDSS, dssCollection]);
+
+  const getDSSBookById = useCallback((id: string): DSSBook | null => {
+    if (!dssCollection) return null;
+    return dssCollection.books.find(b => b.id === id) || null;
+  }, [dssCollection]);
+
+  const getDSSChapterVerses = useCallback((bookId: string, chapter: number): Array<{ verse: number; text: string }> => {
+    if (!dssCollection) return [];
+    const book = dssCollection.books.find(b => b.id === bookId);
+    if (!book) return [];
+    const ch = book.chapters.find(c => c.chapter === chapter);
+    if (!ch) return [];
+    return ch.verses;
+  }, [dssCollection]);
+
+  const getDSSVerseCount = useCallback((bookId: string, chapter: number): number => {
+    if (!dssCollection) return 0;
+    const book = dssCollection.books.find(b => b.id === bookId);
+    if (!book) return 0;
+    const ch = book.chapters.find(c => c.chapter === chapter);
+    return ch?.verses.length || 0;
+  }, [dssCollection]);
+
+  const getDSSCollection = useCallback((): DSSCollection | null => {
+    return dssCollection;
+  }, [dssCollection]);
+
   const value: ScriptureContextValue = {
     isLoading,
     isLoaded,
@@ -425,6 +789,26 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
     getTranslationVerse,
     getBookByName,
     searchVerses,
+    // Apocrypha
+    showApocrypha,
+    setShowApocrypha,
+    apocryphaLoading,
+    apocryphaLoaded,
+    getApocryphaBooks,
+    getApocryphaBookById,
+    getApocryphaChapterVerses,
+    getApocryphaVerseCount,
+    getAvailableApocryphaTranslations,
+    // Dead Sea Scrolls
+    showDSS,
+    setShowDSS,
+    dssLoading,
+    dssLoaded,
+    getDSSBooks,
+    getDSSBookById,
+    getDSSChapterVerses,
+    getDSSVerseCount,
+    getDSSCollection,
   };
 
   return (
@@ -452,6 +836,26 @@ export function useScripture(): ScriptureContextValue {
       getTranslationVerse: () => null,
       getBookByName: () => null,
       searchVerses: () => [],
+      // Apocrypha fallbacks
+      showApocrypha: false,
+      setShowApocrypha: () => {},
+      apocryphaLoading: false,
+      apocryphaLoaded: false,
+      getApocryphaBooks: () => [],
+      getApocryphaBookById: () => null,
+      getApocryphaChapterVerses: () => [],
+      getApocryphaVerseCount: () => 30,
+      getAvailableApocryphaTranslations: () => [],
+      // Dead Sea Scrolls fallbacks
+      showDSS: false,
+      setShowDSS: () => {},
+      dssLoading: false,
+      dssLoaded: false,
+      getDSSBooks: () => [],
+      getDSSBookById: () => null,
+      getDSSChapterVerses: () => [],
+      getDSSVerseCount: () => 0,
+      getDSSCollection: () => null,
     };
   }
   return ctx;

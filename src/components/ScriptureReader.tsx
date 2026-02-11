@@ -12,7 +12,18 @@ import {
   Cog6ToothIcon,
   ArrowLeftIcon,
 } from '@heroicons/react/24/outline';
-import { useScripture, ALL_BIBLE_BOOKS, AVAILABLE_TRANSLATIONS, type BibleBook, type TranslationKey } from '@/context/ScriptureContext';
+import {
+  useScripture,
+  ALL_BIBLE_BOOKS,
+  AVAILABLE_TRANSLATIONS,
+  APOCRYPHA_BOOKS,
+  APOCRYPHA_TRANSLATIONS,
+  type BibleBook,
+  type ApocryphaBook,
+  type DSSBook,
+  type TranslationKey,
+  type ApocryphaTranslationKey,
+} from '@/context/ScriptureContext';
 import { ThemeToggle } from '@/components/ThemeProvider';
 
 // ============================================================================
@@ -123,8 +134,9 @@ export default function ScriptureReader() {
   const scripture = useScripture();
 
   // Navigation State
-  const [selectedTestament, setSelectedTestament] = useState<'OT' | 'NT'>('OT');
+  const [selectedTestament, setSelectedTestament] = useState<'OT' | 'NT' | 'DC' | 'DSS'>('OT');
   const [selectedBook, setSelectedBook] = useState<BibleBook | null>(null);
+  const [selectedDSSBook, setSelectedDSSBook] = useState<DSSBook | null>(null);
   const [selectedChapter, setSelectedChapter] = useState(1);
   const [sidebarTab, setSidebarTab] = useState<'books' | 'tools'>('books');
 
@@ -133,6 +145,9 @@ export default function ScriptureReader() {
   const [showParallel, setShowParallel] = useState(true);
   const [parallelTranslation, setParallelTranslation] = useState<TranslationKey>('esv');
 
+  // Apocrypha Translation State
+  const [apocryphaTranslation, setApocryphaTranslation] = useState<ApocryphaTranslationKey>('kjv-apoc');
+
   // Tools State
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [showPronunciation, setShowPronunciation] = useState(true);
@@ -140,12 +155,38 @@ export default function ScriptureReader() {
   // Search
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Get books by testament
-  const filteredBooks = scripture.getBooksByTestament(selectedTestament);
+  // Determine if we're viewing Apocrypha or DSS
+  const isApocrypha = selectedTestament === 'DC';
+  const isDSS = selectedTestament === 'DSS';
 
-  // Get chapter verses
-  const chapterVerses = selectedBook 
+  // Get books by testament
+  const filteredBooks = selectedTestament === 'DC'
+    ? scripture.getApocryphaBooks()
+    : selectedTestament === 'DSS'
+      ? [] // DSS uses its own book list
+      : scripture.getBooksByTestament(selectedTestament as 'OT' | 'NT');
+
+  // Get DSS books (separate list)
+  const dssBooks = scripture.getDSSBooks();
+
+  // Get chapter verses (canonical or apocrypha)
+  const chapterVerses = selectedBook && !isApocrypha && !isDSS
     ? scripture.getChapterVerses(selectedBook.name, selectedChapter, primaryTranslation)
+    : [];
+
+  // Get Apocrypha verses if applicable
+  const apocryphaVerses = isApocrypha && selectedBook
+    ? scripture.getApocryphaChapterVerses(selectedBook.id, selectedChapter, apocryphaTranslation)
+    : [];
+
+  // Get LXX Greek for the Apocrypha book (original language)
+  const apocryphaGreekVerses = isApocrypha && selectedBook
+    ? scripture.getApocryphaChapterVerses(selectedBook.id, selectedChapter, 'lxx-greek')
+    : [];
+
+  // Get DSS verses if applicable
+  const dssVerses = isDSS && selectedDSSBook
+    ? scripture.getDSSChapterVerses(selectedDSSBook.id, selectedChapter)
     : [];
 
   // Set default book
@@ -299,8 +340,20 @@ export default function ScriptureReader() {
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
                 }`}
               >
-                Old Testament (39)
+                OT (39)
               </button>
+              {scripture.showApocrypha && (
+                <button
+                  onClick={() => setSelectedTestament('DC')}
+                  className={`flex-1 py-2 text-xs font-medium transition-colors ${
+                    selectedTestament === 'DC'
+                      ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border-b-2 border-amber-600'
+                      : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  }`}
+                >
+                  DC ({APOCRYPHA_BOOKS.length})
+                </button>
+              )}
               <button
                 onClick={() => setSelectedTestament('NT')}
                 className={`flex-1 py-2 text-xs font-medium transition-colors ${
@@ -309,13 +362,196 @@ export default function ScriptureReader() {
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
                 }`}
               >
-                New Testament (27)
+                NT (27)
               </button>
+              {scripture.showDSS && (
+                <button
+                  onClick={() => setSelectedTestament('DSS')}
+                  className={`flex-1 py-2 text-xs font-medium transition-colors ${
+                    selectedTestament === 'DSS'
+                      ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border-b-2 border-emerald-600'
+                      : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  }`}
+                >
+                  DSS
+                </button>
+              )}
             </div>
 
             {/* Book List */}
             <div className="flex-1 overflow-y-auto">
-              {filteredBooks.map((book) => (
+              {/* Category grouping for Apocrypha */}
+              {selectedTestament === 'DC' && (() => {
+                const categories = [...new Set((filteredBooks as ApocryphaBook[]).map(b => b.category))];
+                return categories.map(cat => (
+                  <div key={cat}>
+                    <div className="px-4 py-1.5 bg-amber-100 dark:bg-amber-900/30 text-xs font-semibold text-amber-700 dark:text-amber-300 uppercase tracking-wider border-b border-amber-200 dark:border-amber-700">
+                      {cat}
+                    </div>
+                    {(filteredBooks as ApocryphaBook[]).filter(b => b.category === cat).map((book) => (
+                      <div key={book.id} className="border-b border-gray-100 dark:border-gray-700">
+                        <button
+                          onClick={() => { setSelectedBook(book); setSelectedChapter(1); }}
+                          className={`w-full text-left px-4 py-2 flex items-center justify-between transition-colors text-sm ${
+                            selectedBook?.id === book.id
+                              ? 'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 font-semibold'
+                              : 'hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
+                          }`}
+                        >
+                          <div>
+                            <span>{book.name}</span>
+                            <span className="ml-2 text-[10px] text-gray-400 dark:text-gray-500 uppercase">
+                              {book.originalLanguage}
+                            </span>
+                          </div>
+                          <ChevronRightIcon className="h-3 w-3 text-gray-400" />
+                        </button>
+                        {selectedBook?.id === book.id && (
+                          <>
+                            {/* Academic metadata */}
+                            <div className="px-4 py-2 bg-amber-50/50 dark:bg-amber-900/10 text-xs space-y-1 border-b border-amber-100 dark:border-amber-800">
+                              <p className="text-gray-500 dark:text-gray-400">
+                                <span className="font-semibold">Orig:</span> {book.originalLanguageNote}
+                              </p>
+                              <p className="text-gray-500 dark:text-gray-400">
+                                <span className="font-semibold">Date:</span> {book.dateComposed}
+                              </p>
+                              {book.dssFragments.length > 0 && (
+                                <p className="text-green-600 dark:text-green-400">
+                                  📜 DSS: {book.dssFragments.join(', ')}
+                                </p>
+                              )}
+                            </div>
+                            {/* Chapter Grid */}
+                            <div className="px-3 pb-3 grid grid-cols-6 gap-1 bg-gray-50 dark:bg-gray-800">
+                              {Array.from({ length: book.chapters }, (_, i) => i + 1).map((ch) => (
+                                <button
+                                  key={ch}
+                                  onClick={() => setSelectedChapter(ch)}
+                                  className={`w-full h-7 text-xs rounded transition-colors ${
+                                    selectedChapter === ch
+                                      ? 'bg-amber-600 text-white'
+                                      : 'bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:bg-amber-50 dark:hover:bg-amber-900/30 text-gray-700 dark:text-gray-300'
+                                  }`}
+                                >
+                                  {ch}
+                                </button>
+                              ))}
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ));
+              })()}
+
+              {/* DSS Book List */}
+              {selectedTestament === 'DSS' && (() => {
+                const categories = [...new Set(dssBooks.map(b => b.category))];
+                return categories.map(cat => (
+                  <div key={cat}>
+                    <div className="px-4 py-1.5 bg-emerald-100 dark:bg-emerald-900/30 text-xs font-semibold text-emerald-700 dark:text-emerald-300 uppercase tracking-wider border-b border-emerald-200 dark:border-emerald-700">
+                      {cat}
+                    </div>
+                    {dssBooks.filter(b => b.category === cat).map((book) => (
+                      <div key={book.id} className="border-b border-gray-100 dark:border-gray-700">
+                        <button
+                          onClick={() => { setSelectedDSSBook(book); setSelectedBook(null); setSelectedChapter(1); }}
+                          className={`w-full text-left px-4 py-2 flex items-center justify-between transition-colors text-sm ${
+                            selectedDSSBook?.id === book.id
+                              ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 font-semibold'
+                              : 'hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
+                          }`}
+                        >
+                          <div className="flex-1 min-w-0">
+                            <span className="block truncate">{book.name}</span>
+                            <span className="block text-[10px] text-gray-400 dark:text-gray-500">
+                              {book.abbreviation} • {book.original_language}
+                              {book.total_verses > 0 ? ` • ${book.total_verses} verses` : ' • metadata'}
+                            </span>
+                          </div>
+                          {book.total_verses > 0 ? (
+                            <ChevronRightIcon className="h-3 w-3 text-emerald-400 flex-shrink-0" />
+                          ) : (
+                            <span className="text-[9px] text-gray-400 bg-gray-100 dark:bg-gray-700 px-1.5 py-0.5 rounded flex-shrink-0">INFO</span>
+                          )}
+                        </button>
+                        {selectedDSSBook?.id === book.id && (
+                          <>
+                            {/* DSS Academic metadata */}
+                            <div className="px-4 py-2 bg-emerald-50/50 dark:bg-emerald-900/10 text-xs space-y-1 border-b border-emerald-100 dark:border-emerald-800">
+                              <p className="text-gray-500 dark:text-gray-400">
+                                <span className="font-semibold">Date:</span> {book.date_composed}
+                              </p>
+                              <p className="text-gray-500 dark:text-gray-400">
+                                <span className="font-semibold">Qumran:</span> {book.qumran_refs}
+                              </p>
+                              {book.translation && (
+                                <p className="text-gray-500 dark:text-gray-400">
+                                  <span className="font-semibold">Trans:</span> {book.translation}
+                                </p>
+                              )}
+                              {book.text_status === 'metadata_only' && (
+                                <p className="text-orange-500 dark:text-orange-400 text-[10px]">
+                                  ⚠️ Full text under copyright — summaries &amp; links provided
+                                </p>
+                              )}
+                            </div>
+                            {/* Chapter Grid (only for books with content) */}
+                            {book.total_verses > 0 && (
+                              <div className="px-3 pb-3 grid grid-cols-8 gap-1 bg-gray-50 dark:bg-gray-800">
+                                {Array.from({ length: book.total_chapters }, (_, i) => i + 1).map((ch) => (
+                                  <button
+                                    key={ch}
+                                    onClick={() => setSelectedChapter(ch)}
+                                    className={`w-full h-7 text-xs rounded transition-colors ${
+                                      selectedChapter === ch
+                                        ? 'bg-emerald-600 text-white'
+                                        : 'bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 text-gray-700 dark:text-gray-300'
+                                    }`}
+                                  >
+                                    {ch}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                            {/* External links */}
+                            {book.external_links && book.external_links.length > 0 && (
+                              <div className="px-4 pb-2 space-y-1">
+                                {book.external_links.map((link, i) => (
+                                  <a key={i} href={link.url} target="_blank" rel="noopener noreferrer"
+                                    className="block text-xs text-emerald-600 dark:text-emerald-400 hover:underline">
+                                    🔗 {link.label}
+                                  </a>
+                                ))}
+                              </div>
+                            )}
+                            {/* Sections info */}
+                            {book.sections && book.sections.length > 0 && (
+                              <div className="px-4 pb-3">
+                                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Sections:</p>
+                                <div className="space-y-0.5">
+                                  {book.sections.map((sec, i) => (
+                                    <div key={i} className="text-xs text-gray-600 dark:text-gray-400">
+                                      <span className="font-medium">{sec.name}</span>
+                                      {sec.chapters && <span className="text-gray-400"> (Ch. {sec.chapters})</span>}
+                                      {sec.description && <span className="text-gray-400"> — {sec.description}</span>}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ));
+              })()}
+
+              {/* Standard book list for OT/NT */}
+              {selectedTestament !== 'DC' && selectedTestament !== 'DSS' && filteredBooks.map((book) => (
                 <div key={book.id} className="border-b border-gray-100 dark:border-gray-700">
                   <button
                     onClick={() => {
@@ -453,11 +689,94 @@ export default function ScriptureReader() {
               </div>
             </div>
 
+            {/* Apocrypha / Deuterocanonical Toggle */}
+            <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-4 border border-amber-200 dark:border-amber-700">
+              <h3 className="font-semibold text-amber-700 dark:text-amber-300 mb-2 flex items-center space-x-2">
+                <span className="text-lg">📜</span>
+                <span>Deuterocanonical / Apocrypha</span>
+              </h3>
+              <p className="text-xs text-amber-600 dark:text-amber-400 mb-3">
+                Show Apocrypha, Pseudepigrapha, and additional books between OT &amp; NT
+              </p>
+              <div className="flex items-center justify-between">
+                <label className="text-sm text-gray-700 dark:text-gray-300">Show Apocrypha</label>
+                <button
+                  onClick={() => scripture.setShowApocrypha(!scripture.showApocrypha)}
+                  className={`w-12 h-6 rounded-full transition-colors ${
+                    scripture.showApocrypha ? 'bg-amber-600' : 'bg-gray-300 dark:bg-gray-600'
+                  }`}
+                >
+                  <div className={`w-5 h-5 bg-white rounded-full shadow transform transition-transform ${
+                    scripture.showApocrypha ? 'translate-x-6' : 'translate-x-0.5'
+                  }`} />
+                </button>
+              </div>
+              {scripture.showApocrypha && scripture.apocryphaLoading && (
+                <p className="text-xs text-amber-500 mt-2 animate-pulse">Loading Apocrypha data...</p>
+              )}
+              {scripture.showApocrypha && scripture.apocryphaLoaded && (
+                <p className="text-xs text-green-600 dark:text-green-400 mt-2">
+                  ✅ {APOCRYPHA_BOOKS.length} books loaded • {APOCRYPHA_TRANSLATIONS.length} translations
+                </p>
+              )}
+
+              {/* Apocrypha Translation Picker (only when viewing DC books) */}
+              {isApocrypha && scripture.showApocrypha && (
+                <div className="mt-3 pt-3 border-t border-amber-200 dark:border-amber-700">
+                  <label className="text-xs text-amber-600 dark:text-amber-400 uppercase tracking-wider">Apocrypha Translation</label>
+                  <select
+                    value={apocryphaTranslation}
+                    onChange={(e) => setApocryphaTranslation(e.target.value as ApocryphaTranslationKey)}
+                    className="w-full mt-1 px-3 py-2 text-sm border border-amber-300 dark:border-amber-600 rounded-lg bg-white dark:bg-gray-700 dark:text-gray-200 focus:ring-2 focus:ring-amber-500"
+                  >
+                    {APOCRYPHA_TRANSLATIONS.filter(t => t.language === 'english').map(t => (
+                      <option key={t.key} value={t.key}>{t.abbr} — {t.name}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+            </div>
+
+            {/* Dead Sea Scrolls Toggle */}
+            <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-4 border border-emerald-200 dark:border-emerald-700">
+              <h3 className="font-semibold text-emerald-700 dark:text-emerald-300 mb-2 flex items-center space-x-2">
+                <span className="text-lg">🏺</span>
+                <span>Dead Sea Scrolls</span>
+              </h3>
+              <p className="text-xs text-emerald-600 dark:text-emerald-400 mb-3">
+                Ancient manuscripts from Qumran (1947–1956). Includes 1 Enoch, Jubilees, and sectarian scrolls.
+              </p>
+              <div className="flex items-center justify-between">
+                <label className="text-sm text-gray-700 dark:text-gray-300">Show DSS</label>
+                <button
+                  onClick={() => scripture.setShowDSS(!scripture.showDSS)}
+                  className={`w-12 h-6 rounded-full transition-colors ${
+                    scripture.showDSS ? 'bg-emerald-600' : 'bg-gray-300 dark:bg-gray-600'
+                  }`}
+                >
+                  <div className={`w-5 h-5 bg-white rounded-full shadow transform transition-transform ${
+                    scripture.showDSS ? 'translate-x-6' : 'translate-x-0.5'
+                  }`} />
+                </button>
+              </div>
+              {scripture.showDSS && scripture.dssLoading && (
+                <p className="text-xs text-emerald-500 mt-2 animate-pulse">Loading DSS data...</p>
+              )}
+              {scripture.showDSS && scripture.dssLoaded && (() => {
+                const coll = scripture.getDSSCollection();
+                return coll ? (
+                  <p className="text-xs text-green-600 dark:text-green-400 mt-2">
+                    ✅ {coll.info.books_with_full_text} texts with content • {coll.info.books_with_metadata_only} metadata-only • {coll.info.total_verses} verses
+                  </p>
+                ) : null;
+              })()}
+            </div>
+
             {/* Pronunciation Tool */}
             <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
               <h3 className="font-semibold text-[#00457c] dark:text-blue-300 mb-3 flex items-center space-x-2">
                 <SpeakerWaveIcon className="h-4 w-4" />
-                <span>{selectedBook?.testament === 'OT' ? 'Hebrew' : 'Greek'} Tools</span>
+                <span>{selectedBook?.testament === 'OT' ? 'Hebrew' : selectedBook?.testament === 'DC' ? 'Original Language' : 'Greek'} Tools</span>
               </h3>
 
               <div className="flex items-center justify-between mb-3">
@@ -550,158 +869,438 @@ export default function ScriptureReader() {
       {/* MAIN CONTENT - 3 Column Scripture View */}
       {/* ================================================================== */}
       <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Column Headers */}
-        <div className={`grid ${showParallel ? 'grid-cols-3' : 'grid-cols-2'} border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-[#2d3748]`}>
-          <div className="px-4 py-3 border-r border-gray-200 dark:border-gray-700">
-            <h3 className="font-semibold text-[#00457c] dark:text-blue-300 flex items-center space-x-2">
-              <span className="text-lg">🔤</span>
-              <span>{selectedBook?.testament === 'OT' ? 'Hebrew (WLC)' : 'Greek (SBLGNT)'}</span>
-            </h3>
-            <p className="text-xs text-gray-500 dark:text-gray-400">Original Language</p>
-          </div>
-          <div className={`px-4 py-3 ${showParallel ? 'border-r border-gray-200 dark:border-gray-700' : ''}`}>
-            <h3 className="font-semibold text-[#00457c] dark:text-blue-300 flex items-center space-x-2">
-              <span className="text-lg">📖</span>
-              <span>{getTranslationInfo(primaryTranslation)?.abbr || 'Primary'}</span>
-            </h3>
-            <p className="text-xs text-gray-500 dark:text-gray-400">{getTranslationInfo(primaryTranslation)?.name}</p>
-          </div>
-          {showParallel && (
-            <div className="px-4 py-3">
-              <h3 className="font-semibold text-[#00457c] dark:text-blue-300 flex items-center space-x-2">
-                <span className="text-lg">📖</span>
-                <span>{getTranslationInfo(parallelTranslation)?.abbr || 'Parallel'}</span>
-              </h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400">{getTranslationInfo(parallelTranslation)?.name}</p>
-            </div>
-          )}
-        </div>
 
-        {/* Scripture Content - 3 Columns */}
-        <div className="flex-1 overflow-y-auto">
-          <div className={`grid ${showParallel ? 'grid-cols-3' : 'grid-cols-2'} min-h-full`}>
-            
-            {/* Column 1: Original Language */}
-            <div className="bg-[#faf9f6] dark:bg-[#2d3748] border-r border-gray-200 dark:border-gray-700 p-4">
-              <div className="space-y-3">
-                {/* Psalm Introduction / Superscription */}
-                {chapterVerses[0]?.superscription && (
-                  <div className="pb-3 mb-2 border-b border-gray-200 dark:border-gray-600">
-                    <p className={`text-base italic text-gray-600 dark:text-gray-300 leading-relaxed ${
-                      selectedBook?.testament === 'OT' ? 'text-right font-hebrew' : 'font-greek'
-                    }`}>
-                      {chapterVerses[0].superscription}
-                    </p>
-                  </div>
-                )}
-                {chapterVerses.map((verse) => (
-                  <div key={verse.verse} className="group">
-                    <div className={`leading-relaxed ${
-                      selectedBook?.testament === 'OT' 
-                        ? 'text-right font-hebrew text-lg' 
-                        : 'font-greek text-base'
-                    } text-[#333] dark:text-gray-100`}>
-                      <span className="text-[#00457c] dark:text-blue-300 font-sans text-xs font-bold mr-1 align-super">
-                        {verse.verse}
+        {/* ======== DEAD SEA SCROLLS VIEW ======== */}
+        {isDSS ? (
+          <>
+            {/* DSS Header */}
+            <div className="border-b border-emerald-200 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/20 px-4 py-3">
+              {selectedDSSBook ? (
+                <div>
+                  <h3 className="font-semibold text-emerald-700 dark:text-emerald-300 flex items-center space-x-2">
+                    <span className="text-lg">🏺</span>
+                    <span>{selectedDSSBook.name}</span>
+                    {selectedDSSBook.total_verses > 0 && (
+                      <span className="text-sm font-normal text-emerald-600/70 dark:text-emerald-400/70 ml-2">
+                        Chapter {selectedChapter} of {selectedDSSBook.total_chapters}
                       </span>
-                      {verse.originalText ? (
-                        verse.originalText.split(/\s+/).map((word, i) => (
-                          <span
-                            key={i}
-                            onClick={() => handleWordClick(word)}
-                            className={`cursor-pointer hover:bg-yellow-200 dark:hover:bg-yellow-700 px-0.5 rounded transition-colors ${
-                              selectedWord === word ? 'bg-yellow-300 dark:bg-yellow-600' : ''
-                            }`}
-                          >
-                            {word}{' '}
-                          </span>
-                        ))
-                      ) : (
-                        <span className="text-gray-400 italic text-sm font-sans">
-                          [Loading...]
-                        </span>
-                      )}
+                    )}
+                  </h3>
+                  <p className="text-xs text-emerald-600/70 dark:text-emerald-400/70 mt-1">
+                    {selectedDSSBook.original_language} • {selectedDSSBook.date_composed} • {selectedDSSBook.qumran_refs}
+                    {selectedDSSBook.translation && ` • Translation: ${selectedDSSBook.translation}`}
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <h3 className="font-semibold text-emerald-700 dark:text-emerald-300 flex items-center space-x-2">
+                    <span className="text-lg">🏺</span>
+                    <span>Dead Sea Scrolls &amp; Pseudepigrapha</span>
+                  </h3>
+                  <p className="text-xs text-emerald-600/70 dark:text-emerald-400/70">
+                    Select a text from the sidebar to begin reading
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* DSS Content */}
+            <div className="flex-1 overflow-y-auto">
+              {scripture.dssLoading ? (
+                <div className="flex items-center justify-center h-64">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-emerald-600 mx-auto mb-4" />
+                    <p className="text-emerald-700 dark:text-emerald-300">Loading Dead Sea Scrolls...</p>
+                  </div>
+                </div>
+              ) : !selectedDSSBook ? (
+                <div className="flex items-center justify-center h-64">
+                  <div className="text-center text-gray-500 dark:text-gray-400 max-w-md">
+                    <p className="text-4xl mb-4">🏺</p>
+                    <p className="text-lg font-serif mb-2">Ancient Manuscripts</p>
+                    <p className="text-sm">Select a text from the sidebar. Books with 📖 have full readable text. Others have scholarly metadata and external links.</p>
+                  </div>
+                </div>
+              ) : selectedDSSBook.text_status === 'metadata_only' ? (
+                /* Metadata-only view for copyrighted texts */
+                <div className="max-w-2xl mx-auto p-8 space-y-6">
+                  <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-emerald-200 dark:border-emerald-700">
+                    <h2 className="text-2xl font-serif text-emerald-700 dark:text-emerald-300 mb-1">{selectedDSSBook.name}</h2>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{selectedDSSBook.abbreviation} • {selectedDSSBook.original_language} • {selectedDSSBook.date_composed}</p>
+                    
+                    {selectedDSSBook.significance && (
+                      <div className="mb-4">
+                        <h4 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Significance</h4>
+                        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{selectedDSSBook.significance}</p>
+                      </div>
+                    )}
+
+                    <div className="mb-4">
+                      <h4 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">Qumran References</h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">{selectedDSSBook.qumran_refs}</p>
                     </div>
 
-                    {/* Inline Pronunciation (when word is selected from this verse) */}
-                    {showPronunciation && selectedWord && verse.originalText?.includes(selectedWord) && (
-                      (() => {
-                        const pronData = getPronunciationData(selectedWord, selectedBook?.testament || 'OT');
-                        if (!pronData) return null;
-                        return (
-                          <div className="mt-1 p-2 bg-white dark:bg-gray-700 rounded border-l-4 border-[#00457c] text-sm space-y-1">
-                            <div className="flex items-center space-x-2">
-                              <span className="font-mono font-bold text-[#00457c] dark:text-blue-300">{pronData.transliteration}</span>
-                              {pronData.strongs && <span className="text-[10px] bg-gray-100 dark:bg-gray-600 px-1 rounded">{pronData.strongs}</span>}
-                              <span className="text-gray-400 dark:text-gray-500">•</span>
-                              <span className="text-xs text-gray-500 dark:text-gray-400 font-mono">/{pronData.pronunciation}/</span>
+                    {selectedDSSBook.sections && selectedDSSBook.sections.length > 0 && (
+                      <div className="mb-4">
+                        <h4 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Sections</h4>
+                        <div className="space-y-2">
+                          {selectedDSSBook.sections.map((sec, i) => (
+                            <div key={i} className="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-3">
+                              <p className="font-medium text-sm text-emerald-700 dark:text-emerald-300">{sec.name}</p>
+                              {sec.description && <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{sec.description}</p>}
                             </div>
-                            <p className="text-gray-700 dark:text-gray-200">{pronData.meaning}</p>
-                            {pronData.translations && (
-                              <div className="flex flex-wrap gap-1 mt-1">
-                                {Object.entries(pronData.translations).slice(0, 4).map(([abbr, text]) => (
-                                  <span key={abbr} className="text-[10px] bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded">
-                                    {abbr}: {text}
-                                  </span>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })()
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedDSSBook.text_note && (
+                      <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-700 rounded-lg p-3">
+                        <p className="text-xs text-orange-700 dark:text-orange-300">⚠️ {selectedDSSBook.text_note}</p>
+                      </div>
+                    )}
+
+                    {selectedDSSBook.external_links && selectedDSSBook.external_links.length > 0 && (
+                      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <h4 className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">External Resources</h4>
+                        <div className="space-y-1">
+                          {selectedDSSBook.external_links.map((link, i) => (
+                            <a key={i} href={link.url} target="_blank" rel="noopener noreferrer"
+                              className="block text-sm text-emerald-600 dark:text-emerald-400 hover:underline">
+                              🔗 {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     )}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+              ) : dssVerses.length > 0 ? (
+                /* Full text view */
+                <div className="max-w-3xl mx-auto p-6">
+                  <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
+                    {/* Section info for current chapter */}
+                    {selectedDSSBook.sections && (() => {
+                      const sec = selectedDSSBook.sections.find(s => {
+                        if (!s.chapters) return false;
+                        const [start, end] = s.chapters.split('-').map(Number);
+                        return selectedChapter >= start && selectedChapter <= (end || start);
+                      });
+                      return sec ? (
+                        <div className="mb-4 pb-4 border-b border-emerald-200 dark:border-emerald-700">
+                          <p className="text-xs text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">{sec.name}</p>
+                        </div>
+                      ) : null;
+                    })()}
 
-            {/* Column 2: Primary Translation */}
-            <div className={`bg-white dark:bg-[#1a202c] p-4 ${showParallel ? 'border-r border-gray-200 dark:border-gray-700' : ''}`}>
-              <div className="space-y-3">
-                {chapterVerses.map((verse) => (
-                  <p key={verse.verse} className="leading-relaxed text-[#333] dark:text-gray-200 font-serif text-base">
-                    <span className="text-[#00457c] dark:text-blue-300 text-xs font-bold font-sans mr-1 align-super">
-                      {verse.verse}
-                    </span>
-                    {verse.englishText || (
-                      <span className="text-gray-400 italic text-sm">
-                        [Not available]
+                    <div className="space-y-4">
+                      {dssVerses.map((verse) => (
+                        <p key={verse.verse} className="leading-relaxed text-[#333] dark:text-gray-200 font-serif text-base">
+                          <span className="text-emerald-700 dark:text-emerald-300 text-xs font-bold font-sans mr-2 align-super">
+                            {verse.verse}
+                          </span>
+                          {verse.text}
+                        </p>
+                      ))}
+                    </div>
+
+                    {/* Chapter nav */}
+                    <div className="flex items-center justify-between mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <button
+                        onClick={() => setSelectedChapter(Math.max(1, selectedChapter - 1))}
+                        disabled={selectedChapter <= 1}
+                        className="px-4 py-2 text-sm text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg disabled:opacity-30 disabled:cursor-not-allowed"
+                      >
+                        ← Previous Chapter
+                      </button>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                        Chapter {selectedChapter} of {selectedDSSBook.total_chapters}
                       </span>
-                    )}
-                  </p>
-                ))}
+                      <button
+                        onClick={() => setSelectedChapter(Math.min(selectedDSSBook.total_chapters, selectedChapter + 1))}
+                        disabled={selectedChapter >= selectedDSSBook.total_chapters}
+                        className="px-4 py-2 text-sm text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg disabled:opacity-30 disabled:cursor-not-allowed"
+                      >
+                        Next Chapter →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center h-64">
+                  <div className="text-center text-gray-500 dark:text-gray-400">
+                    <p className="text-lg mb-2">🏺</p>
+                    <p>No verse data available for this chapter.</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </>
+        ) : isApocrypha ? (
+          <>
+            {/* Apocrypha Column Headers */}
+            <div className="grid grid-cols-2 border-b border-amber-200 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20">
+              <div className="px-4 py-3 border-r border-amber-200 dark:border-amber-700">
+                <h3 className="font-semibold text-amber-700 dark:text-amber-300 flex items-center space-x-2">
+                  <span className="text-lg">🔤</span>
+                  <span>Septuagint Greek (LXX)</span>
+                </h3>
+                <p className="text-xs text-amber-600/70 dark:text-amber-400/70">
+                  Original Language • {(selectedBook as ApocryphaBook)?.originalLanguage || 'Greek'}
+                </p>
+              </div>
+              <div className="px-4 py-3">
+                <h3 className="font-semibold text-amber-700 dark:text-amber-300 flex items-center space-x-2">
+                  <span className="text-lg">📖</span>
+                  <span>{APOCRYPHA_TRANSLATIONS.find(t => t.key === apocryphaTranslation)?.abbr || 'English'}</span>
+                </h3>
+                <p className="text-xs text-amber-600/70 dark:text-amber-400/70">
+                  {APOCRYPHA_TRANSLATIONS.find(t => t.key === apocryphaTranslation)?.name}
+                </p>
               </div>
             </div>
 
-            {/* Column 3: Parallel Translation */}
-            {showParallel && (
-              <div className="bg-[#fafafa] dark:bg-[#2d3748] p-4">
-                <div className="space-y-3">
-                  {chapterVerses.map((verse) => {
-                    const parallelText = scripture.getTranslationVerse(
-                      parallelTranslation,
-                      selectedBook?.name || '',
-                      selectedChapter,
-                      verse.verse
-                    );
-                    return (
+            {/* Apocrypha Book Info Bar */}
+            {selectedBook && (
+              <div className="px-4 py-2 bg-amber-50/50 dark:bg-amber-900/10 border-b border-amber-100 dark:border-amber-800 text-xs text-amber-700 dark:text-amber-300">
+                <span className="font-semibold">{selectedBook.name}</span>
+                <span className="mx-2">•</span>
+                <span>Written in <strong>{(selectedBook as ApocryphaBook).originalLanguage}</strong></span>
+                <span className="mx-2">•</span>
+                <span>{(selectedBook as ApocryphaBook).dateComposed}</span>
+                {(selectedBook as ApocryphaBook).dssFragments?.length > 0 && (
+                  <>
+                    <span className="mx-2">•</span>
+                    <span className="text-green-600 dark:text-green-400">📜 Dead Sea Scrolls fragments exist</span>
+                  </>
+                )}
+              </div>
+            )}
+
+            {/* Apocrypha Content - 2 Columns */}
+            <div className="flex-1 overflow-y-auto">
+              {scripture.apocryphaLoading ? (
+                <div className="flex items-center justify-center h-64">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-amber-600 mx-auto mb-4" />
+                    <p className="text-amber-700 dark:text-amber-300">Loading Apocrypha...</p>
+                  </div>
+                </div>
+              ) : apocryphaVerses.length === 0 ? (
+                <div className="flex items-center justify-center h-64">
+                  <div className="text-center text-gray-500 dark:text-gray-400">
+                    <p className="text-lg mb-2">📜</p>
+                    <p>No data available for this chapter in the selected translation.</p>
+                    <p className="text-sm mt-1">Try a different translation (KJV or Brenton&apos;s LXX have the most books).</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 min-h-full">
+                  {/* LXX Greek Column */}
+                  <div className="bg-[#faf9f6] dark:bg-[#2d3748] border-r border-amber-200 dark:border-amber-700 p-4">
+                    <div className="space-y-3">
+                      {apocryphaGreekVerses.length > 0 ? apocryphaGreekVerses.map((verse) => (
+                        <div key={verse.verse} className="group">
+                          <p className="leading-relaxed font-greek text-base text-[#333] dark:text-gray-100">
+                            <span className="text-amber-700 dark:text-amber-300 font-sans text-xs font-bold mr-1 align-super">
+                              {verse.verse}
+                            </span>
+                            {verse.text || (
+                              <span className="text-gray-400 italic text-sm font-sans">[Not available in LXX]</span>
+                            )}
+                          </p>
+                        </div>
+                      )) : apocryphaVerses.map((verse) => (
+                        <div key={verse.verse} className="group">
+                          <p className="leading-relaxed font-greek text-base text-[#333] dark:text-gray-100">
+                            <span className="text-amber-700 dark:text-amber-300 font-sans text-xs font-bold mr-1 align-super">
+                              {verse.verse}
+                            </span>
+                            {verse.originalText || (
+                              <span className="text-gray-400 italic text-sm font-sans">[Greek not available]</span>
+                            )}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* English Translation Column */}
+                  <div className="bg-white dark:bg-[#1a202c] p-4">
+                    <div className="space-y-3">
+                      {apocryphaVerses.map((verse) => (
+                        <p key={verse.verse} className="leading-relaxed text-[#333] dark:text-gray-200 font-serif text-base">
+                          <span className="text-amber-700 dark:text-amber-300 text-xs font-bold font-sans mr-1 align-super">
+                            {verse.verse}
+                          </span>
+                          {verse.text || (
+                            <span className="text-gray-400 italic text-sm">[Not available]</span>
+                          )}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            {/* ======== CANONICAL SCRIPTURE VIEW (existing) ======== */}
+            {/* Column Headers */}
+            <div className={`grid ${showParallel ? 'grid-cols-3' : 'grid-cols-2'} border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-[#2d3748]`}>
+              <div className="px-4 py-3 border-r border-gray-200 dark:border-gray-700">
+                <h3 className="font-semibold text-[#00457c] dark:text-blue-300 flex items-center space-x-2">
+                  <span className="text-lg">🔤</span>
+                  <span>{selectedBook?.testament === 'OT' ? 'Hebrew (WLC)' : 'Greek (SBLGNT)'}</span>
+                </h3>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Original Language</p>
+              </div>
+              <div className={`px-4 py-3 ${showParallel ? 'border-r border-gray-200 dark:border-gray-700' : ''}`}>
+                <h3 className="font-semibold text-[#00457c] dark:text-blue-300 flex items-center space-x-2">
+                  <span className="text-lg">📖</span>
+                  <span>{getTranslationInfo(primaryTranslation)?.abbr || 'Primary'}</span>
+                </h3>
+                <p className="text-xs text-gray-500 dark:text-gray-400">{getTranslationInfo(primaryTranslation)?.name}</p>
+              </div>
+              {showParallel && (
+                <div className="px-4 py-3">
+                  <h3 className="font-semibold text-[#00457c] dark:text-blue-300 flex items-center space-x-2">
+                    <span className="text-lg">📖</span>
+                    <span>{getTranslationInfo(parallelTranslation)?.abbr || 'Parallel'}</span>
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{getTranslationInfo(parallelTranslation)?.name}</p>
+                </div>
+              )}
+            </div>
+
+            {/* Scripture Content - 3 Columns */}
+            <div className="flex-1 overflow-y-auto">
+              <div className={`grid ${showParallel ? 'grid-cols-3' : 'grid-cols-2'} min-h-full`}>
+                
+                {/* Column 1: Original Language */}
+                <div className="bg-[#faf9f6] dark:bg-[#2d3748] border-r border-gray-200 dark:border-gray-700 p-4">
+                  <div className="space-y-3">
+                    {/* Psalm Introduction / Superscription */}
+                    {chapterVerses[0]?.superscription && (
+                      <div className="pb-3 mb-2 border-b border-gray-200 dark:border-gray-600">
+                        <p className={`text-base italic text-gray-600 dark:text-gray-300 leading-relaxed ${
+                          selectedBook?.testament === 'OT' ? 'text-right font-hebrew' : 'font-greek'
+                        }`}>
+                          {chapterVerses[0].superscription}
+                        </p>
+                      </div>
+                    )}
+                    {chapterVerses.map((verse) => (
+                      <div key={verse.verse} className="group">
+                        <div className={`leading-relaxed ${
+                          selectedBook?.testament === 'OT' 
+                            ? 'text-right font-hebrew text-lg' 
+                            : 'font-greek text-base'
+                        } text-[#333] dark:text-gray-100`}>
+                          <span className="text-[#00457c] dark:text-blue-300 font-sans text-xs font-bold mr-1 align-super">
+                            {verse.verse}
+                          </span>
+                          {verse.originalText ? (
+                            verse.originalText.split(/\s+/).map((word, i) => (
+                              <span
+                                key={i}
+                                onClick={() => handleWordClick(word)}
+                                className={`cursor-pointer hover:bg-yellow-200 dark:hover:bg-yellow-700 px-0.5 rounded transition-colors ${
+                                  selectedWord === word ? 'bg-yellow-300 dark:bg-yellow-600' : ''
+                                }`}
+                              >
+                                {word}{' '}
+                              </span>
+                            ))
+                          ) : (
+                            <span className="text-gray-400 italic text-sm font-sans">
+                              [Loading...]
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Inline Pronunciation (when word is selected from this verse) */}
+                        {showPronunciation && selectedWord && verse.originalText?.includes(selectedWord) && (
+                          (() => {
+                            const pronData = getPronunciationData(selectedWord, selectedBook?.testament || 'OT');
+                            if (!pronData) return null;
+                            return (
+                              <div className="mt-1 p-2 bg-white dark:bg-gray-700 rounded border-l-4 border-[#00457c] text-sm space-y-1">
+                                <div className="flex items-center space-x-2">
+                                  <span className="font-mono font-bold text-[#00457c] dark:text-blue-300">{pronData.transliteration}</span>
+                                  {pronData.strongs && <span className="text-[10px] bg-gray-100 dark:bg-gray-600 px-1 rounded">{pronData.strongs}</span>}
+                                  <span className="text-gray-400 dark:text-gray-500">•</span>
+                                  <span className="text-xs text-gray-500 dark:text-gray-400 font-mono">/{pronData.pronunciation}/</span>
+                                </div>
+                                <p className="text-gray-700 dark:text-gray-200">{pronData.meaning}</p>
+                                {pronData.translations && (
+                                  <div className="flex flex-wrap gap-1 mt-1">
+                                    {Object.entries(pronData.translations).slice(0, 4).map(([abbr, text]) => (
+                                      <span key={abbr} className="text-[10px] bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded">
+                                        {abbr}: {text}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })()
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Column 2: Primary Translation */}
+                <div className={`bg-white dark:bg-[#1a202c] p-4 ${showParallel ? 'border-r border-gray-200 dark:border-gray-700' : ''}`}>
+                  <div className="space-y-3">
+                    {chapterVerses.map((verse) => (
                       <p key={verse.verse} className="leading-relaxed text-[#333] dark:text-gray-200 font-serif text-base">
                         <span className="text-[#00457c] dark:text-blue-300 text-xs font-bold font-sans mr-1 align-super">
                           {verse.verse}
                         </span>
-                        {parallelText || (
+                        {verse.englishText || (
                           <span className="text-gray-400 italic text-sm">
                             [Not available]
                           </span>
                         )}
                       </p>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
+
+                {/* Column 3: Parallel Translation */}
+                {showParallel && (
+                  <div className="bg-[#fafafa] dark:bg-[#2d3748] p-4">
+                    <div className="space-y-3">
+                      {chapterVerses.map((verse) => {
+                        const parallelText = scripture.getTranslationVerse(
+                          parallelTranslation,
+                          selectedBook?.name || '',
+                          selectedChapter,
+                          verse.verse
+                        );
+                        return (
+                          <p key={verse.verse} className="leading-relaxed text-[#333] dark:text-gray-200 font-serif text-base">
+                            <span className="text-[#00457c] dark:text-blue-300 text-xs font-bold font-sans mr-1 align-super">
+                              {verse.verse}
+                            </span>
+                            {parallelText || (
+                              <span className="text-gray-400 italic text-sm">
+                                [Not available]
+                              </span>
+                            )}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        </div>
+            </div>
+          </>
+        )}
       </main>
       </div>
     </div>
