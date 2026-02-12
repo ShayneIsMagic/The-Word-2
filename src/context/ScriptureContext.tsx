@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback, useRef } from 'react';
 
 // ============================================================================
 // Types
@@ -591,11 +591,16 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
       .finally(() => setAltGreekLoading(false));
   }, [altGreekLoading]);
 
+  // Ref to track in-flight apocrypha translation fetches
+  const loadingApocryphaRef = useRef<Set<string>>(new Set());
+
   // Load an additional Apocrypha translation on demand
   const loadApocryphaTranslation = useCallback(async (key: ApocryphaTranslationKey): Promise<ApocryphaFile | null> => {
     if (apocryphaCache[key]) return apocryphaCache[key];
+    if (loadingApocryphaRef.current.has(key)) return null;
     const info = APOCRYPHA_TRANSLATIONS.find(t => t.key === key);
     if (!info) return null;
+    loadingApocryphaRef.current.add(key);
     try {
       const res = await fetch(`/lib/original-texts/${info.file}`);
       if (!res.ok) return null;
@@ -604,17 +609,25 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
       return data;
     } catch {
       return null;
+    } finally {
+      loadingApocryphaRef.current.delete(key);
     }
   }, [apocryphaCache]);
+
+  // Ref to track in-flight translation fetches (prevents duplicate requests)
+  const loadingTranslationsRef = useRef<Set<string>>(new Set());
 
   // Load an additional translation on demand
   const loadTranslation = useCallback(async (key: TranslationKey): Promise<KJVBible | null> => {
     if (key === 'kjv') return kjvData;
     if (translationCache[key]) return translationCache[key];
+    // Prevent duplicate in-flight requests
+    if (loadingTranslationsRef.current.has(key)) return null;
 
     const info = AVAILABLE_TRANSLATIONS.find(t => t.key === key);
     if (!info) return null;
 
+    loadingTranslationsRef.current.add(key);
     try {
       const res = await fetch(`/lib/original-texts/${info.file}`);
       if (!res.ok) return null;
@@ -623,6 +636,8 @@ export function ScriptureProvider({ children }: { children: ReactNode }) {
       return data;
     } catch {
       return null;
+    } finally {
+      loadingTranslationsRef.current.delete(key);
     }
   }, [kjvData, translationCache]);
 
