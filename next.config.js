@@ -10,6 +10,15 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/reader/',
+        permanent: true,
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig;

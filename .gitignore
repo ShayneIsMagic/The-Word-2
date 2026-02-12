@@ -50,7 +50,7 @@ extraction_*.txt
 *_log.txt
 
 # Scripture data files — tracked via Git LFS (see .gitattributes)
-# public/lib/original-texts/*.json  ← now in LFS, no longer ignored
+# public/lib/original-texts/*.json  ← committed directly (no LFS)
 !public/lib/original-texts/.gitkeep
 
 # Scraped LDS structure data (can be regenerated)
